@@ -6,7 +6,7 @@ const { buttons } = theme;
 
 const StyledButton = styled.a`
 	text-decoration: none;
-	padding: 0.3em 1.25em;
+	padding: 0.4em 1.25em;
 	font-weight: 700;
 	border-radius: 8px;
 	background: ${buttons.primary.background};

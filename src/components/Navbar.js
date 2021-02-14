@@ -18,9 +18,19 @@ const StyledNavbar = styled.nav`
 	margin: 0;
 	padding: 0.8em 0;
 
+	margin-bottom: 2em;
+
 	width: 100%;
 
 	background-color: ${colors.background};
+
+	::after {
+		content: "";
+		width: 100%;
+		display: block;
+		border: 1px solid ${colors.accent20};
+		margin-top: 0.8em;
+	}
 `;
 
 const StyledNavbarNav = styled.div`

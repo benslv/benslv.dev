@@ -1,9 +1,13 @@
 import React from "react";
 import { IconContext } from "phosphor-react";
 
+// Import components
 import Layout from "../components/Layout";
-import Button from "../components/Button";
 
+// Import sections
+import HeroSection from "../components/sections/Hero";
+
+// Import theme
 import theme from "../theme";
 const { colors } = theme;
 
@@ -16,12 +20,9 @@ const IndexPage = () => {
 		// 		weight: "bold",
 		// 		mirrored: false,
 		// 	}}>
-			<Layout>
-				<h1>Hello, world!</h1>
-				<Button to="#" text="Hello there " />
-				<Button to="#" text="Hello" />
-				<p>Lorem ipsum sit dolor amet</p>
-			</Layout>
+		<Layout>
+			<HeroSection />
+		</Layout>
 		// </IconContext.Provider>
 	);
 };

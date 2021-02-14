@@ -6,7 +6,7 @@ const { buttons } = theme;
 
 const StyledButton = styled.a`
 	text-decoration: none;
-	padding: 0.8em 1.25em;
+	padding: 0.3em 1.25em;
 	font-weight: 700;
 	border-radius: 8px;
 	background: ${buttons.primary.background};
@@ -14,7 +14,10 @@ const StyledButton = styled.a`
 	outline: none;
 	width: fit-content;
 
-	margin: 0 0.25em;
+	display: flex;
+	align-items: center;
+
+	margin: 0 0.8em;
 
 	transition: all 0.15s cubic-bezier(0.21, 0.63, 0.32, 0.98);
 
@@ -28,20 +31,13 @@ const StyledButton = styled.a`
 		background: ${buttons.hover.background};
 		color: ${buttons.hover.color};
 	}
-
-	:first-child {
-		margin-left: 0;
-	}
-
-	:last-child {
-		margin-right: 0;
-	}
 `;
 
 const StyledIcon = styled.span`
 	font-size: 1.25em;
 	position: relative;
-	top: 0.2em;
+	top: 0.1em;
+	padding-right: 0.35em;
 `;
 
 const Button = ({ to, icon, text }) => {

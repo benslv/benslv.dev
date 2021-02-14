@@ -6,6 +6,7 @@ export default {
 			header: "#0E1B2F",
 		},
 		accent: "#59C470",
+		accent20: "#59C47014",
 	},
 	buttons: {
 		primary: {
@@ -19,6 +20,17 @@ export default {
 		vibrant: {
 			background: "#59C470",
 			color: "#ffffff",
+		},
+	},
+	fonts: {
+		sizes: {
+			small: "14px",
+			regular: "18px",
+			large: "36px",
+			xLarge: "48px",
+		},
+		family: {
+			"san-serif": `"Inter", sans-serif`,
 		},
 	},
 };

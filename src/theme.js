@@ -25,12 +25,16 @@ export default {
 	fonts: {
 		sizes: {
 			small: "14px",
-			regular: "18px",
+			regular: "16px",
 			large: "36px",
 			xLarge: "48px",
 		},
 		family: {
 			"san-serif": `"Inter", sans-serif`,
+		},
+		weights: {
+			regular: 400,
+			bold: 700,
 		},
 	},
 };

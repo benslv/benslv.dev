@@ -27,6 +27,7 @@ export default createGlobalStyle`
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: ${fonts.sizes.regular};
+    text-align: center;
   }
 
   h1, h2, h3, p {
@@ -42,6 +43,14 @@ export default createGlobalStyle`
 
   h1 {
     font-size: ${fonts.sizes.xLarge}
+  }
+
+  h2 {
+    font-size: ${fonts.sizes.large}
+  }
+
+  h3 {
+    font-size: ${fonts.sizes.regular}
   }
 
   p { 

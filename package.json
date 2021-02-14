@@ -1,0 +1,29 @@
+{
+	"name": "me",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Me",
+	"author": "Ben Silverman",
+	"keywords": [
+		"gatsby"
+	],
+	"scripts": {
+		"develop": "gatsby develop",
+		"start": "gatsby develop",
+		"build": "gatsby build",
+		"serve": "gatsby serve",
+		"clean": "gatsby clean"
+	},
+	"dependencies": {
+		"babel-plugin-styled-components": "^1.12.0",
+		"fontsource-inter": "^4.0.0",
+		"gatsby": "^2.32.3",
+		"gatsby-plugin-styled-components": "^3.10.0",
+		"phosphor-react": "^1.1.2",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-helmet": "^6.1.0",
+		"styled-components": "^5.2.1",
+		"theme-ui": "^0.3.5"
+	}
+}

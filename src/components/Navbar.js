@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { House, Pen, Newspaper } from "phosphor-react";
 
 import Button from "./Button";
+import Container from "./Container";
 
 import theme from "../theme";
 const { colors } = theme;
 
 const links = [
-	{ name: "Home", to: "/" },
-	{ name: "Projects", to: "/projects" },
-	{ name: "Blog", to: "/blog" },
+	{ name: "Home", to: "/", icon: <House weight="bold" /> },
+	{ name: "Projects", to: "/projects", icon: <Pen weight="bold" /> },
+	{ name: "Blog", to: "/blog", icon: <Newspaper weight="bold" /> },
 ];
 
 const StyledNavbar = styled.nav`
@@ -21,19 +23,21 @@ const StyledNavbar = styled.nav`
 	background-color: ${colors.background};
 `;
 
-const StyledNavbarNav = styled.ul`
-  list-style: none;
-  display: flex;
-  justify-content: center;
-
-  (Button)
-`
+const StyledNavbarNav = styled.div`
+	display: flex;
+	justify-content: center;
+`;
 
 const Navbar = () => (
 	<StyledNavbar>
-		<StyledNavbarNav>
-			{links && links.map((link) => <li><Button text={link.name}/></li>)}
-		</StyledNavbarNav>
+		<Container>
+			<StyledNavbarNav>
+				{links &&
+					links.map(({name, icon}) => (
+						<Button text={name} icon={icon}/>
+					))}
+			</StyledNavbarNav>
+		</Container>
 	</StyledNavbar>
 );
 

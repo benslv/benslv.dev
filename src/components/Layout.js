@@ -5,8 +5,10 @@ import "fontsource-inter/400.css";
 import "fontsource-inter/700.css";
 
 import Navbar from "./Navbar";
+import Container from "./Container";
 
 import theme from "../theme";
+import Footer from "./Footer";
 const { colors } = theme;
 
 const GlobalStyle = createGlobalStyle`
@@ -20,21 +22,16 @@ const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-const Container = styled.div`
-	max-width: 540px;
-	margin: 0 auto;
-`;
-
 const Layout = ({ title, children }) => {
 	return (
-		<React.Fragment>
+		<React.Fragment className="site">
 			<Helmet>
 				<title>{title}</title>
 			</Helmet>
 			<GlobalStyle />
 			<Navbar />
-			<Container>{children}</Container>
-			{/* Footer */}
+			<Container className="content">{children}</Container>
+			<Footer />
 		</React.Fragment>
 	);
 };

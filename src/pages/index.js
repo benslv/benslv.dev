@@ -9,6 +9,7 @@ import HeroSection from "../components/sections/Hero";
 
 // Import theme
 import theme from "../theme";
+import AboutSection from "../components/sections/About";
 const { colors } = theme;
 
 const IndexPage = () => {
@@ -22,6 +23,7 @@ const IndexPage = () => {
 		// 	}}>
 		<Layout>
 			<HeroSection />
+			<AboutSection />
 		</Layout>
 		// </IconContext.Provider>
 	);

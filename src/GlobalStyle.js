@@ -6,7 +6,8 @@ const { colors, fonts } = theme;
 export default createGlobalStyle`
   html {
     box-sizing: border-box;
-    width: 100;
+    width: 100%;
+    height: 100vh;
   }
 
   *,
@@ -18,6 +19,8 @@ export default createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+
+    height: 100%;
 
     background-color: ${colors.background};
     color: ${colors.text.body};

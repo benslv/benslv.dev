@@ -10,17 +10,29 @@ import Footer from "./Footer";
 
 import GlobalStyle from "../GlobalStyle";
 
+// Styles for applying a sticky footer
+const styles = {
+	site: {
+		display: "flex",
+		"min-height": "100vh",
+		"flex-direction": "column",
+	},
+	content: {
+		flex: 1,
+	},
+};
+
 const Layout = ({ title, children }) => {
 	return (
-		<React.Fragment className="site">
+		<div style={styles.site}>
 			<Helmet>
 				<title>{title}</title>
 			</Helmet>
 			<GlobalStyle />
 			<Navbar />
-			<Container className="content">{children}</Container>
+			<Container style={styles.content}>{children}</Container>
 			<Footer />
-		</React.Fragment>
+		</div>
 	);
 };
 

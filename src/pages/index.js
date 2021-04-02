@@ -1,32 +1,22 @@
 import React from "react";
-import { IconContext } from "phosphor-react";
+import styled from "styled-components";
+import { BiTimer } from "react-icons/bi";
 
-// Import components
-import Layout from "../components/Layout";
+import { Layout } from "@components/Layout";
+import { Card } from "../components/Card";
 
-// Import sections
-import HeroSection from "../components/sections/Hero";
-
-// Import theme
-import theme from "../theme";
-import AboutSection from "../components/sections/About";
-const { colors } = theme;
+import { color, font } from "@theme/config";
 
 const IndexPage = () => {
-	return (
-		// <IconContext.Provider
-		// 	value={{
-		// 		color: `${colors.text.body}`,
-		// 		size: 24,
-		// 		weight: "bold",
-		// 		mirrored: false,
-		// 	}}>
-		<Layout>
-			<HeroSection />
-			<AboutSection />
-		</Layout>
-		// </IconContext.Provider>
-	);
+  return (
+    <Layout>
+      <Card
+        title="Coming Soon"
+        description="I'm working hard on designing this site at the moment, and am aiming to actually start
+        coding it as soon as possible!"
+      />
+    </Layout>
+  );
 };
 
 export default IndexPage;

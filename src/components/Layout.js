@@ -1,39 +1,29 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import "fontsource-inter/400.css";
-import "fontsource-inter/700.css";
+import styled from "styled-components";
 
-// Import components
-import Navbar from "./Navbar";
-import Container from "./Container";
-import Footer from "./Footer";
+import { GlobalStyle } from "@theme/globalStyles";
 
-import GlobalStyle from "../GlobalStyle";
+const StyledSite = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`;
 
-// Styles for applying a sticky footer
-const styles = {
-	site: {
-		display: "flex",
-		"min-height": "100vh",
-		"flex-direction": "column",
-	},
-	content: {
-		flex: 1,
-	},
+const StyledContent = styled.main`
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Layout = ({ children }) => {
+  return (
+    <StyledSite>
+      <GlobalStyle />
+      <StyledContent>{children}</StyledContent>
+    </StyledSite>
+  );
 };
-
-const Layout = ({ title, children }) => {
-	return (
-		<div style={styles.site}>
-			<Helmet>
-				<title>{title}</title>
-			</Helmet>
-			<GlobalStyle />
-			<Navbar />
-			<Container style={styles.content}>{children}</Container>
-			<Footer />
-		</div>
-	);
-};
-
-export default Layout;

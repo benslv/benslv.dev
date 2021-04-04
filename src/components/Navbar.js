@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { BiMenu, BiX } from "react-icons/bi";
+import { BiHomeAlt, BiMenu, BiX } from "react-icons/bi";
 
 import { TextLink } from "./TextLink";
 
@@ -23,6 +23,7 @@ const StyledNavbar = styled.div`
     align-items: center;
 
     padding: 1.5em 2em;
+    margin-bottom: 1em;
   }
 `;
 
@@ -65,11 +66,10 @@ const StyledNavLink = styled(TextLink)`
 `;
 
 const StyledNavBrand = styled(TextLink)`
-  color: ${color.accent};
+  display: flex;
+  align-items: center;
 
-  &:hover {
-    color: ${color.heading};
-  }
+  color: ${color.text};
 `;
 
 const StyledNavHeader = styled.div`
@@ -137,7 +137,9 @@ const MenuToggle = ({ toggle, isOpen }) => (
 
 const NavHeader = ({ toggle, isOpen }) => (
   <StyledNavHeader>
-    <StyledNavBrand to="/">slv.</StyledNavBrand>
+    <StyledNavBrand to="/">
+      <BiHomeAlt style={{ fontSize: 28, fontWeight: 700 }} />
+    </StyledNavBrand>
     <MenuToggle toggle={toggle} isOpen={isOpen} />
   </StyledNavHeader>
 );

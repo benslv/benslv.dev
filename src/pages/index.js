@@ -6,15 +6,12 @@ import { Layout } from "@components/Layout";
 import { Card } from "../components/Card";
 
 import { color, font } from "@theme/config";
+import { TextLink } from "../components/TextLink";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <Card
-        title="Coming Soon"
-        description="I'm working hard on designing this site at the moment, and am aiming to actually start
-        coding it as soon as possible!"
-      />
+      <TextLink to="https://google.com">Hello!</TextLink>
     </Layout>
   );
 };

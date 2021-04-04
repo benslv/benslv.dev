@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import { font, color } from "@theme/config";
+import { font, color } from "../theme/config";
 
 const StyledCard = styled.div`
   display: flex;
@@ -44,9 +45,15 @@ export const Card = ({ title, description }) => {
     <StyledCard>
       <Title>{title}</Title>
       <Description>
-        I&apos;m working hard on designing this site at the moment, and am aiming to actually start
-        coding it as soon as possible!
+        {description}
+        {/* I&apos;m working hard on designing this site at the moment, and am aiming to actually start
+        coding it as soon as possible! */}
       </Description>
     </StyledCard>
   );
+};
+
+Card.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
 };

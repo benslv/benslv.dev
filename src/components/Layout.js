@@ -1,34 +1,47 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import { Container } from "@components/Container";
+import { Navbar } from "./Navbar";
 
-import { GlobalStyle } from "@theme/globalStyles";
-import { color } from "@theme/config";
+import { GlobalStyle } from "../theme/globalStyles";
+import { color, breakpoint } from "../theme/config";
 
 const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: ${color.accent};
+  /* background-color: ${color.accent}; */
+  background-color: #efeff4;
 `;
 
 const StyledContent = styled.main`
   flex: 1;
   width: 100%;
-  max-width: calc(100vw - 200px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: ${color.background};
+
+  ${breakpoint.lg} {
+    max-width: calc(100vw - 200px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
 `;
 
 export const Layout = ({ children }) => {
   return (
     <StyledSite>
       <GlobalStyle />
-      <StyledContent>{children}</StyledContent>
+      <StyledContent>
+        <Navbar />
+        {children}
+      </StyledContent>
     </StyledSite>
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.node,
 };

@@ -1053,10 +1053,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/inter@^4.2.2":
+"@fontsource/rubik@^4.2.2":
   version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.2.2.tgz#efe97167aac992db3fadf60ea0dd72aacd3e1fc4"
-  integrity sha512-lvR1PQe+8FTTd3YRW84KGcgUR8leZ7S3aY+51MQ90MQHI0VQe3cDH6T6jjs1qTm+wPmWfdSVjN8ugvNZpGUnvA==
+  resolved "https://registry.yarnpkg.com/@fontsource/rubik/-/rubik-4.2.2.tgz#e7507b5d4e2c2f3722e25e41f16169e7e5d58511"
+  integrity sha512-M7PAoPSFmmsg4A5E4jEVr4oMN9GRO6B9OUbSU4W68JhzzBJr8RFIgJ5jglbHxUuais+jDKMPHfIRzH2lmnYLJA==
 
 "@gatsbyjs/reach-router@^1.3.6":
   version "1.3.6"

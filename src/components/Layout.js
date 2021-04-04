@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Container } from "@components/Container";
+import { Navbar } from "@components/navbar";
 
 import { GlobalStyle } from "@theme/globalStyles";
-import { color } from "@theme/config";
+import { color, breakpoint } from "@theme/config";
 
 const StyledSite = styled.div`
   display: flex;
@@ -16,19 +16,25 @@ const StyledSite = styled.div`
 const StyledContent = styled.main`
   flex: 1;
   width: 100%;
-  max-width: calc(100vw - 200px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: ${color.background};
+
+  ${breakpoint.lg} {
+    max-width: calc(100vw - 200px);
+  }
 `;
 
 export const Layout = ({ children }) => {
   return (
     <StyledSite>
       <GlobalStyle />
-      <StyledContent>{children}</StyledContent>
+      <StyledContent>
+        <Navbar />
+        {children}
+      </StyledContent>
     </StyledSite>
   );
 };

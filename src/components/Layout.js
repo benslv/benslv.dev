@@ -12,7 +12,8 @@ const StyledSite = styled.div`
   min-height: 100vh;
   flex-direction: column;
   /* background-color: ${color.accent}; */
-  background-color: #efeff4;
+  /* background-color: #efeff4; */
+  background-color: ${color.accent};
 `;
 
 const StyledContent = styled.main`
@@ -26,7 +27,10 @@ const StyledContent = styled.main`
 
   ${breakpoint.lg} {
     max-width: calc(100vw - 200px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 2em;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
   }
 `;
 

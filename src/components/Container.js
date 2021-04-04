@@ -8,11 +8,15 @@ const StyledContainer = styled.div`
   width: 100%;
   max-width: 960px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
 
   padding: 0 1em;
+
+  ${breakpoint.md} {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 1em;
+  }
 
   ${breakpoint.lg} {
     padding: 0 2em;

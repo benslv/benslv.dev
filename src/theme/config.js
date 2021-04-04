@@ -1,5 +1,7 @@
 export const color = {
-  accent: "#91BB79",
+  // accent: "#91BB79",
+  // accent: "#93EC5F",
+  accent: `hsl(${Math.floor(Math.random() * 360)}, 65%, 50%)`,
   text: "#646478",
   heading: "#1F1F2D",
   background: "#FFFFFF",
@@ -7,7 +9,7 @@ export const color = {
 };
 
 export const font = {
-  size: { base: "18px", large: "48px" },
+  size: { base: "18px", medium: "24px", large: "48px" },
   family: {
     sans: "Rubik, Inter, Helvetica, Arial, sans-serif",
   },

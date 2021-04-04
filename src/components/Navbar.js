@@ -131,7 +131,7 @@ const Nav = ({ isOpen }) => {
 
 const MenuToggle = ({ toggle, isOpen }) => (
   <StyledMenuToggle onClick={toggle}>
-    {isOpen ? <BiX style={{ fontSize: 24 }} /> : <BiMenu style={{ fontSize: 24 }} />}
+    {isOpen ? <BiX style={{ fontSize: 28 }} /> : <BiMenu style={{ fontSize: 28 }} />}
   </StyledMenuToggle>
 );
 

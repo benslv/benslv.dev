@@ -1,12 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-import { color } from "@theme/config";
+import { font, color } from "../theme/config";
 
 const StyledLink = styled(Link)`
-  color: ${color.text};
-  font-weight: 700;
+  color: ${color.heading};
+  font-weight: ${font.weight.semibold};
   outline: none;
   text-decoration: none;
   transition: all 0.15s ease;
@@ -31,4 +32,10 @@ export const TextLink = ({ to, children, className }) => {
       {children}
     </StyledLink>
   );
+};
+
+TextLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };

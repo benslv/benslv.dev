@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import { Navbar } from "@components/navbar";
+import { Navbar } from "./Navbar";
 
-import { GlobalStyle } from "@theme/globalStyles";
-import { color, breakpoint } from "@theme/config";
+import { GlobalStyle } from "../theme/globalStyles";
+import { color, breakpoint } from "../theme/config";
 
 const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: ${color.accent};
+  /* background-color: ${color.accent}; */
+  background-color: #efeff4;
 `;
 
 const StyledContent = styled.main`
@@ -37,4 +39,8 @@ export const Layout = ({ children }) => {
       </StyledContent>
     </StyledSite>
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.node,
 };

@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Ben Silverman <bensilverman10@gmail.com>",
   "dependencies": {
-    "@fontsource/inter": "^4.2.2",
+    "@fontsource/rubik": "^4.2.2",
     "gatsby": "^3.2.1",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-styled-components": "^4.2.0",
@@ -43,7 +43,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint . --fix"
+    "lint": "eslint src/**/*.{js,jsx} --fix"
   },
   "repository": {
     "type": "git",

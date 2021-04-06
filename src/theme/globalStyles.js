@@ -21,6 +21,11 @@ export const GlobalStyle = createGlobalStyle`
   }
   /* END OF RESET */
 
+  ::selection {
+    color: ${color.background};
+    background-color: #226699;
+  }
+
   body {
     height: 100%;
     background-color: ${color.background};

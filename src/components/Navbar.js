@@ -22,7 +22,7 @@ const StyledNavbar = styled.div`
     justify-content: flex-end;
     align-items: center;
 
-    padding: 1.5em 2em;
+    padding: 2em 3em;
     margin-bottom: 1em;
   }
 `;
@@ -69,7 +69,7 @@ const StyledNavBrand = styled(TextLink)`
   display: flex;
   align-items: center;
 
-  color: ${color.text};
+  color: ${color.heading};
 `;
 
 const StyledNavHeader = styled.div`

@@ -1,7 +1,4 @@
 export const color = {
-  // accent: "#91BB79",
-  // accent: "#93EC5F",
-  // accent: `hsl(${Math.floor(Math.random() * 360)}, 65%, 50%)`,
   accent: "#FF9D00",
   text: "#646478",
   heading: "#1F1F2D",

@@ -11,9 +11,14 @@ const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /* background-color: ${color.accent}; */
-  /* background-color: #efeff4; */
-  background-color: ${color.accent};
+
+  background-color: #269;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 `;
 
 const StyledContent = styled.main`

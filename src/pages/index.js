@@ -5,21 +5,23 @@ import { Layout } from "../components/Layout";
 import { Container } from "../components/Container";
 import { TextLink } from "../components/TextLink";
 import { Projects } from "../components/sections/Projects";
-import { Cell } from "../components/Cell";
 
 import { font, breakpoint } from "../theme/config";
 
 const Hero = styled.div`
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 6;
 
-  margin-top: 5rem;
-  height: 100%;
+  margin: 5rem 0;
 
   p {
     font-size: ${font.size.medium};
   }
 
   ${breakpoint.md} {
+    grid-column: 1 / span 4;
+  }
+
+  ${breakpoint.lg} {
     height: 30vh;
   }
 `;
@@ -36,9 +38,6 @@ const IndexPage = () => {
           </p>
         </Hero>
         <Projects />
-        <Cell lg="4" lgSpan="3c">
-          <p>This is a cell</p>
-        </Cell>
       </Container>
     </Layout>
   );

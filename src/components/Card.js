@@ -24,7 +24,7 @@ const StyledCard = styled.div`
   transition: all 0.2s ease;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.025);
     box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
     margin-bottom: 2em;
   }

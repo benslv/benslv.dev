@@ -32,7 +32,7 @@ const NotFoundPage = () => {
       <Container>
         <Tag>
           <h1>Oops!</h1>
-          <p>It doesn&apos;t look like this page exists 😅</p>
+          <p>It looks like this page doesn&apos;t exist 😅</p>
         </Tag>
         <Message>
           Double-check the URL to make sure you are where you wanted to be. If something&apos;s not

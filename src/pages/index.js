@@ -1,20 +1,43 @@
 import React from "react";
+import styled from "styled-components";
 
 import { Layout } from "../components/Layout";
 import { Container } from "../components/Container";
+import { TextLink } from "../components/TextLink";
+import { Projects } from "../components/sections/Projects";
+
+import { font, breakpoint } from "../theme/config";
+
+const Hero = styled.div`
+  grid-column: 1 / span 6;
+
+  margin: 5rem 0;
+
+  p {
+    font-size: ${font.size.medium};
+  }
+
+  ${breakpoint.md} {
+    grid-column: 1 / span 4;
+  }
+
+  ${breakpoint.lg} {
+    height: 30vh;
+  }
+`;
 
 const IndexPage = () => {
   return (
     <Layout>
       <Container>
-        <h1>Hello, world!</h1>
-        <p>
-          Ex minim nulla id minim reprehenderit. Cillum dolor dolore quis eiusmod. Quis culpa
-          proident culpa qui cillum. Ad magna deserunt eu nostrud do eu duis quis culpa. Adipisicing
-          minim minim occaecat aliquip duis ullamco commodo in est ad officia deserunt occaecat
-          laboris. Voluptate cillum magna fugiat fugiat duis adipisicing exercitation dolor commodo
-          id minim. Esse tempor sunt ea ullamco sit veniam qui veniam et.
-        </p>
+        <Hero>
+          <h1>Hi, I&apos;m Ben!</h1>
+          <p>
+            I&apos;m a third-year Computer Science student at the University of York, currently on
+            placement at <TextLink to="https://www.arm.com/">Arm</TextLink>.
+          </p>
+        </Hero>
+        <Projects />
       </Container>
     </Layout>
   );

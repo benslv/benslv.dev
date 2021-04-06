@@ -2,45 +2,49 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import { font, color } from "../theme/config";
+import { font, color, breakpoint } from "../theme/config";
 
 const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  max-width: 480px;
+  width: 100%;
 
-  padding: 1.5rem;
+  padding: 1rem;
+  margin: 1em 0;
 
   background-color: ${color.lightGrey};
 
-  box-shadow: 0 0 25px 4px ${color.lightGrey};
+  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.1);
 
   border-radius: 5px;
   border: 1px solid ${color.text};
 
-  transition: all 0.35s ease;
+  transition: all 0.2s ease;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.025);
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+  }
+
+  ${breakpoint.md} {
+    max-width: 480px;
   }
 `;
 
 const Title = styled.h1`
   text-transform: uppercase;
   font-size: ${font.size.base};
-
-  margin-bottom: 1em;
 `;
 
 const Description = styled.p`
-  font-size: ${font.size.medium};
+  font-size: ${font.size.base};
   margin-bottom: 0;
 `;
 
-export const Card = ({ title, description }) => {
+export const Card = ({ title = "Title", description = "Description" }) => {
   return (
     <StyledCard>
       <Title>{title}</Title>

@@ -11,8 +11,14 @@ const StyledSite = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /* background-color: ${color.accent}; */
-  background-color: #efeff4;
+
+  background-color: #269;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 `;
 
 const StyledContent = styled.main`
@@ -26,7 +32,10 @@ const StyledContent = styled.main`
 
   ${breakpoint.lg} {
     max-width: calc(100vw - 200px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 2em;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
   }
 `;
 

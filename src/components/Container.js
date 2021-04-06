@@ -9,12 +9,11 @@ const StyledContainer = styled.div`
   max-width: 960px;
 
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(6, 1fr);
 
   padding: 0 1em;
 
   ${breakpoint.md} {
-    grid-template-columns: repeat(6, 1fr);
     column-gap: 1em;
   }
 

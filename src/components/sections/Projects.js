@@ -6,7 +6,7 @@ import { Card } from "../Card";
 import { font, breakpoint } from "../../theme/config";
 
 const StyledProjects = styled.div`
-  grid-column: 1 / span 1;
+  grid-column: 1 / span 6;
 
   ${breakpoint.md} {
     grid-column: 1 / span 3;

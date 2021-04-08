@@ -12,7 +12,7 @@ const StyledSite = styled.div`
   min-height: 100vh;
   flex-direction: column;
 
-  background-color: #269;
+  background-color: ${(props) => props.bgColor || "#269"};
   background-image: linear-gradient(rgba(255, 255, 255, 0.5) 2px, transparent 2px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.5) 2px, transparent 2px),
     linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
@@ -39,9 +39,9 @@ const StyledContent = styled.main`
   }
 `;
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, bgColor }) => {
   return (
-    <StyledSite>
+    <StyledSite bgColor={bgColor}>
       <GlobalStyle />
       <StyledContent>
         <Navbar />

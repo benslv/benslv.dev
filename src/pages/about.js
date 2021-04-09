@@ -15,8 +15,12 @@ const Content = styled.div`
   grid-row: 2;
 
   ${breakpoint.md} {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 4;
     grid-row: 1;
+  }
+
+  ${breakpoint.lg} {
+    grid-column: 1 / span 3;
   }
 `;
 
@@ -56,6 +60,7 @@ const AboutPage = () => {
             layout="fullWidth"
             src="../images/profile.png"
             alt="Me standing in a forest, arms crossed"
+            style={{ borderRadius: "5px" }}
           />
           <ProfileLinks>
             <TextLink to="#">

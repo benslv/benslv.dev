@@ -32,10 +32,6 @@ const Profile = styled.div`
   grid-column: 1 / span 6;
   grid-row: 1;
 
-  img {
-    border-radius: 5px;
-  }
-
   ${breakpoint.md} {
     grid-column: 5 / span 2;
   }
@@ -60,6 +56,7 @@ const AboutPage = () => {
             layout="fullWidth"
             src="../images/profile.png"
             alt="Me standing in a forest, arms crossed"
+            placeholder="tracedSVG"
             style={{ borderRadius: "5px" }}
           />
           <ProfileLinks>

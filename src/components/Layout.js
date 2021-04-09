@@ -18,7 +18,7 @@ const StyledSite = styled.div`
     linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-position: center -2px;
 `;
 
 const StyledContent = styled.main`

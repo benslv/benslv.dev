@@ -89,8 +89,8 @@ const AboutPage = () => {
               time trying to combine the two things into cool (and hopefully useful) projects!
             </p>
             <p>
-              I also love music, and have been played the saxophone for around 11 years now. I’m
-              also member of my university’s Concert Band and Jazz Band.
+              I also love music, have been playing the saxophone for around 11 years now and I’m
+              member of my university’s Concert Band and Jazz Band.
             </p>
           </Info>
           <Info>

@@ -60,19 +60,19 @@ const AboutPage = () => {
             style={{ borderRadius: "5px" }}
           />
           <ProfileLinks>
-            <TextLink to="#">
+            <TextLink to="https://twitter.com/bensilverman_">
               <FaTwitter />
             </TextLink>
-            <TextLink to="#">
+            <TextLink to="https://instagram.com/ben.silverman">
               <FaInstagram />
             </TextLink>
-            <TextLink to="#">
+            <TextLink to="https://linkedin.com/in/ben-silverman">
               <FaLinkedinIn />
             </TextLink>
-            <TextLink to="#">
+            <TextLink to="https://t.me/benslv">
               <FaTelegramPlane />
             </TextLink>
-            <TextLink to="#">
+            <TextLink to="mailto:hey@benslv.dev">
               <FaEnvelope />
             </TextLink>
           </ProfileLinks>

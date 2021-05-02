@@ -6,6 +6,8 @@ import "@fontsource/rubik/700.css";
 
 import "@fontsource/fira-code/500.css";
 
+
+
 export const GlobalStyle = createGlobalStyle`
   :root {
     --color-text: hsla(240, 9%, 43%, 1);
@@ -20,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     --easing: ease;
     
     --font-sans: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    --font-mono: "IBM Plex Mono", "Fira Code", Hack, "Cascadia Code", Inconsolata, "Roboto Mono", Consolas, monospace;
+    --font-mono: "Fira Code", Hack, "Cascadia Code", Inconsolata, "Roboto Mono", Consolas, monospace;
 
     --scaling-ratio: 1.4;
     --font-size-base: 17px;
@@ -95,6 +97,17 @@ export const GlobalStyle = createGlobalStyle`
 
     &:focus {
       outline: 3px solid var(--color-accent);
+      border-radius: var(--border-radius);
     }
+  }
+
+  code {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-weight: 500;
+
+    background: var(--color-accent-20);
+    border-radius: var(--border-radius);
+    padding: 2px 5px;
   }
 `;

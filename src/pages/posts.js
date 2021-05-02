@@ -1,19 +1,18 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { TextLink } from "../components/TextLink";
 import { Layout } from "../components/Layout";
-import { Emoji } from "../components/Emoji";
+import { Card } from "../components/Card";
 
 const PostsPage = ({
   data: {
     allMdx: { nodes },
   },
 }) => {
-  const posts = nodes.map(({ id, frontmatter, fields: { slug } }) => (
-    <TextLink key={id} to={slug}>
-      {frontmatter.title}
-    </TextLink>
+  const posts = nodes.map(({ id, frontmatter, excerpt, fields: { slug } }) => (
+    <Card title={frontmatter.title} to={slug} key={id}>
+      <p>{excerpt}</p>
+    </Card>
   ));
 
   return (

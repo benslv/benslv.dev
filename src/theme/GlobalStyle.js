@@ -16,6 +16,9 @@ export const GlobalStyle = createGlobalStyle`
     --color-accent: hsla(206, 80%, 50%, 1);
     --color-accent-20: hsla(206, 80%, 50%, 0.2);
     --color-card-background: hsla(240, 20%, 97%, 1);
+    --color-card-border: hsla(240, 20%, 75%, 1);
+    --color-warn: hsla(348, 100%, 44%, 1);
+    --color-warn-20: hsla(348, 100%, 44%, 0.2);
 
     --border-radius: 5px;
 
@@ -42,6 +45,8 @@ export const GlobalStyle = createGlobalStyle`
   *,
   *:before,
   *:after {
+    margin: 0;
+    padding: 0;
     box-sizing: inherit;
   }
 
@@ -114,6 +119,15 @@ export const GlobalStyle = createGlobalStyle`
   img {
     max-width: 100%;
     border-radius: var(--border-radius);
+  }
+
+  .gatsby-resp-image-figcaption {
+    font-size: var(--font-size-sm);
+    text-align: center;
+    font-style: italic;
+
+
+    margin-top: calc(0.5 * var(--font-size-sm));
   }
 
   ${PrismStyles}

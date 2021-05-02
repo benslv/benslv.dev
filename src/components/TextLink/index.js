@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
+import { Sidenote } from "../Sidenote";
+
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--color-accent);
@@ -13,6 +15,16 @@ const StyledLink = styled(Link)`
   &:hover {
     color: var(--color-heading);
     border-bottom: 2px solid var(--color-heading);
+  }
+
+  ${Sidenote}.warn & {
+    color: var(--color-warn);
+    border-bottom: 2px solid var(--color-warn-20);
+
+    &:hover {
+      color: var(--color-heading);
+      border-bottom: 2px solid var(--color-heading);
+    }
   }
 `;
 

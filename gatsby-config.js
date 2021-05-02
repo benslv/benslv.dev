@@ -1,28 +1,36 @@
-/* eslint-disable quotes */
-/* eslint-disable no-undef */
 module.exports = {
   siteMetadata: {
     title: "Me",
-    description: "A personal website for me, Ben Silverman!",
-    author: "@bensilverman_",
   },
   plugins: [
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        displayName: true,
+        icon: "src/images/icon.png",
       },
     },
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-alias-imports`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        alias: {
-          "@components": "src/components",
-          "@content": "src/content",
-          "@theme": "src/theme",
-          "@images": "src/images",
-        },
+        name: "images",
+        path: "./src/images/",
       },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
     },
   ],
 };

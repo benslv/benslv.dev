@@ -1,55 +1,38 @@
 {
   "name": "me",
+  "version": "1.0.0",
   "private": true,
-  "description": "A personal site for me, Ben Silverman!",
-  "version": "0.1.0",
-  "author": "Ben Silverman <bensilverman10@gmail.com>",
-  "dependencies": {
-    "@fontsource/inter": "^4.2.2",
-    "gatsby": "^3.2.1",
-    "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-styled-components": "^4.2.0",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-icons": "^4.2.0",
-    "styled-components": "^5.2.3"
-  },
-  "devDependencies": {
-    "eslint": "^7.23.0",
-    "eslint-plugin-react": "^7.23.1",
-    "husky": "^6.0.0",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0"
-  },
+  "description": "Me",
+  "author": "Ben Silverman",
   "keywords": [
     "gatsby"
   ],
-  "license": "AGPL-3.0-only",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && pretty-quick --staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": "eslint"
-  },
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint . --fix"
+    "clean": "gatsby clean"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/benslv/me"
-  },
-  "bugs": {
-    "url": "https://github.com/benslv/me/issues"
+  "dependencies": {
+    "@fontsource/fira-code": "^4.2.2",
+    "@fontsource/rubik": "^4.2.2",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "babel-plugin-styled-components": "^1.12.0",
+    "gatsby": "^3.4.0",
+    "gatsby-plugin-image": "^1.4.0",
+    "gatsby-plugin-manifest": "^3.4.0",
+    "gatsby-plugin-mdx": "^2.4.0",
+    "gatsby-plugin-react-helmet": "^4.4.0",
+    "gatsby-plugin-sharp": "^3.4.0",
+    "gatsby-plugin-sitemap": "^4.0.0",
+    "gatsby-plugin-styled-components": "^4.4.0",
+    "gatsby-source-filesystem": "^3.4.0",
+    "gatsby-transformer-sharp": "^3.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.2.3"
   }
 }

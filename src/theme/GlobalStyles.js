@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-background: hsla(0, 0%, 100%,1);
     --color-accent: hsla(206, 80%, 50%, 1);
     --color-accent-20: hsla(206, 80%, 50%, 0.2);
+    --color-card-background: hsla(240, 20%, 97%, 1);
 
     --border-radius: 5px;
 
@@ -85,20 +86,15 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  /* Unsure if this is a good method but it removes
+     a lot of the annoying link styling.
+  */
   a {
     text-decoration: none;
+    color: inherit;
 
-    border-bottom: 2px solid var(--color-accent-20);
-    
-    color: var(--color-accent);
-    
-    font-weight: 500;
-    
-    transition: color 0.175s var(--easing), border 0.175s var(--easing);
-    
-    &:hover {
-      color: var(--color-heading);
-      border-bottom: 2px solid var(--color-heading);
+    &:focus {
+      outline: 3px solid var(--color-accent);
     }
   }
 `;

@@ -6,6 +6,8 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     // {
     //   resolve: "gatsby-plugin-manifest",
     //   options: {
@@ -17,6 +19,19 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 750,
+              showCaptions: true,
+              withWebp: true,
+              withAvif: true,
+              tracedSVG: true,
+            },
+          },
           {
             // https://www.gatsbyjs.org/packages/gatsby-remark-code-titles/
             resolve: "gatsby-remark-code-titles",
@@ -89,8 +104,7 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+
     {
       resolve: "gatsby-source-filesystem",
       options: {

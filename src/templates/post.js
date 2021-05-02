@@ -7,7 +7,9 @@ import { MDXProvider } from "@mdx-js/react";
 import { Layout } from "../components/Layout";
 import { TextLink } from "../components/TextLink";
 
-const shortcodes = { a: ({ href, children }) => <TextLink to={href}>{children}</TextLink> };
+const shortcodes = {
+  a: ({ href, children }) => <TextLink to={href}>{children}</TextLink>,
+};
 
 const Header = styled.header`
   text-align: center;

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container } from "../Container";
 
-import { GlobalStyle } from "../../theme/GlobalStyles";
+import { GlobalStyle } from "../../theme/GlobalStyle";
 
 export const Layout = ({ children }) => {
   return (

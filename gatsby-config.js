@@ -18,6 +18,10 @@ module.exports = {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
           {
+            // https://www.gatsbyjs.org/packages/gatsby-remark-code-titles/
+            resolve: "gatsby-remark-code-titles",
+          }, // IMPORTANT: this must be ahead of other plugins that use code blocks
+          {
             resolve: "gatsby-remark-prismjs",
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;

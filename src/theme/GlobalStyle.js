@@ -6,7 +6,7 @@ import "@fontsource/rubik/700.css";
 
 import "@fontsource/fira-code/500.css";
 
-
+import { PrismStyles } from "./PrismStyles";
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -101,7 +101,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  code {
+  /* code {
     color: var(--color-accent);
     font-family: var(--font-mono);
     font-weight: 500;
@@ -109,5 +109,7 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--color-accent-20);
     border-radius: var(--border-radius);
     padding: 2px 5px;
-  }
+  } */
+
+  ${PrismStyles}
 `;

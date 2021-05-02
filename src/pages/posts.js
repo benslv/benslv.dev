@@ -2,8 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import { TextLink } from "../components/TextLink";
+import { Layout } from "../components/Layout";
+import { Emoji } from "../components/Emoji";
 
-const BlogPage = ({
+const PostsPage = ({
   data: {
     allMdx: { nodes },
   },
@@ -15,14 +17,14 @@ const BlogPage = ({
   ));
 
   return (
-    <div>
-      <p>bruh</p>
+    <Layout>
+      <h1>Posts</h1>
       {posts}
-    </div>
+    </Layout>
   );
 };
 
-export default BlogPage;
+export default PostsPage;
 
 export const query = graphql`
   query {

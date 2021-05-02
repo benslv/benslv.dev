@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
@@ -8,15 +9,22 @@ import { TextLink } from "../components/TextLink";
 
 const shortcodes = { a: ({ href, children }) => <TextLink to={href}>{children}</TextLink> };
 
+const Header = styled.header`
+  text-align: center;
+  margin-bottom: 1em;
+`;
+
 const PostTemplate = ({ data }) => {
-  const { frontmatter, body } = data.mdx;
+  const { frontmatter, timeToRead, body } = data.mdx;
 
   return (
     <Layout>
-      <header>
+      <Header>
         <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-      </header>
+        <p>
+          {frontmatter.date} • {timeToRead} minutes
+        </p>
+      </Header>
       <MDXProvider components={shortcodes}>
         <article>
           <MDXRenderer>{body}</MDXRenderer>
@@ -36,6 +44,7 @@ export const query = graphql`
         title
         date(formatString: "Do MMMM YYYY")
       }
+      timeToRead
     }
   }
 `;

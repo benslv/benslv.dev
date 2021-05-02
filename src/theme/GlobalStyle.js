@@ -101,7 +101,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  /* code {
+  code {
     color: var(--color-accent);
     font-family: var(--font-mono);
     font-weight: 500;
@@ -109,7 +109,12 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--color-accent-20);
     border-radius: var(--border-radius);
     padding: 2px 5px;
-  } */
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+  }
 
   ${PrismStyles}
 `;

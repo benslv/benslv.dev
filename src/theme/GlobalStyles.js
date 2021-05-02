@@ -18,14 +18,20 @@ export const GlobalStyle = createGlobalStyle`
 
     --easing: ease;
     
-    --base-font-size: 17px;
     --font-sans: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --font-mono: "IBM Plex Mono", "Fira Code", Hack, "Cascadia Code", Inconsolata, "Roboto Mono", Consolas, monospace;
 
-    font-size: var(--base-font-size);
-  }
+    --scaling-ratio: 1.4;
+    --font-size-base: 17px;
+    --font-size-sm: 15px;
+    --font-size-md: calc(var(--scaling-ratio) * var(--font-size-sm));
+    --font-size-lg: calc(var(--scaling-ratio) * var(--font-size-md));
+    --font-size-xl: calc(var(--scaling-ratio) * var(--font-size-lg));
 
+  }
+  
   html {
+    font-size: var(--font-size-base);
     box-sizing: border-box;
     width: 100%;
   }
@@ -52,27 +58,31 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--color-heading);
 
     margin: 0;
-    margin-bottom: calc(0.5 * var(--base-font-size));
+    margin-bottom: calc(0.5 * var(--font-size-base));
   }
 
   h1 {
-    
+    font-size: var(--font-size-xl)
   }
-  h2 {
 
+  h2 {
+    font-size: var(--font-size-lg)
   }
+
   h3 {
- 
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: var(--font-size-md);
   }
 
   p {
     line-height: 1.4;
     margin: 0;
-    margin-bottom: var(--base-font-size);
-  }
+    margin-bottom: var(--font-size-base);
 
-  pre {
-    font-family: var(--font-mono);
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   a {

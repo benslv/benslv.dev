@@ -6,6 +6,8 @@ import "@fontsource/rubik/700.css";
 
 import "@fontsource/fira-code/500.css";
 
+import { PrismStyles } from "./PrismStyles";
+
 export const GlobalStyle = createGlobalStyle`
   :root {
     --color-text: hsla(240, 9%, 43%, 1);
@@ -13,13 +15,14 @@ export const GlobalStyle = createGlobalStyle`
     --color-background: hsla(0, 0%, 100%,1);
     --color-accent: hsla(206, 80%, 50%, 1);
     --color-accent-20: hsla(206, 80%, 50%, 0.2);
+    --color-card-background: hsla(240, 20%, 97%, 1);
 
     --border-radius: 5px;
 
     --easing: ease;
     
     --font-sans: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    --font-mono: "IBM Plex Mono", "Fira Code", Hack, "Cascadia Code", Inconsolata, "Roboto Mono", Consolas, monospace;
+    --font-mono: "Fira Code", Hack, "Cascadia Code", Inconsolata, "Roboto Mono", Consolas, monospace;
 
     --scaling-ratio: 1.4;
     --font-size-base: 17px;
@@ -85,20 +88,33 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  /* Unsure if this is a good method but it removes
+     a lot of the annoying link styling.
+  */
   a {
     text-decoration: none;
+    color: inherit;
 
-    border-bottom: 2px solid var(--color-accent-20);
-    
-    color: var(--color-accent);
-    
-    font-weight: 500;
-    
-    transition: color 0.175s var(--easing), border 0.175s var(--easing);
-    
-    &:hover {
-      color: var(--color-heading);
-      border-bottom: 2px solid var(--color-heading);
+    &:focus {
+      outline: 3px solid var(--color-accent);
+      border-radius: var(--border-radius);
     }
   }
+
+  code {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-weight: 500;
+
+    background: var(--color-accent-20);
+    border-radius: var(--border-radius);
+    padding: 2px 5px;
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+  }
+
+  ${PrismStyles}
 `;

@@ -17,7 +17,7 @@ const StyledLink = styled(Link)`
     border-bottom: 2px solid var(--color-heading);
   }
 
-  ${Sidenote}.warn & {
+  ${Sidenote}.warn > & {
     color: var(--color-warn);
     border-bottom: 2px solid var(--color-warn-20);
 

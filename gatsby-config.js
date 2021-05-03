@@ -18,6 +18,7 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+        remarkPlugins: [require("remark-unwrap-images")],
         gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-images",
@@ -30,6 +31,7 @@ module.exports = {
               withWebp: true,
               withAvif: true,
               tracedSVG: true,
+              wrapperStyle: "border-radius: var(--border-radius)",
             },
           },
           {

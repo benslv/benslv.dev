@@ -58,7 +58,26 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
 
     color: var(--color-text);
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-text) var(--color-background);
+
+  &::-webkit-scrollbar {
+    width: 12px;
   }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-background);      
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-text);
+    border-radius: 20px;
+    border: 3px solid var(--color-background);  creates padding around scroll thumb
+  }
+  }
+
+
 
   h1,h2,h3 {
     font-weight: 700;
@@ -174,7 +193,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     
   }
-
 
   string, b {
     font-weight: 500;

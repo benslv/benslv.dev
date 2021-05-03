@@ -100,7 +100,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
 
-    &:focus {
+    &:focus-visible {
       outline: 3px solid var(--color-accent);
       border-radius: var(--border-radius);
     }

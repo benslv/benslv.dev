@@ -100,7 +100,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
 
-    &:focus {
+    &:focus-visible {
       outline: 3px solid var(--color-accent);
       border-radius: var(--border-radius);
     }
@@ -114,6 +114,8 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--color-accent-20);
     border-radius: var(--border-radius);
     padding: 2px 5px;
+
+    line-height: 1.6;
   }
   
   img {

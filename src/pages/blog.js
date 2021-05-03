@@ -1,23 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
+import styled from "styled-components";
 
 import { Layout } from "../components/Layout";
 import { Card } from "../components/Card";
+
+const PostSearch = styled.input`
+  padding: calc(0.5 * var(--font-size-base));
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-card-border);
+
+  color: var(--color-text);
+`;
 
 const BlogPage = ({
   data: {
     allMdx: { nodes },
   },
 }) => {
-  const posts = nodes.map(({ id, frontmatter, excerpt, fields: { slug } }) => (
-    <Card title={frontmatter.title} to={slug} key={id}>
-      <p>{excerpt}</p>
-    </Card>
-  ));
+  const [searchValue, setSearchValue] = useState("");
+
+  const posts = nodes
+    .filter(
+      ({ frontmatter }) =>
+        frontmatter.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+        frontmatter.description?.toLowerCase().includes(searchValue.toLowerCase()),
+    )
+    .map(({ id, frontmatter, fields: { slug } }) => (
+      <Card title={frontmatter.title} to={slug} key={id}>
+        <p>{frontmatter.description}</p>
+      </Card>
+    ));
 
   return (
     <Layout>
-      <h1>Posts</h1>
+      <header>
+        <h1>Posts</h1>
+        <p>
+          Here's a collection of posts I've written about different things! Probably (mostly) all
+          programming-related but who knows? Maybe some other topics will slip in here too.
+        </p>
+      </header>
+      <PostSearch
+        type="text"
+        placeholder={`Search through ${nodes.length} posts`}
+        aria-label={`Search through ${nodes.length} posts`}
+        onChange={(e) => setSearchValue(e.target.value)}
+      />
       {posts}
     </Layout>
   );
@@ -33,10 +62,10 @@ export const query = graphql`
     ) {
       nodes {
         id
-        excerpt(pruneLength: 250)
         frontmatter {
           title
           date
+          description
         }
         fields {
           slug

@@ -1,6 +1,6 @@
 import React from "react";
 
-const baseURL = "http://emojicdn.elk.sh";
+const baseURL = "https://emojicdn.elk.sh";
 
 export const Emoji = ({ emoji, style, size }) => {
   let url = `${baseURL}/${emoji}`;

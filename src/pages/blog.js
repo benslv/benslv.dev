@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { Layout } from "../components/Layout";
 import { Card } from "../components/Card";
 
-const PostsPage = ({
+const BlogPage = ({
   data: {
     allMdx: { nodes },
   },
@@ -23,7 +23,7 @@ const PostsPage = ({
   );
 };
 
-export default PostsPage;
+export default BlogPage;
 
 export const query = graphql`
   query {

@@ -132,5 +132,29 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: calc(0.5 * var(--font-size-sm));
   }
 
+  /* Custom <ol> styling 
+     https://www.joshwcomeau.com/css/styling-ordered-lists-with-css-counters/
+  */
+  ol {
+    counter-reset: bruh;
+    list-style: none;
+    /* padding-left: calc(0.5 * var(--font-size-base)); */
+
+    margin: var(--font-size-base) 0;
+  }
+
+  ol li {
+    counter-increment: bruh;
+  }
+
+  ol li:before {
+    content: counters(bruh, ".") ". ";
+
+    color: var(--color-accent);
+    font-weight: 500;
+
+    padding-right: calc(0.25 * var(--font-size-base));
+  }
+
   ${PrismStyles}
 `;

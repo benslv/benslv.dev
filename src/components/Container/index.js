@@ -7,7 +7,7 @@ export const Container = styled.main`
   grid-template-columns: 1fr min(65ch, calc(100% - 2 * var(--gap-width))) 1fr;
   grid-column-gap: var(--gap-width);
 
-  grid-row-gap: var(--font-size-base);
+  grid-row-gap: var(--font-size-lg);
 
   & > * {
     grid-column: 2;

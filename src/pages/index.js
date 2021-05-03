@@ -19,7 +19,12 @@ const IndexPage = () => {
         <StaticImage
           src="../images/profile.jpg"
           alt="Head and shoulders picture of me!"
-          style={{ borderRadius: "50%", marginLeft: "auto", marginRight: "auto" }}
+          style={{
+            borderRadius: "50%",
+            marginLeft: "auto",
+            marginRight: "auto",
+            boxShadow: "var(--box-shadow-light)",
+          }}
           placeholder="tracedSVG"
           aspectRatio={1 / 1}
           layout="constrained"

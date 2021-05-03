@@ -17,7 +17,7 @@ const CardBody = styled.div`
 
   transition: transform 0.175s var(--easing), box-shadow 0.175s var(--easing);
 
-  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-light);
 
   &:hover,
   &:active {

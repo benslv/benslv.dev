@@ -22,6 +22,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --border-radius: 5px;
 
+    --box-shadow-light: 0 0px 5px 0 rgba(0, 0, 0, 0.1);
+
     --easing: ease;
     
     --font-sans: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -62,22 +64,20 @@ export const GlobalStyle = createGlobalStyle`
     scrollbar-width: thin;
     scrollbar-color: var(--color-text) var(--color-background);
 
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
 
-  &::-webkit-scrollbar-track {
-    background: var(--color-background);      
-  }
+    &::-webkit-scrollbar-track {
+      background: var(--color-background);      
+    }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-text);
-    border-radius: 20px;
-    border: 3px solid var(--color-background);  creates padding around scroll thumb
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-text);
+      border-radius: 20px;
+      border: 3px solid var(--color-background);
+    }
   }
-  }
-
-
 
   h1,h2,h3 {
     font-weight: 700;

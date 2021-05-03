@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-import { hexToRGBA } from "./utils";
+import { hexToRGBA } from "../utils";
 
 const prismColors = {
   text: "#e3eaf2",
@@ -64,7 +64,7 @@ export const PrismStyles = css`
   pre[class*="language-"] {
     color: ${prismColors.text};
     background: none;
-    /* font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; */
+    padding: 0;
     font-family: var(--font-mono);
     text-align: left;
     white-space: pre;

@@ -6,9 +6,11 @@ import { MDXProvider } from "@mdx-js/react";
 
 import { Layout } from "../components/Layout";
 import { TextLink } from "../components/TextLink";
+import { Sidenote } from "../components/Sidenote";
 
 const shortcodes = {
   a: ({ href, children }) => <TextLink to={href}>{children}</TextLink>,
+  aside: ({ className, children }) => <Sidenote className={className}>{children}</Sidenote>,
 };
 
 const Header = styled.header`

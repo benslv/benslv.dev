@@ -4,27 +4,6 @@ import { Layout } from "../components/Layout";
 import { Sidenote } from "../components/Sidenote";
 import { TextLink } from "../components/TextLink";
 import { Emoji } from "../components/Emoji";
-import * as Bubbles from "../components/Bubbles";
-
-const skills = [
-  "JavaScript (ES6)",
-  "React",
-  "Svelte",
-  "Gatsby",
-  "Express",
-  "TinyHTTP",
-  "Axios",
-  "Needle",
-  "Preact",
-  "Python",
-  "Java",
-  "HTML",
-  "CSS",
-  "Docker",
-  "Bash",
-  "Photoshop",
-  "Figma",
-];
 
 const IndexPage = () => {
   return (
@@ -34,52 +13,58 @@ const IndexPage = () => {
           <Emoji emoji="👋" /> Hi, I'm Ben!
         </h1>
         <p>
-          I’m a third-year Computer Science student at the University of York, currently on
-          placement at Arm.
-        </p>
-      </section>
-      <section>
-        <h2>About Me</h2>
-        <p>
-          Hi! I'm Ben, a third year Computer Science student at the University of York. I built this
-          website to showcase the work I've been doing recently and to keep my skills web
-          development skills warm.
+          Hi! I'm Ben, a third year Computer Science student at the University of York, currently
+          working on placement at <TextLink to="https://arm.com">Arm</TextLink>.
         </p>
         <p>
-          Outside of my studies, I usually spend my time programming, reading or playing in the
-          University Jazz and Concert bands!
+          <b>Outside of my studies</b>, I usually spend my time <TextLink to="https://github.com/benslv">programming</TextLink>, <TextLink to="https://goodreads.com/benslv">reading</TextLink> or playing in
+          the University Jazz and Concert Bands!
         </p>
-        {skills && (
-          <>
-            <h3>Skills</h3>
-            <Bubbles.Container>
-              {skills.map((skill, i) => (
-                <Bubbles.Item key={i} index={i}>
-                  {skill}
-                </Bubbles.Item>
-              ))}
-            </Bubbles.Container>
-          </>
-        )}
       </section>
       <section>
         <h2>This Website</h2>
         <p>
-          I'm currently in the process of building a new website for myself, so consider this a kind
-          of showcase and holding page for now.
+          I recently decided to treat myself to a new website, because my{" "}
+          <TextLink to="https://bensilverman.co.uk">old one</TextLink> was beginning to look a
+          little dated, and I've learned a lot about web development in the two years since I wrote
+          it!
         </p>
-        <Sidenote>This is what a normal aside will look like.</Sidenote>
-        <Sidenote className="info">This is what an "info" aside looks like.</Sidenote>
-        <Sidenote className="warn">This is what a "warning" aside looks like.</Sidenote>
+        <p>
+          I wanted to take this as an opportunity to build something with my favourite new tools
+          (namely React and Gatsby) that:
+        </p>
+        <ul>
+          <li>looked a lot nicer, with fully responsive layout and styling</li>
+          <li>
+            packed in a lot more functionality, like reusable components, blog posts, and more
+          </li>
+        </ul>
+        <p>
+          I might write a little post detailing the full site stack at some point, but I'm mainly
+          focussed on actually coding the thing at the moment!
+        </p>
         <Sidenote>
-          This is what an aside looks like with a <TextLink to="/posts">link</TextLink> inside it.
+          <p>
+            Recently I discvered a new term I really liked:{" "}
+            <b>
+              <i>digital gardening.</i>
+            </b>
+          </p>
+          <p>
+            This lovely, horticultural phrase refers to the act of "cultivating" a website full of
+            little snippets, posts and tidbits, letting it naturally evolve over time instead of
+            strictly managing and defining its structure.
+          </p>
+          <p>
+            I really like the concept of this, so it's not entirely impossible that I'll begin to
+            use this site as my own <Emoji emoji="🌱" /> digital garden <Emoji emoji="🌱" /> of
+            sorts, setting it up to hold various different types of <TextLink to="/blog">blog posts</TextLink>, snippets, and pages
+            that I think are interesting or useful (either to me or others).
+          </p>
         </Sidenote>
-        <Sidenote className="info">
-          This is what an aside looks like with a <TextLink to="/posts">link</TextLink> inside it.
-        </Sidenote>
-        <Sidenote className="warn">
-          This is what an aside looks like with a <TextLink to="/posts">link</TextLink> inside it.
-        </Sidenote>
+      </section>
+      <section>
+        <h2>Contact Me</h2>
         <p>
           If you'd like to get in touch, please send me a DM on{" "}
           <TextLink to="https://twitter.com/bensilverman_">Twitter</TextLink>!

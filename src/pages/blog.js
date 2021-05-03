@@ -11,6 +11,17 @@ const PostSearch = styled.input`
   border: 1px solid var(--color-card-border);
 
   color: var(--color-text);
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+`;
+
+const PostsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
+
+  grid-column-gap: var(--font-size-base);
+  grid-row-gap: var(--font-size-base);
 `;
 
 const BlogPage = ({
@@ -47,7 +58,7 @@ const BlogPage = ({
         aria-label={`Search through ${nodes.length} posts`}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      {posts}
+      <PostsContainer>{posts}</PostsContainer>
     </Layout>
   );
 };

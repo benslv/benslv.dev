@@ -1,26 +1,44 @@
 import React from "react";
+import styled from "styled-components";
 
 import { Layout } from "../components/Layout";
 import { Sidenote } from "../components/Sidenote";
 import { TextLink } from "../components/TextLink";
 import { Emoji } from "../components/Emoji";
+import { StaticImage } from "gatsby-plugin-image";
+
+const Hero = styled.header`
+  display: grid;
+  grid-row-gap: var(--font-size-lg);
+`;
 
 const IndexPage = () => {
   return (
     <Layout>
-      <section>
-        <h1>
-          Hey there!
-        </h1>
-        <p>
-          Hi! I'm Ben, a third year Computer Science student at the University of York, currently
-          working on placement at <TextLink to="https://arm.com">Arm</TextLink>.
-        </p>
-        <p>
-          <b>Outside of my studies</b>, I usually spend my time <TextLink to="https://github.com/benslv">programming</TextLink>, <TextLink to="https://goodreads.com/benslv">reading</TextLink> or playing in
-          the University Jazz and Concert Bands!
-        </p>
-      </section>
+      <Hero>
+        <StaticImage
+          src="../images/profile.jpg"
+          alt="Head and shoulders picture of me!"
+          style={{ borderRadius: "50%", marginLeft: "auto", marginRight: "auto" }}
+          placeholder="tracedSVG"
+          aspectRatio={1 / 1}
+          layout="constrained"
+          width={150}
+        />
+        <div>
+          <h1>Hey there!</h1>
+          <p>
+            Hi! I'm Ben, a third year Computer Science student at the University of York, currently
+            working on placement at <TextLink to="https://arm.com">Arm</TextLink>.
+          </p>
+          <p>
+            <b>Outside of my studies</b>, I usually spend my time{" "}
+            <TextLink to="https://github.com/benslv">programming</TextLink>,{" "}
+            <TextLink to="https://goodreads.com/benslv">reading</TextLink> or playing in the
+            University Jazz and Concert Bands!
+          </p>
+        </div>
+      </Hero>
       <section>
         <h2>This Website</h2>
         <p>
@@ -58,8 +76,9 @@ const IndexPage = () => {
           <p>
             I really like the concept of this, so it's not entirely impossible that I'll begin to
             use this site as my own <Emoji emoji="🌱" /> digital garden <Emoji emoji="🌱" /> of
-            sorts, setting it up to hold various different types of <TextLink to="/blog">blog posts</TextLink>, snippets, and pages
-            that I think are interesting or useful (either to me or others).
+            sorts, setting it up to hold various different types of{" "}
+            <TextLink to="/blog">blog posts</TextLink>, snippets, and pages that I think are
+            interesting or useful (either to me or others).
           </p>
         </Sidenote>
       </section>

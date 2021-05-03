@@ -10,7 +10,7 @@ const IndexPage = () => {
     <Layout>
       <section>
         <h1>
-          <Emoji emoji="👋" /> Hi, I'm Ben!
+          Hey there!
         </h1>
         <p>
           Hi! I'm Ben, a third year Computer Science student at the University of York, currently

@@ -24,7 +24,14 @@ export const Navbar = () => {
   return (
     <Wrapper>
       <Emoji emoji="👋" size="48px" style="" />
-      <Nav>{nav && nav.map(({ name, to }) => <TextLink to={to}>{name}</TextLink>)}</Nav>
+      <Nav>
+        {nav &&
+          nav.map(({ name, to }, i) => (
+            <TextLink to={to} key={i}>
+              {name}
+            </TextLink>
+          ))}
+      </Nav>
     </Wrapper>
   );
 };

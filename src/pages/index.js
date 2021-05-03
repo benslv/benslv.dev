@@ -3,6 +3,7 @@ import React from "react";
 import { Layout } from "../components/Layout";
 import { Sidenote } from "../components/Sidenote";
 import { TextLink } from "../components/TextLink";
+import { Emoji } from "../components/Emoji";
 import * as Bubbles from "../components/Bubbles";
 
 const skills = [
@@ -29,7 +30,9 @@ const IndexPage = () => {
   return (
     <Layout>
       <section>
-        <h1>👋 Hi, I'm Ben!</h1>
+        <h1>
+          <Emoji emoji="👋" /> Hi, I'm Ben!
+        </h1>
         <p>
           I’m a third-year Computer Science student at the University of York, currently on
           placement at Arm.
@@ -58,6 +61,8 @@ const IndexPage = () => {
             </Bubbles.Container>
           </>
         )}
+      </section>
+      <section>
         <h2>This Website</h2>
         <p>
           I'm currently in the process of building a new website for myself, so consider this a kind

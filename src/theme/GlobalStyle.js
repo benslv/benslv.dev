@@ -140,7 +140,7 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
     /* padding-left: calc(0.5 * var(--font-size-base)); */
 
-    margin: var(--font-size-base) 0;
+    margin: calc(0.5 * var(--font-size-base)) 0;
   }
 
   ol li {
@@ -154,6 +154,31 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 500;
 
     padding-right: calc(0.25 * var(--font-size-base));
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: 1em;
+  
+    li {
+      margin: calc(0.5 * var(--font-size-base));
+
+      &:before {
+        content: "•";
+      color: var(--color-accent);
+
+      padding-right: 8px;
+
+      font-weight: 700;
+      }
+    }
+    
+  }
+
+
+  string, b {
+    font-weight: 500;
+    color: var(--color-heading);
   }
 
   ${PrismStyles}

@@ -15,10 +15,12 @@ export const GlobalStyle = createGlobalStyle`
     --color-background: hsla(0, 0%, 100%,1);
     --color-accent: hsla(206, 80%, 50%, 1);
     --color-accent-20: hsla(206, 80%, 50%, 0.2);
+    --color-warn: hsla(38, 100%, 53%, 1);
+    --color-warn-20: hsla(38, 100%, 53%, 0.2);
+    --color-error: hsla(348, 100%, 44%, 1);
+    --color-error-20: hsla(348, 100%, 44%, 0.2);
     --color-card-background: hsla(240, 20%, 97%, 1);
     --color-card-border: hsla(240, 20%, 75%, 1);
-    --color-warn: hsla(348, 100%, 44%, 1);
-    --color-warn-20: hsla(348, 100%, 44%, 0.2);
 
     --border-radius: 5px;
 

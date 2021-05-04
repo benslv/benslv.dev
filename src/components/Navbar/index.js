@@ -5,6 +5,7 @@ import { TextLink } from "../TextLink";
 import { Emoji } from "../Emoji";
 
 import { nav } from "../../content/config";
+import { blueBox } from "../../theme/mixins";
 
 const Wrapper = styled.div`
   padding: var(--font-size-lg);
@@ -21,15 +22,7 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled(TextLink)`
-  color: var(--color-accent);
-  border: 0;
-
-  background-color: var(--color-accent-20);
-  
-  padding: calc(0.5 * var(--font-size-base)) var(--font-size-base);
-  border-radius: var(--border-radius);
-
-  box-shadow: var(--box-shadow-light);
+  ${blueBox};
 
   transition: background-color 0.175s var(--easing), color 0.175s var(--easing);
 

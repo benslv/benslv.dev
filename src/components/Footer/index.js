@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { blueBox } from "../../theme/mixins";
 
 import { Emoji } from "../Emoji";
 
@@ -12,12 +13,9 @@ const Wrapper = styled.footer`
   padding: var(--font-size-lg) 0;
 
   p {
-    color: var(--color-accent);
+    ${blueBox};
+    
     font-weight: 500;
-    background-color: var(--color-accent-20);
-    padding: calc(0.5 * var(--font-size-base)) var(--font-size-base);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow-light);
   }
 `;
 

@@ -1,11 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import styled from "styled-components";
 
 import { Sidenote } from "../Sidenote";
+import { UnstyledLink } from "../UnstyledLink";
 
-const StyledLink = styled(Link)`
+export const TextLink = styled(UnstyledLink)`
   text-decoration: none;
   color: var(--color-accent);
   font-weight: 500;
@@ -47,27 +45,3 @@ const StyledLink = styled(Link)`
     }
   }
 `;
-
-export const TextLink = ({ to, children, className }) => {
-  const isInternal = /^\/(?!\/)/.test(to);
-
-  if (isInternal) {
-    return (
-      <StyledLink to={to} className={className}>
-        {children}
-      </StyledLink>
-    );
-  }
-
-  return (
-    <StyledLink as="a" href={to} target="_blank" rel="noopener noreferrer" className={className}>
-      {children}
-    </StyledLink>
-  );
-};
-
-TextLink.propTypes = {
-  to: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};

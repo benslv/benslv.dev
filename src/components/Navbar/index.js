@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import { TextLink } from "../TextLink";
 import { Emoji } from "../Emoji";
-
 import { nav } from "../../content/config";
 import { blueBox } from "../../theme/mixins";
+import { UnstyledLink } from "../UnstyledLink";
 
 const Wrapper = styled.div`
   padding: var(--font-size-lg);
@@ -21,7 +20,7 @@ const Nav = styled.nav`
   align-items: center;
 `;
 
-const NavLink = styled(TextLink)`
+const NavLink = styled(UnstyledLink)`
   ${blueBox};
 
   transition: background-color 0.175s var(--easing), color 0.175s var(--easing);

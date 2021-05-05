@@ -5,13 +5,14 @@ export const Sidenote = styled.aside`
   margin-bottom: var(--font-size-base);
   border-radius: var(--border-radius);
 
-  color: var(--color-heading);
+  color: var(--color-text);
   background-color: var(--color-card-background);
   border: 1px solid var(--color-card-border);
 
   &.info {
+    color: var(--color-heading);
     background-color: var(--color-accent-20);
-   
+
     border: none;
     border-left: 5px solid var(--color-accent);
 
@@ -19,6 +20,7 @@ export const Sidenote = styled.aside`
   }
 
   &.warn {
+    color: var(--color-heading);
     background-color: var(--color-warn-20);
 
     border: 0;
@@ -28,6 +30,7 @@ export const Sidenote = styled.aside`
   }
 
   &.error {
+    color: var(--color-heading);
     background-color: var(--color-error-20);
 
     border: 0;

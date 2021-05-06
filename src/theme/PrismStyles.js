@@ -21,12 +21,12 @@ const prismColors = {
 export const PrismStyles = css`
   .gatsby-highlight {
     background-color: ${prismColors.background};
-    border-radius: var(--border-radius);
-    margin-bottom: 1em;
+    border-radius: 8px;
+    margin-bottom: calc(2 * var(--font-size-base));
     overflow: auto;
     position: relative;
     font-family: var(--font-mono);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
   }
 
   /* PrismJS Code Titles
@@ -38,7 +38,7 @@ export const PrismStyles = css`
 
     background-color: ${prismColors.background};
     color: var(--color-text);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     z-index: 0;
 
     border-top-left-radius: var(--border-radius);
@@ -79,6 +79,9 @@ export const PrismStyles = css`
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+
+    scrollbar-width: thin;
+    scrollbar-color: ${prismColors.selection} ${prismColors.background};
   }
 
   pre[class*="language-"]::-moz-selection,
@@ -99,7 +102,7 @@ export const PrismStyles = css`
   pre[class*="language-"] {
     margin: 0;
     overflow: auto;
-    padding: 1em;
+    padding: calc(1.25 * var(--font-size-base));
   }
 
   :not(pre) > code[class*="language-"],

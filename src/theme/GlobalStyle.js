@@ -54,6 +54,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
+  * {
+    /* scrollbar-width: thin; */
+    scrollbar-color: var(--color-text) var(--color-background);
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -63,8 +68,6 @@ export const GlobalStyle = createGlobalStyle`
 
     color: var(--color-text);
 
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-text) var(--color-background);
 
     &::-webkit-scrollbar {
       width: 12px;

@@ -1,0 +1,14 @@
+[
+  {
+    "title": "jsfycat",
+    "description": "A Node.js wrapper for the Gfycat API, using async/await functionality.\nAllows users to create and upload media to Gfycat via their command line.",
+    "tags": ["Node", "Axios"],
+    "image": "../images/jsfycat-screenshot.png"
+  },
+  {
+    "title": "Countable",
+    "description": "A JavaScript bot for managing counting channels in Discord communities, complete with custom settings and robust tracking.",
+    "tags": ["JavaScript (ES6)", "Discord.js", "Enmap"],
+    "image": "../images/countable-screenshot.png"
+  }
+]

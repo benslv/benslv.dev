@@ -29,6 +29,7 @@ const IndexPage = () => {
           aspectRatio={1 / 1}
           layout="constrained"
           width={150}
+          quality={100}
         />
         <div>
           <h1>Hey there!</h1>

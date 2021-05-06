@@ -14,7 +14,7 @@ const Hero = styled.header`
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout title="Index">
       <Hero>
         <StaticImage
           src="../images/profile.jpg"

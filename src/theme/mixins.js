@@ -2,7 +2,6 @@ import { css } from "styled-components";
 
 export const blueBox = css`
   color: var(--color-accent);
-  border: 0;
 
   background-color: var(--color-accent-20);
 

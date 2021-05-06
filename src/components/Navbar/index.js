@@ -23,11 +23,11 @@ const Nav = styled.nav`
 const NavLink = styled(UnstyledLink)`
   ${blueBox};
 
+  font-weight: 500;
+
   transition: background-color 0.175s var(--easing), color 0.175s var(--easing);
 
   &:hover {
-    border: 0;
-
     color: var(--color-text);
     background-color: var(--color-card-background);
   }

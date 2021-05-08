@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 
 import { Layout } from "../components/Layout";
-import { Card } from "../components/Card";
+import { CardLink } from "../components/Card";
 
 const PostSearch = styled.input`
   padding: calc(0.5 * var(--font-size-base));
@@ -38,9 +38,9 @@ const BlogPage = ({
         frontmatter.description?.toLowerCase().includes(searchValue.toLowerCase()),
     )
     .map(({ id, frontmatter, fields: { slug } }) => (
-      <Card title={frontmatter.title} to={slug} key={id}>
+      <CardLink title={frontmatter.title} to={slug} key={id}>
         <p>{frontmatter.description}</p>
-      </Card>
+      </CardLink>
     ));
 
   return (

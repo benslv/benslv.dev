@@ -16,3 +16,7 @@ export const Container = styled.main`
     grid-column: 1 / -1;
   }
 `;
+
+export const WideContainer = styled(Container)`
+  grid-template-columns: 1fr min(1200px, calc(100% - 2 * var(--gap-width))) 1fr;
+`;

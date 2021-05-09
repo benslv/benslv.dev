@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 
+import { Container, WideContainer } from "../components/Container";
 import { Layout } from "../components/Layout";
 import { CardLink } from "../components/Card";
 
@@ -18,7 +19,7 @@ const PostSearch = styled.input`
 
 const PostsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   grid-column-gap: var(--font-size-base);
   grid-row-gap: var(--font-size-base);
@@ -45,20 +46,22 @@ const BlogPage = ({
 
   return (
     <Layout>
-      <header>
+      <Container as="header">
         <h1>Posts</h1>
         <p>
           Here's a collection of posts I've written about different things! Probably (mostly) all
           programming-related but who knows? Maybe some other topics will slip in here too.
         </p>
-      </header>
-      <PostSearch
-        type="text"
-        placeholder={`Search through ${nodes.length} posts`}
-        aria-label={`Search through ${nodes.length} posts`}
-        onChange={(e) => setSearchValue(e.target.value)}
-      />
-      <PostsContainer>{posts}</PostsContainer>
+      </Container>
+      <WideContainer id="main-content">
+        <PostSearch
+          type="text"
+          placeholder={`Search through ${nodes.length} posts`}
+          aria-label={`Search through ${nodes.length} posts`}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <PostsContainer>{posts}</PostsContainer>
+      </WideContainer>
     </Layout>
   );
 };

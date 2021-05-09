@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import { UnstyledLink } from "../../UnstyledLink";
-// import { TextLink } from "../../TextLink";
 
 export const Wrapper = styled.section`
   display: flex;
@@ -16,7 +15,7 @@ export const Project = styled.article`
 `;
 
 export const ProjectInfo = styled.div`
-  grid-column: 1 / span 6;
+  grid-column: 3 / span 4 ;
   grid-row: 1;
 
   display: grid;
@@ -40,7 +39,7 @@ export const ProjectTitle = styled(UnstyledLink)`
 `;
 
 export const ProjectImage = styled.div`
-  grid-column: 5 / 13;
+  grid-column: 6 / span 5;
   grid-row: 1;
   
   box-shadow: var(--box-shadow-light);

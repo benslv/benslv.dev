@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
 import { Layout } from "../components/Layout";
+import { Container } from "../components/Container";
 import { TextLink } from "../components/TextLink";
 import { Sidenote } from "../components/Sidenote";
 
@@ -23,17 +24,19 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Header>
-        <h1>{frontmatter.title}</h1>
-        <p>
-          {frontmatter.date} • {timeToRead} {timeToRead === 1 ? "minute" : "minutes"}
-        </p>
-      </Header>
-      <MDXProvider components={shortcodes}>
-        <article>
-          <MDXRenderer>{body}</MDXRenderer>
-        </article>
-      </MDXProvider>
+      <Container id="main-content">
+        <Header>
+          <h1>{frontmatter.title}</h1>
+          <p>
+            {frontmatter.date} • {timeToRead} {timeToRead === 1 ? "minute" : "minutes"}
+          </p>
+        </Header>
+        <MDXProvider components={shortcodes}>
+          <article>
+            <MDXRenderer>{body}</MDXRenderer>
+          </article>
+        </MDXProvider>
+      </Container>
     </Layout>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Navbar } from "../Navbar";
-import { Container } from "../Container";
 import { Footer } from "../Footer";
 import { SkipToContent } from "../SkipToContent";
 import { SEO } from "../SEO";
@@ -15,7 +14,7 @@ export const Layout = ({ title, description, children }) => {
       <SEO title={title} description={description} />
       <SkipToContent />
       <Navbar />
-      <Container id="main-content">{children}</Container>
+      {children}
       <Footer />
     </>
   );

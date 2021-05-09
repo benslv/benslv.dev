@@ -26,7 +26,7 @@ const PostTemplate = ({ data }) => {
       <Header>
         <h1>{frontmatter.title}</h1>
         <p>
-          {frontmatter.date} • {timeToRead} minutes
+          {frontmatter.date} • {timeToRead} {timeToRead === 1 ? "minute" : "minutes"}
         </p>
       </Header>
       <MDXProvider components={shortcodes}>

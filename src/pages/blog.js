@@ -1,28 +1,45 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import { BiSearch } from "react-icons/bi";
 
 import { Container, WideContainer } from "../components/Container";
 import { Layout } from "../components/Layout";
 import { CardLink } from "../components/Card";
 
-const PostSearch = styled.input`
-  padding: calc(0.5 * var(--font-size-base));
-  border-radius: var(--border-radius);
-  border: 1px solid var(--color-card-border);
+const PostSearch = styled.div`
+  position: relative;
 
-  color: var(--color-text);
+  input {
+    padding: calc(0.5 * var(--font-size-base));
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-card-border);
 
-  font-family: var(--font-sans);
-  font-size: var(--font-size-base);
+    color: var(--color-text);
+
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+
+    width: 100%;
+  }
+
+  svg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
 `;
 
 const PostsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   grid-column-gap: var(--font-size-base);
-  grid-row-gap: var(--font-size-base);
+  grid-row-gap: var(--font-size-base); */
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--font-size-base);
 `;
 
 const BlogPage = ({
@@ -46,20 +63,25 @@ const BlogPage = ({
 
   return (
     <Layout>
-      <Container as="header">
-        <h1>Posts</h1>
-        <p>
-          Here's a collection of posts I've written about different things! Probably (mostly) all
-          programming-related but who knows? Maybe some other topics will slip in here too.
-        </p>
+      <Container>
+        <header>
+          <h1>Posts</h1>
+          <p>
+            Here's a collection of posts I've written about different things! Probably (mostly) all
+            programming-related but who knows? Maybe some other topics will slip in here too.
+          </p>
+          <PostSearch>
+            <input
+              type="text"
+              placeholder={`Search through ${nodes.length} posts`}
+              aria-label={`Search through ${nodes.length} posts`}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <BiSearch />
+          </PostSearch>
+        </header>
       </Container>
       <WideContainer id="main-content">
-        <PostSearch
-          type="text"
-          placeholder={`Search through ${nodes.length} posts`}
-          aria-label={`Search through ${nodes.length} posts`}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
         <PostsContainer>{posts}</PostsContainer>
       </WideContainer>
     </Layout>

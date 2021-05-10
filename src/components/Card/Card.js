@@ -11,6 +11,8 @@ const Body = styled.div`
 
   padding: 1em;
 
+  max-width: 300px;
+
   background-color: var(--color-card-background);
 
   box-shadow: var(--box-shadow-light);

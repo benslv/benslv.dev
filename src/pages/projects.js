@@ -1,13 +1,13 @@
 import React from "react";
 
-import { WideContainer} from "../components/Container";
+import { WideContainer, Container } from "../components/Container";
 import { Layout } from "../components/Layout";
 import { FeaturedProjects } from "../components/sections/Featured";
 
 const ProjectsPage = () => {
   return (
     <Layout>
-      <WideContainer>
+      <Container>
         <header>
           <h1>Projects</h1>
         </header>
@@ -15,7 +15,7 @@ const ProjectsPage = () => {
         <section>
           <h2>All Projects</h2>
         </section>
-      </WideContainer>
+      </Container>
     </Layout>
   );
 };

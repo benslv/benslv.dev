@@ -6,7 +6,6 @@ import { BiSearch } from "react-icons/bi";
 import { Container, WideContainer } from "../components/Container";
 import { Layout } from "../components/Layout";
 import { CardLink } from "../components/Card";
-import Spacer from "../components/Spacer";
 
 const PostSearch = styled.div`
   position: relative;

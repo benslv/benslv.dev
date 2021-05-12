@@ -6,6 +6,7 @@ import { BiSearch } from "react-icons/bi";
 import { Container, WideContainer } from "../components/Container";
 import { Layout } from "../components/Layout";
 import { CardLink } from "../components/Card";
+import Spacer from "../components/Spacer";
 
 const PostSearch = styled.div`
   position: relative;
@@ -31,15 +32,11 @@ const PostSearch = styled.div`
 `;
 
 const PostsContainer = styled.div`
-  /* display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   grid-column-gap: var(--font-size-base);
-  grid-row-gap: var(--font-size-base); */
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--font-size-base);
+  grid-row-gap: var(--font-size-base);
 `;
 
 const BlogPage = ({
@@ -63,7 +60,7 @@ const BlogPage = ({
 
   return (
     <Layout>
-      <Container>
+      <Container as="div">
         <header>
           <h1>Posts</h1>
           <p>

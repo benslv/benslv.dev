@@ -10,6 +10,8 @@ const Link = styled(UnstyledLink)`
   border-radius: var(--border-radius);
   transition: transform 0.175s var(--easing), box-shadow 0.175s var(--easing);
 
+  /* max-width: 300px; */
+
   &:hover,
   &:active {
     transform: translateY(-5px);

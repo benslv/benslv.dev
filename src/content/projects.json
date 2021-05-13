@@ -12,5 +12,12 @@
     "tags": ["JavaScript (ES6)", "Discord.js", "Enmap"],
     "image": "../images/countable-screenshot.png",
     "link": "https://github.com/benslv/countable"
+  },
+  {
+    "title": "CyberSoc",
+    "description": "University of York Cyber Security Sociey website.",
+    "tags": ["React", "Gatsby"],
+    "image": "../images/cybersoc-screenshot.png",
+    "link": "https://github.com/CyberSocYork/cybersocyork.github.io"
   }
 ]

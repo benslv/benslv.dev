@@ -1,7 +1,8 @@
 import React from "react";
 
-import { WideContainer, Container } from "../components/Container";
+import { Container } from "../components/Container";
 import { Layout } from "../components/Layout";
+import { TextLink } from "../components/TextLink";
 import { FeaturedProjects } from "../components/sections/Featured";
 
 const ProjectsPage = () => {
@@ -13,7 +14,12 @@ const ProjectsPage = () => {
         </header>
         <FeaturedProjects />
         <section>
-          <h2>All Projects</h2>
+          <h2>Other Stuff</h2>
+          <p>
+            I host all of my projects over on{" "}
+            <TextLink to="https://github.com/benslv">GitHub</TextLink>, so check that out if
+            you&apos;re interested to see what else I&apos;ve worked on!
+          </p>
         </section>
       </Container>
     </Layout>

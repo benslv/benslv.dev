@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Layout } from "../components/Layout";
+import { Container } from "../components/Container";
 import { Sidenote } from "../components/Sidenote";
 import { TextLink } from "../components/TextLink";
 import { Emoji } from "../components/Emoji";
@@ -15,8 +16,8 @@ const Hero = styled.header`
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <Container>
+    <Layout title="Index">
+      <Container id="main-content">
         <Hero>
           <StaticImage
             src="../images/profile.jpg"

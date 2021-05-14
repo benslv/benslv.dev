@@ -4,9 +4,8 @@ import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
-import {Container} from "../components/Container";
-import { Layout } from "../components/Layout";
 import { Container } from "../components/Container";
+import { Layout } from "../components/Layout";
 import { TextLink } from "../components/TextLink";
 import { Sidenote } from "../components/Sidenote";
 

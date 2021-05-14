@@ -26,6 +26,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --box-shadow-light: 0 0px 5px 0 rgba(0, 0, 0, 0.1);
 
+    --gap-width: 24px;
+
     --easing: ease;
     
     --font-sans: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif;

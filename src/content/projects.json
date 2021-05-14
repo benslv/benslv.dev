@@ -1,0 +1,37 @@
+[
+  {
+    "title": "jsfycat",
+    "description": "A Node.js wrapper for the Gfycat API.",
+    "tags": ["Node", "Axios"],
+    "image": "../images/jsfycat-screenshot.png",
+    "link": "https://www.npmjs.com/package/jsfycat"
+  },
+  {
+    "title": "Countable",
+    "description": "A Discord bot for managing counting channels.",
+    "tags": ["JavaScript (ES6)", "Discord.js", "Enmap"],
+    "image": "../images/countable-screenshot.png",
+    "link": "https://github.com/benslv/countable"
+  },
+  {
+    "title": "CyberSoc",
+    "description": "University of York Cyber Security Society website.",
+    "tags": ["React", "Gatsby"],
+    "image": "../images/cybersoc-screenshot.png",
+    "link": "https://github.com/CyberSocYork/cybersocyork.github.io"
+  },
+  {
+    "title": "Yordevs",
+    "description": "Project and developer lead for the Yordevs society website.",
+    "tags": ["React", "Gatsby"],
+    "image": "../images/yordevs-screenshot.png",
+    "link": "https://github.com/yordevs/yordevs.github.io"
+  },
+  {
+    "title": "K-means",
+    "description": "Node implementation of the k-means algorithm.",
+    "tags": ["Node"],
+    "image": "../images/kmeans-screenshot.png",
+    "link": "https://github.com/benslv/kmeans"
+  }
+]

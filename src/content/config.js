@@ -21,7 +21,12 @@ export const nav = [
     to: "/",
   },
   {
+    name: "Projects",
+    to: "/projects",
+  },
+  {
     name: "Blog",
     to: "/blog",
   },
 ];
+

@@ -7,6 +7,7 @@ import { Sidenote } from "../components/Sidenote";
 import { TextLink } from "../components/TextLink";
 import { Emoji } from "../components/Emoji";
 import { StaticImage } from "gatsby-plugin-image";
+import { Container } from "../components/Container";
 
 const Hero = styled.header`
   display: grid;

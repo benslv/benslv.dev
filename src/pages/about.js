@@ -6,7 +6,7 @@ import { Container } from "../components/Container";
 import { Layout } from "../components/Layout";
 import { TextLink } from "../components/TextLink";
 
-const Bleh = styled.section`
+const Header = styled.section`
   display: grid;
   row-gap: var(--font-size-md);
 `;
@@ -15,7 +15,7 @@ const AboutPage = () => {
   return (
     <Layout title="About">
       <Container id="main-content">
-        <Bleh>
+        <Header>
           <StaticImage
             src="../images/profile.jpg"
             alt="Head and shoulders picture of me!"
@@ -53,7 +53,7 @@ const AboutPage = () => {
               <TextLink to="https://www.trackmania.com/">Trackmania</TextLink> too!
             </p>
           </div>
-        </Bleh>
+        </Header>
       </Container>
     </Layout>
   );

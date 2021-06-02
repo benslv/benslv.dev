@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import { BiSearch } from "react-icons/bi";
+import { format } from "date-fns";
 
-import { Container, WideContainer } from "../components/Container";
+import { Container } from "../components/Container";
 import { Layout } from "../components/Layout";
 import { CardLink } from "../components/Card";
 
@@ -38,6 +39,11 @@ const PostsContainer = styled.div`
   grid-row-gap: var(--font-size-base);
 `;
 
+const Date = styled.span`
+  font-style: italic;
+  font-size: var(--font-size-sm);
+`;
+
 const BlogPage = ({
   data: {
     allMdx: { nodes },
@@ -54,6 +60,7 @@ const BlogPage = ({
     .map(({ id, frontmatter, fields: { slug } }) => (
       <CardLink title={frontmatter.title} to={slug} key={id}>
         <p>{frontmatter.description}</p>
+        <Date>{frontmatter.date}</Date>
       </CardLink>
     ));
 
@@ -77,9 +84,9 @@ const BlogPage = ({
           </PostSearch>
         </header>
       </Container>
-      <WideContainer id="main-content">
+      <Container id="main-content">
         <PostsContainer>{posts}</PostsContainer>
-      </WideContainer>
+      </Container>
     </Layout>
   );
 };

@@ -35,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --scaling-ratio: 1.4;
     --font-size-base: 17px;
-    --font-size-sm: calc(var(--font-size-base) / var(--scaling-ratio));
+    --font-size-sm: calc((var(--font-size-base) / var(--scaling-ratio)) + 2px);
     --font-size-md: calc(var(--scaling-ratio) * var(--font-size-base));
     --font-size-lg: calc(var(--scaling-ratio) * var(--font-size-md));
     --font-size-xl: calc(var(--scaling-ratio) * var(--font-size-lg));

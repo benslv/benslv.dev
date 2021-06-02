@@ -29,7 +29,6 @@ const Tags = styled.span`
 
   font-weight: 500;
 
-
   display: flex;
   gap: var(--font-size-base);
   justify-content: center;

@@ -1,7 +1,9 @@
 import React from "react";
+import { graphql } from "gatsby";
 
-// Components
-import { Link, graphql } from "gatsby";
+import { Layout } from "../components/Layout";
+import { Container } from "../components/Container";
+import { TextLink } from "../components/TextLink";
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -9,25 +11,23 @@ const Tags = ({ pageContext, data }) => {
   const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`;
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields;
-          const { title } = node.frontmatter;
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
-      <Link to="/tags">All tags</Link>
-    </div>
+    <Layout>
+      <Container>
+        <h2>{tagHeader}</h2>
+        <ul>
+          {edges.map(({ node }) => {
+            const { slug } = node.fields;
+            const { title } = node.frontmatter;
+            return (
+              <li key={slug}>
+                <TextLink to={slug}>{title}</TextLink>
+              </li>
+            );
+          })}
+        </ul>
+        <TextLink to="/tags">All tags</TextLink>
+      </Container>
+    </Layout>
   );
 };
 

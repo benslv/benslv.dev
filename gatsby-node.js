@@ -1,3 +1,5 @@
+const _ = require("lodash");
+
 const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -20,8 +22,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   const result = await graphql(`
-    query {
-      allMdx {
+    {
+      postsMDX: allMdx {
         edges {
           node {
             id
@@ -31,6 +33,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      tagsGroup: allMdx(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
   `);
 
@@ -38,7 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild("🚨  ERROR: Loading 'createPages' query");
   }
 
-  const posts = result.data.allMdx.edges;
+  const posts = result.data.postsMDX.edges;
 
   posts.forEach(({ node }, i) => {
     createPage({
@@ -47,5 +54,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { id: node.id },
     });
     console.log(`Created page at ${node.fields.slug}!`);
+  });
+
+  const tags = result.data.tagsGroup.group;
+
+  tags.forEach((tag) => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: path.resolve("./src/templates/tags.js"),
+      context: {
+        tag: tag.fieldValue,
+      },
+    });
   });
 };

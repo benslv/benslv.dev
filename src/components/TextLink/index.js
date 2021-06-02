@@ -10,6 +10,8 @@ export const TextLink = styled(UnstyledLink)`
   border-bottom: 2px solid var(--color-accent-20);
   transition: color 0.175s var(--easing), border 0.175s var(--easing);
 
+  width: max-content;
+
   &:hover {
     color: var(--color-heading);
     border-bottom: 2px solid var(--color-heading);

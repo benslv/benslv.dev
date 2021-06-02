@@ -26,7 +26,7 @@ export const PrismStyles = css`
     overflow: auto;
     position: relative;
     font-family: var(--font-mono);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
   }
 
   /* PrismJS Code Titles

@@ -35,8 +35,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --scaling-ratio: 1.4;
     --font-size-base: 17px;
-    --font-size-sm: 15px;
-    --font-size-md: calc(var(--scaling-ratio) * var(--font-size-sm));
+    --font-size-sm: calc(var(--font-size-base) / var(--scaling-ratio));
+    --font-size-md: calc(var(--scaling-ratio) * var(--font-size-base));
     --font-size-lg: calc(var(--scaling-ratio) * var(--font-size-md));
     --font-size-xl: calc(var(--scaling-ratio) * var(--font-size-lg));
 
@@ -151,12 +151,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .gatsby-resp-image-figcaption {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     text-align: center;
     font-style: italic;
 
 
-    margin-top: calc(0.5 * var(--font-size-sm));
+    margin-top: calc(0.5 * var(--font-size-base));
   }
 
   /* Custom <ol> styling 

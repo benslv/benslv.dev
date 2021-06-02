@@ -9,9 +9,11 @@ import { UnstyledLink } from "../UnstyledLink";
 const Wrapper = styled.div`
   padding: var(--font-size-lg);
 
+  background-color: var(--color-background);
+
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 `;
 
 const Nav = styled.nav`
@@ -21,15 +23,15 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled(UnstyledLink)`
-  ${blueBox};
+  /* ${blueBox}; */
 
   font-weight: 500;
+  color: var(--color-text);
 
-  transition: background-color 0.175s var(--easing), color 0.175s var(--easing);
+  transition: color 0.175s var(--easing);
 
   &:hover {
-    color: var(--color-text);
-    background-color: var(--color-card-background);
+    color: var(--color-accent);
   }
 `;
 

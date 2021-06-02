@@ -21,6 +21,10 @@ export const nav = [
     to: "/",
   },
   {
+    name: "About",
+    to: "/about",
+  },
+  {
     name: "Projects",
     to: "/projects",
   },
@@ -29,4 +33,3 @@ export const nav = [
     to: "/blog",
   },
 ];
-

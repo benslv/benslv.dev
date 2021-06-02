@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     --font-mono: "Fira Code", Hack, "Cascadia Code", Inconsolata, "Roboto Mono", Consolas, monospace;
 
     --scaling-ratio: 1.4;
-    --font-size-base: 16px;
+    --font-size-base: 17px;
     --font-size-sm: 15px;
     --font-size-md: calc(var(--scaling-ratio) * var(--font-size-sm));
     --font-size-lg: calc(var(--scaling-ratio) * var(--font-size-md));
@@ -68,6 +68,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: var(--font-sans);
     font-weight: 400;
 
+    background-color: var(--color-background);
     color: var(--color-text);
 
 

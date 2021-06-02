@@ -6,11 +6,11 @@ import { Container } from "../components/Container";
 import { Sidenote } from "../components/Sidenote";
 import { TextLink } from "../components/TextLink";
 import { Emoji } from "../components/Emoji";
-import { StaticImage } from "gatsby-plugin-image";
 
 const Hero = styled.header`
-  display: grid;
-  grid-row-gap: var(--font-size-lg);
+  p {
+    font-size: var(--font-size-md);
+  }
 `;
 
 const IndexPage = () => {
@@ -18,34 +18,11 @@ const IndexPage = () => {
     <Layout title="Index">
       <Container id="main-content">
         <Hero>
-          <StaticImage
-            src="../images/profile.jpg"
-            alt="Head and shoulders picture of me!"
-            style={{
-              borderRadius: "50%",
-              marginLeft: "auto",
-              marginRight: "auto",
-              boxShadow: "var(--box-shadow-light)",
-            }}
-            placeholder="tracedSVG"
-            aspectRatio={1 / 1}
-            layout="constrained"
-            width={150}
-            quality={100}
-          />
-          <div>
-            <h1>Hey there!</h1>
-            <p>
-              Hi! I'm Ben, a third year Computer Science student at the University of York,
-              currently working on placement at <TextLink to="https://arm.com">Arm</TextLink>.
-            </p>
-            <p>
-              <b>Outside of my studies</b>, I usually spend my time{" "}
-              <TextLink to="https://github.com/benslv">programming</TextLink>,{" "}
-              <TextLink to="https://goodreads.com/benslv">reading</TextLink> or playing in the
-              University Jazz and Concert Bands!
-            </p>
-          </div>
+          <h1>Hey there!</h1>
+          <p>
+            Hi! I'm Ben, a third year Computer Science student at the University of York, currently
+            working on placement at <TextLink to="https://arm.com">Arm</TextLink>.
+          </p>
         </Hero>
         <section>
           <h2>This Website</h2>

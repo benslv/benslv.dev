@@ -17,9 +17,5 @@ const SkipLink = styled.a`
 `;
 
 export const SkipToContent = () => {
-  return (
-    <SkipLink href="#main-content">
-      Skip to content
-    </SkipLink>
-  );
+  return <SkipLink href="#main-content">Skip to content</SkipLink>;
 };

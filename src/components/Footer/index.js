@@ -14,7 +14,7 @@ const Wrapper = styled.footer`
 
   p {
     ${blueBox};
-    
+
     font-weight: 500;
   }
 `;

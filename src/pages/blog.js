@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import { BiSearch } from "react-icons/bi";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 import { Container } from "../components/Container";
 import { Layout } from "../components/Layout";
@@ -33,13 +33,12 @@ const PostSearch = styled.div`
 
 const PostsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
 
-  grid-column-gap: var(--font-size-base);
   grid-row-gap: var(--font-size-base);
 `;
 
-const Date = styled.span`
+const Date = styled.p`
   font-style: italic;
   font-size: var(--font-size-sm);
 `;
@@ -59,8 +58,8 @@ const BlogPage = ({
     )
     .map(({ id, frontmatter, fields: { slug } }) => (
       <CardLink title={frontmatter.title} to={slug} key={id}>
+        <Date>{format(parseISO(frontmatter.date), "dd/MM/yyyy")}</Date>
         <p>{frontmatter.description}</p>
-        <Date>{frontmatter.date}</Date>
       </CardLink>
     ));
 

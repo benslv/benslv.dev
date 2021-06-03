@@ -63,8 +63,13 @@ const Body = styled.div`
 
   text-shadow: 0 0 35px black;
 
-  opacity: 0;
-  transform: translateY(10px);
+  opacity: 1;
+  transform: translateY(0);
+
+  ${media("sm")} {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
   font-size: var(--font-size-md);
 

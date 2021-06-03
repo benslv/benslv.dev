@@ -22,7 +22,9 @@ export const PrismStyles = css`
   .gatsby-highlight {
     background-color: ${prismColors.background};
     border-radius: 8px;
-    margin: calc(2 * var(--font-size-base)) calc(-1 * var(--gap-width));
+    margin: 0 calc(-1 * var(--gap-width));
+    margin-top: var(--font-size-base);
+    margin-bottom: calc(2 * var(--font-size-base));
     overflow: auto;
     position: relative;
     font-family: var(--font-mono);

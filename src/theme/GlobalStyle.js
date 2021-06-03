@@ -113,10 +113,14 @@ export const GlobalStyle = createGlobalStyle`
   p {
     line-height: 1.4;
     margin: 0;
-    margin-bottom: var(--font-size-base);
+    margin-bottom: calc(0.5 * var(--font-size-base));
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    & + :is(h1,h2,h3) {
+      margin-top: var(--font-size-base);
     }
   }
 

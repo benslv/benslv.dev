@@ -11,7 +11,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: "slug",
       node,
-      value: `/blog${value}`,
+      value: `${value}`,
     });
   }
 };
@@ -24,7 +24,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`
     {
       postsMDX: allMdx(
-        filter: { fileAbsolutePath: { regex: "/blog/" } }
+        filter: { fileAbsolutePath: { regex: "/posts/" } }
       ) {
         edges {
           node {

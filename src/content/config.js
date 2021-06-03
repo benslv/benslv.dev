@@ -29,7 +29,7 @@ export const nav = [
     to: "/projects",
   },
   {
-    name: "Blog",
-    to: "/blog",
+    name: "Posts",
+    to: "/posts",
   },
 ];

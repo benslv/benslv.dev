@@ -3,7 +3,7 @@ import React from "react";
 import { Container } from "../components/Container";
 import { Layout } from "../components/Layout";
 import { TextLink } from "../components/TextLink";
-import { FeaturedProjects } from "../components/sections/Featured";
+import { FeaturedProjects } from "../components/sections/FeaturedProjects";
 
 const ProjectsPage = () => {
   return (

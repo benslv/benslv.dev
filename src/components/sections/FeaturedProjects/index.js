@@ -73,24 +73,29 @@ const Body = styled.div`
 export const FeaturedProjects = () => {
   const data = useStaticQuery(graphql`
     {
-      allProjectsJson {
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "/projects/" } }
+        sort: { fields: frontmatter___title, order: ASC }
+      ) {
         edges {
           node {
             id
-            title
-            description
-            tags
-            link
-            image {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 750
-                  height: 400
-                  quality: 100
-                  layout: CONSTRAINED
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
+            frontmatter {
+              title
+              description
+              tags
+              link
+              image {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 750
+                    height: 400
+                    quality: 100
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
               }
             }
           }
@@ -99,12 +104,12 @@ export const FeaturedProjects = () => {
     }
   `);
 
-  const projects = data.allProjectsJson.edges;
+  const projects = data.allMdx.edges;
 
   return (
     <Wrapper>
       {projects &&
-        projects.map(({ node: { id, title, description, tags, link, image } }) => (
+        projects.map(({ node: { id, frontmatter: { title, description, tags, link, image } } }) => (
           <UnstyledLink key={id} to={link}>
             <Project>
               <Body>

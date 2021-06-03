@@ -23,7 +23,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     {
-      postsMDX: allMdx {
+      postsMDX: allMdx(
+        filter: { fileAbsolutePath: { regex: "/blog/" } }
+      ) {
         edges {
           node {
             id

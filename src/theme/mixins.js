@@ -1,5 +1,11 @@
 import { css } from "styled-components";
 
+const breakpoints = {
+  sm: "640px",
+  md: "768px",
+  lg: "1280px",
+};
+
 export const blueBox = css`
   color: var(--color-accent);
 
@@ -10,3 +16,5 @@ export const blueBox = css`
 
   box-shadow: var(--box-shadow-light);
 `;
+
+export const media = (size = "sm") => `@media screen and (min-width: ${breakpoints[size]})`;

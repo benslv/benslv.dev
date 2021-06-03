@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 import { UnstyledLink } from "../../UnstyledLink";
 
+import { media } from "../../../theme/mixins";
+
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -27,11 +29,15 @@ const Project = styled.article`
     top: 0;
     left: 0;
     background: linear-gradient(-150deg, rgba(0, 0, 0, 0) 0%, hsla(0, 0%, 0%, 0.6) 100%);
-    opacity: 0;
+    opacity: 1;
 
     backdrop-filter: blur(2px);
 
     transition: opacity 0.5s ease;
+
+    ${media("sm")} {
+      opacity: 0;
+    }
   }
 
   &:hover:after {

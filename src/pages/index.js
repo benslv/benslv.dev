@@ -62,7 +62,7 @@ const IndexPage = () => {
               I really like the concept of this, so it's not entirely impossible that I'll begin to
               use this site as my own <Emoji emoji="🌱" /> digital garden <Emoji emoji="🌱" /> of
               sorts, setting it up to hold various different types of{" "}
-              <TextLink to="/blog">blog posts</TextLink>, snippets, and pages that I think are
+              <TextLink to="/posts">blog posts</TextLink>, snippets, and pages that I think are
               interesting or useful (either to me or others).
             </p>
           </Sidenote>

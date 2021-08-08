@@ -10,6 +10,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@fontsource/fira-code": "^4.5.0",
+    "@fontsource/rubik": "^4.5.0",
     "@stitches/react": "^0.2.3",
     "next": "11.0.1",
     "react": "17.0.2",

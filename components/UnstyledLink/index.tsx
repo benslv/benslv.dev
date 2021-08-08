@@ -3,11 +3,11 @@ import Link from "next/link";
 
 interface UnstyledLinkProps {
   to: string;
-  className: string;
+  className?: string;
   children: React.ReactNode;
 }
 
-export const UnstyledLink = ({ to, className, children }: UnstyledLinkProps) => {
+export const UnstyledLink = ({ to, className, children }: UnstyledLinkProps): JSX.Element => {
   const isInternal = /^\/(?!\/)/.test(to);
 
   if (isInternal) {
@@ -23,5 +23,4 @@ export const UnstyledLink = ({ to, className, children }: UnstyledLinkProps) => 
       {children}
     </a>
   );
-};
 };

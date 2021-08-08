@@ -1,12 +1,16 @@
 import React from "react";
-import { Layout } from "../components/Layout";
 
-const Home = (): JSX.Element => {
+import { Layout } from "../components/Layout";
+import { Container } from "../components/Container";
+
+const IndexPage = (): JSX.Element => {
   return (
-    <Layout>
-      <h1>Hello, world!</h1>
+    <Layout title="Home">
+      <Container id="main-content">
+        <h1>Hello, world!</h1>
+      </Container>
     </Layout>
   );
 };
 
-export default Home;
+export default IndexPage;

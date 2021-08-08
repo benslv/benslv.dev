@@ -35,7 +35,9 @@ export const { styled, css, global, keyframes, getCssString, theme } = createCss
       light: "0 0px 5px 0 rgba(0, 0, 0, 0.1)",
     },
     space: {
-      1: "24px",
+      1: "12px",
+      2: "24px",
+      3: "48px",
     },
     radii: {
       1: "5px",
@@ -43,5 +45,17 @@ export const { styled, css, global, keyframes, getCssString, theme } = createCss
     transitions: {
       ease: "ease",
     },
+  },
+  utils: {
+    blueBox: () => () => ({
+      color: "$accent",
+      backgroundColor: "$accent20",
+
+      padding: "calc(0.5 * $1) $1",
+
+      borderRadius: "$1",
+
+      boxShadow: "$light",
+    }),
   },
 });

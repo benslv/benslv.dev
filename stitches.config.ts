@@ -39,11 +39,14 @@ export const { styled, css, global, keyframes, getCssString, theme } = createCss
       2: "24px",
       3: "48px",
     },
+    sizes: {
+      1: "24px",
+    },
     radii: {
       1: "5px",
     },
     transitions: {
-      ease: "ease",
+      ease: "0.175s ease",
     },
   },
   utils: {

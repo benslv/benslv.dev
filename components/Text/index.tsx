@@ -1,9 +1,16 @@
-import React from "react";
+import { styled } from "../../stitches.config";
 
-interface TextProps {
-  children: React.ReactNode;
-}
+export const Text = styled("p", {
+  lineHeight: 1.4,
 
-export const Text = ({ children }: TextProps): JSX.Element => {
-  return <p>{children}</p>;
-};
+  margin: 0,
+  marginBottom: "calc(0.5 * $1)",
+
+  "&:last-child": {
+    marginBottom: 0,
+  },
+
+  "& + :is(h1,h2,h3)": {
+    marginTop: "$1",
+  },
+});

@@ -26,6 +26,8 @@ const NavLink = styled(UnstyledLink, {
   color: "$text",
   fontWeight: 500,
 
+  textDecoration: "none",
+
   transition: "color 0.175s $ease",
 
   "&:hover": {

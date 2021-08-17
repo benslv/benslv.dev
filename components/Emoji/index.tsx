@@ -3,7 +3,7 @@ import React from "react";
 const baseURL = "https://emojicdn.elk.sh";
 
 interface EmojiProps {
-  emoji: string | undefined; // apparently Emojis aren't recognised as strings...
+  emoji: string;
   style?:
     | "apple"
     | "google"

@@ -20,11 +20,11 @@ export const { styled, css, global, keyframes, getCssString, theme } = createCss
       mono: "Fira Code, Hack, Cascadia Code, Inconsolata, Roboto Mono, Consolas, monospace",
     },
     fontSizes: {
-      base: "17px",
-      sm: "calc(($base / 1.4) + 2px)",
-      md: "calc(1.4 * $base)",
-      lg: "calc(1.4 * $md)",
-      xl: "calc(1.4 * $lg)",
+      0: "12px",
+      1: "16px",
+      2: "24px",
+      3: "32px",
+      4: "48px",
     },
     fontWeights: {
       normal: 400,
@@ -35,9 +35,11 @@ export const { styled, css, global, keyframes, getCssString, theme } = createCss
       light: "0 0px 5px 0 rgba(0, 0, 0, 0.1)",
     },
     space: {
-      1: "12px",
+      0: "12px",
+      1: "16px",
       2: "24px",
-      3: "48px",
+      3: "32px",
+      4: "48px",
     },
     sizes: {
       1: "24px",

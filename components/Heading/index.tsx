@@ -9,11 +9,11 @@ const heading = css({
 });
 
 export const H1 = styled("h1", heading, {
-  fontSize: "$xl",
+  fontSize: "$4",
 });
 
 export const H2 = styled("h2", heading, {
-  fontSize: "$lg",
+  fontSize: "$3",
 });
 
 export const H3 = styled("h3", heading, {
@@ -21,5 +21,5 @@ export const H3 = styled("h3", heading, {
 
   textTransform: "uppercase",
 
-  fontSize: "$md",
+  fontSize: "$2",
 });

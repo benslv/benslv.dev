@@ -2,7 +2,7 @@ import { global } from "../stitches.config";
 
 export const globalStyles = global({
   html: {
-    fontSize: "$base",
+    fontSize: "$1",
     boxSizing: "border-box",
     width: "100%",
   },

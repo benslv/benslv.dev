@@ -3,6 +3,7 @@ import React from "react";
 import { globalStyles } from "../../styles/globalStyles";
 import { Footer } from "../Footer";
 import { Navbar } from "../Navbar";
+import { SkipToContent } from "../SkipToContent";
 
 interface LayoutProps {
   title: string;
@@ -16,7 +17,7 @@ export const Layout = ({ title, description, children }: LayoutProps): JSX.Eleme
   return (
     <>
       {/* SEO */}
-      {/* Skip to Content button */}
+      <SkipToContent />
       <Navbar />
       {children}
       <Footer />

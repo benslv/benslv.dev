@@ -1,6 +1,7 @@
 import React from "react";
 
 import { globalStyles } from "../../styles/globalStyles";
+import { Footer } from "../Footer";
 import { Navbar } from "../Navbar";
 
 interface LayoutProps {
@@ -18,7 +19,7 @@ export const Layout = ({ title, description, children }: LayoutProps): JSX.Eleme
       {/* Skip to Content button */}
       <Navbar />
       {children}
-      {/* Footer */}
+      <Footer />
     </>
   );
 };

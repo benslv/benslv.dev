@@ -1,6 +1,6 @@
-import { global } from "../stitches.config";
+import { globalCss } from "../stitches.config";
 
-export const globalStyles = global({
+export const globalStyles = globalCss({
   html: {
     fontSize: "$1",
     boxSizing: "border-box",

@@ -1,6 +1,6 @@
-import { createCss } from "@stitches/react";
+import { createStitches } from "@stitches/react";
 
-export const { styled, css, global, keyframes, getCssString, theme } = createCss({
+export const { styled, css, globalCss, keyframes, getCssText, theme } = createStitches({
   theme: {
     colors: {
       text: "hsla(240, 9%, 43%, 1)",
@@ -12,7 +12,7 @@ export const { styled, css, global, keyframes, getCssString, theme } = createCss
       warn20: "hsla(38, 100%, 53%, 0.2)",
       error: "hsla(348, 100%, 44%, 1)",
       error20: "hsla(348, 100%, 44%, 0.2)",
-      cardBackround: "hsla(240, 20%, 97%, 1)",
+      cardBackground: "hsla(240, 20%, 97%, 1)",
       cardBorder: "hsla(240, 20%, 75%, 1)",
     },
     fonts: {
@@ -50,17 +50,5 @@ export const { styled, css, global, keyframes, getCssString, theme } = createCss
     transitions: {
       ease: "0.175s ease",
     },
-  },
-  utils: {
-    blueBox: () => () => ({
-      color: "$accent",
-      backgroundColor: "$accent20",
-
-      padding: "calc(0.5 * $1) $1",
-
-      borderRadius: "$1",
-
-      boxShadow: "$light",
-    }),
   },
 });

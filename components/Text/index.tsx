@@ -6,6 +6,11 @@ export const Text = styled("p", {
   margin: 0,
   marginBottom: "calc(0.5 * $1)",
 
+  "b, strong": {
+    fontWeight: "$semibold",
+    color: "$heading",
+  },
+
   "&:last-child": {
     marginBottom: 0,
   },

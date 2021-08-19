@@ -29,6 +29,14 @@ export const SEO = ({ description = defaultDesc, title }: SEOProps): JSX.Element
         description: description,
         locale: "en_GB",
         site_name: "benslv.dev",
+        images: [
+          {
+            url: "https://i.postimg.cc/Jz0HqVqR/banner.jpg",
+            width: 1500,
+            height: 1500,
+            alt: "Og Image"
+          },
+        ],
       }}
     />
   );

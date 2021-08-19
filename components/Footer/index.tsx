@@ -1,7 +1,9 @@
 import React from "react";
 import { styled } from "../../stitches.config";
+import { blueBox } from "../BlueBox";
 
 import { Emoji } from "../Emoji";
+import { Text } from "../Text";
 
 const Wrapper = styled("footer", {
   display: "flex",
@@ -11,9 +13,7 @@ const Wrapper = styled("footer", {
   marginTop: "$3",
   padding: "$3 0",
 
-  p: {
-    blueBox: "",
-
+  [`& ${Text}`]: {
     fontWeight: "$semibold",
   },
 });
@@ -21,9 +21,9 @@ const Wrapper = styled("footer", {
 export const Footer = (): JSX.Element => {
   return (
     <Wrapper>
-      <p>
+      <Text className={blueBox()}>
         Made with <Emoji emoji="☕" /> in the UK!
-      </p>
+      </Text>
     </Wrapper>
   );
 };

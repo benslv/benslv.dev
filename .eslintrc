@@ -30,7 +30,8 @@
     "semi": ["error", "always"],
     "react/display-name": 0,
     "react/prop-types": 1,
-    "@next/next/no-img-element": 0
+    "react/no-unescaped-entities": 0,
+    "@next/next/no-img-element": 0,
   },
   "settings": {
     "react": {

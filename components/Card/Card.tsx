@@ -15,11 +15,6 @@ const Body = styled("div", {
   backgroundColor: "$cardBackground",
 
   boxShadow: "$light",
-
-  // transition: "transform 0.2s ease",
-  // "&:hover": {
-  //   transform: "translateY(-50px)",
-  // },
 });
 
 const Title = styled(H2, {

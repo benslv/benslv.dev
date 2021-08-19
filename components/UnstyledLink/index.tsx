@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-interface UnstyledLinkProps {
+export interface UnstyledLinkProps {
   to: string;
   className?: string;
   children: React.ReactNode;

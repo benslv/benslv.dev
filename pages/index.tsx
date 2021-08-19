@@ -8,6 +8,7 @@ import { H1, H2 } from "../components/Heading";
 import { Text } from "../components/Text";
 import { TextLink } from "../components/TextLink";
 import { Sidenote } from "../components/Sidenote";
+import { Card, CardLink } from "../components/Card";
 
 const Hero = styled("header", {
   [`& ${Text}`]: {
@@ -42,6 +43,13 @@ const IndexPage = (): JSX.Element => {
           <Sidenote type="info">Here is some text in the sidenote.</Sidenote>
           <Sidenote type="error">Here is some text in the sidenote.</Sidenote>
           <Sidenote type="warn">Here is some text in the sidenote.</Sidenote>
+        </section>
+        <section>
+          <Card title="Hello!">I am a card.</Card>
+          <CardLink title="Hello!" to="https://google.com">
+            {" "}
+            I am a linked card.
+          </CardLink>
         </section>
       </Container>
     </Layout>

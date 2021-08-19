@@ -7,7 +7,7 @@ export const Sidenote = styled("aside", {
   borderRadius: "$1",
 
   color: "$text",
-  backgroundColor: "$cardBackround",
+  backgroundColor: "$cardBackground",
   border: "1px solid $cardBorder",
 
   variants: {

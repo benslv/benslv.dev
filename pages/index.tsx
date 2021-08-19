@@ -7,6 +7,7 @@ import { Container } from "../components/Container";
 import { H1, H2 } from "../components/Heading";
 import { Text } from "../components/Text";
 import { TextLink } from "../components/TextLink";
+import { Sidenote } from "../components/Sidenote";
 
 const Hero = styled("header", {
   [`& ${Text}`]: {
@@ -35,6 +36,12 @@ const IndexPage = (): JSX.Element => {
             little dated, and I've learned a lot about web development in the two years since I
             wrote it!
           </Text>
+        </section>
+        <section>
+          <Sidenote>Here is some text in the sidenote.</Sidenote>
+          <Sidenote type="info">Here is some text in the sidenote.</Sidenote>
+          <Sidenote type="error">Here is some text in the sidenote.</Sidenote>
+          <Sidenote type="warn">Here is some text in the sidenote.</Sidenote>
         </section>
       </Container>
     </Layout>

@@ -6,6 +6,7 @@ import { Layout } from "../components/Layout";
 import { getSortedPostsData } from "../lib/posts";
 import { Container } from "../components/Container";
 import { TextLink } from "../components/TextLink";
+import { GetStaticProps } from "next";
 
 interface Props {
   allPostsData: { slug: string; date: string; title: string }[];
@@ -33,7 +34,7 @@ const PostsPage = ({ allPostsData }: Props): JSX.Element => {
 
 export default PostsPage;
 
-export const getStaticProps = () => {
+export const getStaticProps: GetStaticProps = () => {
   const allPostsData = getSortedPostsData();
 
   return {

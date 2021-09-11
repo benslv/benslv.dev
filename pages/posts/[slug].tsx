@@ -1,4 +1,6 @@
 import React from "react";
+import { GetStaticProps, GetStaticPaths } from "next";
+import { MDXRemote } from "next-mdx-remote";
 import { styled } from "../../stitches.config";
 
 import { getAllPostIDs, getPostData } from "../../lib/posts";
@@ -6,31 +8,58 @@ import { getAllPostIDs, getPostData } from "../../lib/posts";
 import { Layout } from "../../components/Layout";
 import { Date } from "../../components/Date";
 import { Container } from "../../components/Container";
-import { H1 } from "../../components/Heading";
+import { TextLink } from "../../components/TextLink";
+import { Sidenote, SidenoteProps } from "../../components/Sidenote";
+import { H1, H2, H3 } from "../../components/Heading";
 
 const Header = styled("header", {
   textAlign: "center",
   marginBottom: "$1",
 });
 
-const Post = ({ postData }) => {
+interface LinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+const components = {
+  a: ({ href, children }: LinkProps) => <TextLink to={href}>{children}</TextLink>,
+  aside: ({ className, type, children }: SidenoteProps) => (
+    <Sidenote type={type} className={className}>
+      {children}
+    </Sidenote>
+  ),
+  h1: H1,
+  h2: H2,
+  h3: H3,
+};
+
+interface PostProps {
+  postData: {
+    title: string;
+    date: string;
+    source: any;
+  };
+}
+
+const Post = ({ postData: { title, date, source } }: PostProps): JSX.Element => {
   return (
-    <Layout title={postData.title}>
+    <Layout title={title}>
       <Container id="main-content">
         <Header>
-          <H1>{postData.title}</H1>
-          <Date dateString={postData.date} />
+          <H1>{title}</H1>
+          <Date dateString={date} />
         </Header>
         <br />
-        <article dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
+        <article>
+          <MDXRemote {...source} components={components} />
+        </article>
       </Container>
     </Layout>
   );
 };
 
-export default Post;
-
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIDs();
 
   return {
@@ -39,8 +68,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.slug);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = await getPostData(params?.slug);
 
   return {
     props: {
@@ -48,3 +77,5 @@ export const getStaticProps = async ({ params }) => {
     },
   };
 };
+
+export default Post;

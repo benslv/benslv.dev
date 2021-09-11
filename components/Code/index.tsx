@@ -18,21 +18,21 @@ const Wrapper = styled("div", {
   overflow: "hidden",
 });
 
-interface CodeProps {
-  code: string;
-  language: string;
+export interface CodeProps {
+  code: React.ReactNode;
 }
 
-export const Code = ({ code, language }: CodeProps): JSX.Element => {
+export const Code = ({ code }: CodeProps): JSX.Element => {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
 
   return (
     <Wrapper className="code">
-      <pre>
+      {/* <pre>
         <code className={language}>{code}</code>
-      </pre>
+      </pre> */}
+      <pre>{code}</pre>
     </Wrapper>
   );
 };

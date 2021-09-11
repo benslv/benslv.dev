@@ -33,7 +33,9 @@ const components = {
   h1: H1,
   h2: H2,
   h3: H3,
-  code: (props) => <Code language={props.className} code={props.children} {...props} />,
+  pre: ({ children }: { children: React.ReactNode }) => {
+    return <Code code={children} />;
+  },
 };
 
 interface PostProps {

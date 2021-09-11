@@ -19,8 +19,6 @@ export const getSortedPostsData = (): { slug: string; date: string }[] => {
     // Use gray-matter to parse the post metadata section
     const { data } = matter(fileContents);
 
-    console.log(data.date);
-
     // Combine the data with the id
     return {
       slug,

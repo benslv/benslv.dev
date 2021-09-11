@@ -8,6 +8,8 @@ import "@fontsource/rubik/700.css";
 
 import "@fontsource/fira-code/500.css";
 
+import "../styles/prism-theme.scss";
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return <Component {...pageProps} />;
 }

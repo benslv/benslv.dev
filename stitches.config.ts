@@ -21,7 +21,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
     },
     fontSizes: {
       0: "12px",
-      1: "16px",
+      1: "17px",
       2: "24px",
       3: "32px",
       4: "48px",
@@ -46,6 +46,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
     },
     radii: {
       1: "5px",
+      2: "10px",
     },
     transitions: {
       ease: "0.175s ease",

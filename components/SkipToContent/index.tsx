@@ -17,5 +17,9 @@ const SkipLink = styled("a", {
 });
 
 export const SkipToContent = (): JSX.Element => {
-  return <SkipLink className={blueBox()} href="#main-content">Skip to content</SkipLink>;
+  return (
+    <SkipLink className={blueBox()} href="#main-content">
+      Skip to content
+    </SkipLink>
+  );
 };

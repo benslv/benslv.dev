@@ -1,4 +1,5 @@
 import React from "react";
+import { MDXRemote } from "next-mdx-remote";
 import { styled } from "../../stitches.config";
 
 import { getAllPostIDs, getPostData } from "../../lib/posts";
@@ -6,29 +7,43 @@ import { getAllPostIDs, getPostData } from "../../lib/posts";
 import { Layout } from "../../components/Layout";
 import { Date } from "../../components/Date";
 import { Container } from "../../components/Container";
-import { H1 } from "../../components/Heading";
+import { TextLink } from "../../components/TextLink";
+import { Sidenote } from "../../components/Sidenote";
+import { H1, H2, H3 } from "../../components/Heading";
 
 const Header = styled("header", {
   textAlign: "center",
   marginBottom: "$1",
 });
 
-const Post = ({ postData }) => {
+const components = {
+  a: ({ href, children }) => <TextLink to={href}>{children}</TextLink>,
+  aside: ({ className, type, children }) => (
+    <Sidenote type={type} className={className}>
+      {children}
+    </Sidenote>
+  ),
+  h1: H1,
+  h2: H2,
+  h3: H3,
+};
+
+const Post = ({ postData: { title, date, source } }) => {
   return (
-    <Layout title={postData.title}>
+    <Layout title={title}>
       <Container id="main-content">
         <Header>
-          <H1>{postData.title}</H1>
-          <Date dateString={postData.date} />
+          <H1>{title}</H1>
+          <Date dateString={date} />
         </Header>
         <br />
-        <article dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
+        <article>
+          <MDXRemote {...source} components={components} />
+        </article>
       </Container>
     </Layout>
   );
 };
-
-export default Post;
 
 export const getStaticPaths = async () => {
   const paths = getAllPostIDs();
@@ -48,3 +63,5 @@ export const getStaticProps = async ({ params }) => {
     },
   };
 };
+
+export default Post;

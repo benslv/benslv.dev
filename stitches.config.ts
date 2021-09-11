@@ -36,7 +36,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
     },
     space: {
       0: "12px",
-      1: "16px",
+      1: "17px",
       2: "24px",
       3: "32px",
       4: "48px",

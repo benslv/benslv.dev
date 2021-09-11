@@ -3,6 +3,8 @@ import { styled } from "../../stitches.config";
 export const Text = styled("p", {
   lineHeight: 1.4,
 
+  fontSize: "$1",
+
   margin: 0,
   marginBottom: "calc(0.5 * $1)",
 

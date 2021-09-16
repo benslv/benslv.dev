@@ -12,6 +12,7 @@ import { TextLink } from "../../components/TextLink";
 import { Sidenote, SidenoteProps } from "../../components/Sidenote";
 import { H1, H2, H3 } from "../../components/Heading";
 import { Code } from "../../components/Code";
+import { Text } from "../../components/Text";
 
 const Header = styled("header", {
   textAlign: "center",
@@ -33,6 +34,7 @@ const components = {
   h1: H1,
   h2: H2,
   h3: H3,
+  p: Text,
   pre: ({ children }: { children: React.ReactNode }) => {
     return <Code code={children} />;
   },

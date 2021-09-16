@@ -8,9 +8,7 @@ const Wrapper = styled("div", {
   },
 
   backgroundColor: "hsla(212, 39%, 10%, 1)",
-  margin: "0 calc(-1 * $2)",
-  marginTop: "$2",
-  marginBottom: "$1",
+  margin: "$2 calc(-1 * $2)",
   position: "relative",
   fontFamily: "$mono",
   fontSize: "$1",

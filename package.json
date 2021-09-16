@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fontsource/fira-code": "^4.5.0",
@@ -21,6 +22,7 @@
     "prismjs": "^1.24.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
     "remark": "13",
     "remark-html": "13",
     "sass": "^1.39.2"
@@ -33,6 +35,7 @@
     "@typescript-eslint/parser": "^4.28.5",
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",
+    "husky": "^7.0.2",
     "prettier": "^2.3.2",
     "typescript": "^4.4.3"
   }

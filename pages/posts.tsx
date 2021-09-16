@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { GetStaticProps } from "next";
+import { BiSearch } from "react-icons/bi";
 import { styled } from "../stitches.config";
+
+import { getSortedPostsData } from "../lib/posts";
 
 import { Date } from "../components/Date";
 import { Layout } from "../components/Layout";
-
-import { getSortedPostsData } from "../lib/posts";
 import { Container } from "../components/Container";
-import { GetStaticProps } from "next";
 import { H1 } from "../components/Heading";
 import { Text } from "../components/Text";
 import { CardLink } from "../components/Card";
@@ -17,11 +18,42 @@ const PostsContainer = styled("div", {
   gap: "$1",
 });
 
+const SearchWrapper = styled("div", {
+  position: "relative",
+});
+
+const SearchBar = styled("input", {
+  padding: "calc(0.5 * $1)",
+  borderRadius: "$1",
+  border: "1px solid $cardBorder",
+
+  color: "$text",
+
+  fontFamily: "$sans",
+  fontSize: "$1",
+
+  width: "100%",
+});
+
+const SearchIcon = styled(BiSearch, {
+  position: "absolute",
+  right: 10,
+  top: 10,
+});
+
 interface Props {
-  allPostsData: { slug: string; date: string; title: string }[];
+  allPostsData: { slug: string; date: string; title: string; description: string }[];
 }
 
 const PostsPage = ({ allPostsData }: Props): JSX.Element => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const posts = allPostsData.filter(
+    ({ title, description }) =>
+      title.toLowerCase().includes(searchValue.toLowerCase()) ||
+      description?.toLowerCase().includes(searchValue.toLowerCase()),
+  );
+
   return (
     <Layout title="Posts">
       <Container as="div">
@@ -31,11 +63,20 @@ const PostsPage = ({ allPostsData }: Props): JSX.Element => {
             Here's a collection of posts I've written about different things! Probably (mostly) all
             programming-related but who knows? Maybe some other topics will slip in here too.
           </Text>
+          <SearchWrapper>
+            <SearchBar
+              type="text"
+              placeholder={`Search through ${allPostsData.length} posts`}
+              aria-label={`Search through ${allPostsData.length} posts`}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <SearchIcon />
+          </SearchWrapper>
         </header>
       </Container>
       <Container id="main-content">
         <PostsContainer>
-          {allPostsData.map(({ slug, date, title, description }) => (
+          {posts.map(({ slug, date, title, description }) => (
             <CardLink title={title} key={slug} to={`/posts/${slug}`}>
               <Date dateString={date} />
               <Text>{description}</Text>

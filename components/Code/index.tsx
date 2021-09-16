@@ -12,8 +12,11 @@ const Wrapper = styled("div", {
   position: "relative",
   fontFamily: "$mono",
   fontSize: "$1",
-  borderRadius: "$2",
   overflow: "hidden",
+
+  "@bp1": {
+    borderRadius: "$2",
+  },
 });
 
 export interface CodeProps {

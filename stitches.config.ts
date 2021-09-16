@@ -52,4 +52,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       ease: "0.175s ease",
     },
   },
+  media: {
+    bp1: "(min-width: 768px)",
+  },
 });

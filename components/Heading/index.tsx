@@ -5,7 +5,7 @@ const heading = css({
   color: "$heading",
 
   margin: 0,
-  marginBottom: "$1",
+  marginBottom: "calc(0.5 * $1)",
 });
 
 export const H1 = styled("h1", heading, {

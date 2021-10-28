@@ -5,7 +5,14 @@ import { serialize } from "next-mdx-remote/serialize";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
-export const getSortedPostsData = (): { slug: string; date: string }[] => {
+export const getSortedPostsData = (): {
+  slug: string;
+  date: string;
+  title: string;
+  description: string;
+  tags: string[];
+  published: boolean;
+}[] => {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -23,6 +30,10 @@ export const getSortedPostsData = (): { slug: string; date: string }[] => {
     return {
       slug,
       date: data.date,
+      title: data.title,
+      description: data.description,
+      tags: data.tags,
+      published: data.published,
       ...data,
     };
   });

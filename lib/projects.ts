@@ -15,8 +15,6 @@ export interface Project {
 export const getProjectData = (): Project[] => {
   const fileNames = fs.readdirSync(projectDirectory);
 
-  console.log(fileNames);
-
   const allProjectsData = fileNames.map((fileName) => {
     // Read markdown file as string
     const fullPath = path.join(projectDirectory, fileName, "index.mdx");

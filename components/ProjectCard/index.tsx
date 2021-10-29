@@ -5,11 +5,15 @@ import { css, styled } from "../../stitches.config";
 
 const Project = styled("article", {
   position: "relative",
-  height: 150,
+  minHeight: 150,
+  borderRadius: 0,
   overflow: "hidden",
-  borderRadius: "$2",
 
   boxShadow: "$light",
+
+  "@sm": {
+    borderRadius: "$2",
+  },
 
   "&:after": {
     content: "",
@@ -25,14 +29,20 @@ const Project = styled("article", {
     opacity: 1,
     backdropFilter: "blur(2px)",
 
-    "@sm": {
+    transition: "opacity $easeSlower",
+
+    "@md": {
       opacity: 0,
     },
+  },
+
+  "&:hover:after": {
+    opacity: 1,
   },
 });
 
 const Body = styled("div", {
-  position: "absolute",
+  position: "relative",
 
   display: "flex",
   flexDirection: "column",
@@ -48,12 +58,13 @@ const Body = styled("div", {
   transform: "translateY(0)",
 
   height: "100%",
+  width: "100%",
 
   zIndex: 1,
 
   transition: "opacity $easeSlower, transform $easeSlower",
 
-  "@sm": {
+  "@md": {
     opacity: 0,
     transform: "translateY(10px)",
   },

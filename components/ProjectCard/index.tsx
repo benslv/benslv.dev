@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import { css, styled } from "../../stitches.config";
+import { UnstyledLink } from "../UnstyledLink";
 
 const Project = styled("article", {
   position: "relative",
@@ -84,13 +85,19 @@ const cardImage = css({
   objectPosition: "top",
 });
 
+const ProjectLink = styled(UnstyledLink, {
+  textDecoration: "none",
+});
+
 export const ProjectCard = ({ title, description, tags, link, image }) => {
   return (
     <Project>
-      <Body>
-        <Title>{title}</Title>
-        <p>{description}</p>
-      </Body>
+      <ProjectLink to={link}>
+        <Body>
+          <Title>{title}</Title>
+          <p>{description}</p>
+        </Body>
+      </ProjectLink>
       <Image src={image} layout="fill" alt="" className={cardImage()} />
     </Project>
   );

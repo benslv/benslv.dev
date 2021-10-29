@@ -1,11 +1,10 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-// import { serialize } from "next-mdx-remote";
 
 const projectDirectory = path.join(process.cwd(), "content/projects");
 
-interface Post {
+export interface Project {
   title: string;
   description: string;
   image: string;
@@ -13,12 +12,14 @@ interface Post {
   tags: string[];
 }
 
-export const getProjectData = (): Post[] => {
+export const getProjectData = (): Project[] => {
   const fileNames = fs.readdirSync(projectDirectory);
+
+  console.log(fileNames);
 
   const allProjectsData = fileNames.map((fileName) => {
     // Read markdown file as string
-    const fullPath = path.join(projectDirectory, fileName);
+    const fullPath = path.join(projectDirectory, fileName, "index.mdx");
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     // Use gray-matter to parse the post metadata section

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { css } from "../stitches.config";
 
-import { H2 } from "../components/Heading";
+import { H1 } from "../components/Heading";
 import { TextLink } from "../components/TextLink";
 import { Text } from "../components/Text";
 import { Layout } from "../components/Layout";
@@ -34,7 +34,7 @@ const AboutPage = (): JSX.Element => {
           />
         </div>
         <div>
-          <H2>About Me</H2>
+          <H1>About Me</H1>
           <Text>
             Hi! I'm Ben, a third year Computer Science student at the University of York, currently
             working on placement at <TextLink to="https://arm.com">Arm</TextLink>.

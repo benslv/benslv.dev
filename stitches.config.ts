@@ -50,9 +50,12 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
     },
     transitions: {
       ease: "0.175s ease",
+      easeSlower: "0.25s ease",
     },
   },
   media: {
-    bp1: "(min-width: 768px)",
+    sm: "(min-width: 640px)",
+    md: "(min-width: 768px)",
+    lg: "(min-width: 1280px)",
   },
 });

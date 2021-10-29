@@ -39,8 +39,8 @@ const ProjectPage = ({ allProjectData }: { allProjectData: Project[] }): JSX.Ele
 
 export default ProjectPage;
 
-export const getStaticProps: GetStaticProps = () => {
-  const allProjectData = getProjectData();
+export const getStaticProps: GetStaticProps = async () => {
+  const allProjectData = await getProjectData();
 
   return {
     props: {

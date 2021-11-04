@@ -4,6 +4,8 @@ import Image from "next/image";
 import { css, styled } from "../../stitches.config";
 import { UnstyledLink } from "../UnstyledLink";
 
+import { Project as ProjectType } from "../../lib/projects";
+
 const Project = styled("article", {
   position: "relative",
   minHeight: 150,
@@ -89,15 +91,7 @@ const ProjectLink = styled(UnstyledLink, {
   textDecoration: "none",
 });
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  tags?: string[];
-  link: string;
-  image: string;
-}
-
-export const ProjectCard = ({ title, description, link, image }: ProjectCardProps): JSX.Element => {
+export const ProjectCard = ({ title, description, link, image }: ProjectType): JSX.Element => {
   return (
     <Project>
       <ProjectLink to={link}>

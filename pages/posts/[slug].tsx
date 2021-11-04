@@ -1,6 +1,6 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { styled } from "../../stitches.config";
 
 import { getAllPostIDs, getPostData } from "../../lib/posts";
@@ -44,7 +44,7 @@ interface PostProps {
   postData: {
     title: string;
     date: string;
-    source: any;
+    source: MDXRemoteSerializeResult;
   };
 }
 

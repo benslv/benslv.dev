@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -68,7 +69,9 @@ export const getAllPostIDs = (): {
 
 type Slug = string | string[] | undefined;
 
-export const getPostData = async (slug: Slug): Promise<{ slug: Slug; source: any }> => {
+export const getPostData = async (
+  slug: Slug,
+): Promise<{ slug: Slug; source: MDXRemoteSerializeResult }> => {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

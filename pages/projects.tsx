@@ -24,7 +24,7 @@ const ProjectStack = styled("div", {
 
 const ProjectPage = ({ allProjectData }: { allProjectData: Project[] }): JSX.Element => {
   return (
-    <Layout title="My Work">
+    <Layout title="Projects">
       <Container>
         <H1>Projects</H1>
         <ProjectStack>

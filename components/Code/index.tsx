@@ -14,7 +14,7 @@ const Wrapper = styled("div", {
   fontSize: "$1",
   overflow: "hidden",
 
-  "@bp1": {
+  "@md": {
     borderRadius: "$2",
   },
 });

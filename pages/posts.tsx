@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { GetStaticProps } from "next";
 import { BiSearch } from "react-icons/bi";
-import { styled } from "../stitches.config";
+import { styled } from "stitches.config";
 
-import { getSortedPostsData } from "../lib/posts";
+import { getSortedPostsData } from "lib/posts";
 
-import { Date } from "../components/Date";
-import { Layout } from "../components/Layout";
-import { Container } from "../components/Container";
-import { H1 } from "../components/Heading";
-import { Text } from "../components/Text";
-import { CardLink } from "../components/Card";
+import { Date, Layout, Container, H1, Text, CardLink } from "components";
 
 const PostsContainer = styled("div", {
   display: "flex",

@@ -1,15 +1,19 @@
 import React from "react";
 
-import { styled } from "../stitches.config";
+import { styled } from "stitches.config";
 
-import { Layout } from "../components/Layout";
-import { Container } from "../components/Container";
-import { H1, H2 } from "../components/Heading";
-import { Text } from "../components/Text";
-import { TextLink } from "../components/TextLink";
-import { Sidenote } from "../components/Sidenote";
-import { Emoji } from "../components/Emoji";
-import { UnorderedList, Item } from "../components/List";
+import {
+  Layout,
+  Container,
+  H1,
+  H2,
+  Text,
+  TextLink,
+  Sidenote,
+  Emoji,
+  UnorderedList,
+  ListItem,
+} from "components";
 
 const Hero = styled("header", {
   [`& ${Text}`]: {
@@ -42,10 +46,10 @@ const IndexPage = (): JSX.Element => {
             (namely React and NextJS) that:
           </Text>
           <UnorderedList>
-            <Item>looked a lot nicer, with fully responsive layout and styling</Item>
-            <Item>
+            <ListItem>looked a lot nicer, with fully responsive layout and styling</ListItem>
+            <ListItem>
               packed in a lot more functionality, like reusable components, blog posts, and more
-            </Item>
+            </ListItem>
           </UnorderedList>
           <Text>
             I might write a little post detailing the full site stack at some point, but I'm mainly

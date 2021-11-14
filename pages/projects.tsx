@@ -1,11 +1,11 @@
 import React from "react";
 import { GetStaticProps } from "next";
 
-import { styled } from "../stitches.config";
+import { styled } from "stitches.config";
 
-import { Layout, Container, H1, ProjectCard } from "../components";
+import { Layout, Container, H1, ProjectCard } from "components";
 
-import { getProjectData, Project } from "../lib/projects";
+import { getProjectData, Project } from "lib/projects";
 
 const ProjectStack = styled("div", {
   display: "flex",

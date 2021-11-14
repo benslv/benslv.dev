@@ -1,24 +1,13 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { styled } from "../../stitches.config";
+import { styled } from "stitches.config";
 
-import { getAllPostIDs, getPostData } from "../../lib/posts";
+import { getAllPostIDs, getPostData } from "lib/posts";
 
-import {
-  Container,
-  Date,
-  H1,
-  H2,
-  H3,
-  Code,
-  Text,
-  Sidenote,
-  TextLink,
-  Layout,
-} from "../../components";
+import { Container, Date, H1, H2, H3, Code, Text, Sidenote, TextLink, Layout } from "components";
 
-import { SidenoteProps } from "../../components/Sidenote";
+import { SidenoteProps } from "components/Sidenote";
 
 const Header = styled("header", {
   textAlign: "center",

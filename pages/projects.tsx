@@ -3,10 +3,7 @@ import { GetStaticProps } from "next";
 
 import { styled } from "../stitches.config";
 
-import { Layout } from "../components/Layout";
-import { Container } from "../components/Container";
-import { H1 } from "../components/Heading";
-import { ProjectCard } from "../components/ProjectCard";
+import { Layout, Container, H1, ProjectCard } from "../components";
 
 import { getProjectData, Project } from "../lib/projects";
 

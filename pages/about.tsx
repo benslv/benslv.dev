@@ -2,11 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { css } from "../stitches.config";
 
-import { H1 } from "../components/Heading";
-import { TextLink } from "../components/TextLink";
-import { Text } from "../components/Text";
-import { Layout } from "../components/Layout";
-import { Container } from "../components/Container";
+import { H1, TextLink, Text, Layout, Container } from "../components";
 
 import profile from "../public/profile.jpg";
 

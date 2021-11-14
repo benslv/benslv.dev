@@ -9,6 +9,6 @@ export const UnorderedList = styled("ul", {
   },
 });
 
-export const Item = styled("li", {
+export const ListItem = styled("li", {
   margin: "calc(0.5 * $1) 0",
 });

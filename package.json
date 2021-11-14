@@ -19,6 +19,7 @@
     "@fontsource/rubik": "^4.5.0",
     "@stitches/react": "^1.0.0-canary.11",
     "blurhash": "^1.1.4",
+    "canvas": "2.6.1",
     "date-fns": "^2.23.0",
     "gray-matter": "^4.0.3",
     "next": "11.0.1",

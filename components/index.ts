@@ -1,6 +1,6 @@
 export { blueBox } from "./BlueBox";
 export { Card, CardLink } from "./Card";
-export { Code } from "./Code";
+export { Pre } from "./Pre";
 export { Container } from "./Container";
 export { Date } from "./Date";
 export { Emoji } from "./Emoji";
@@ -16,3 +16,4 @@ export { SkipToContent } from "./SkipToContent";
 export { Text } from "./Text";
 export { TextLink } from "./TextLink";
 export { UnstyledLink } from "./UnstyledLink";
+export { Code } from "./Code";

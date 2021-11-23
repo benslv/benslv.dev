@@ -6,7 +6,7 @@ published: true
 tags: [article]
 ---
 
-In this post we're going to cover how to create your own local web server using the `express` [package](https://npmjs.com/express). It's a pretty straightforward process, so let's begin!
+In this post we're going to cover how to create your own local web server using the <code>express</code> [package](https://npmjs.com/express). It's a pretty straightforward process, so let's begin!
 
 <aside type="info">
   This is a crosspost of an article I wrote over on the Yordevs{" "}
@@ -15,7 +15,7 @@ In this post we're going to cover how to create your own local web server using 
 
 ## Setting up our project
 
-If you haven't already, set up a new Node project. From there we just need to install `express` with the following command:
+If you haven't already, set up a new Node project. From there we just need to install <code>express</code> with the following command:
 
 ```bash
 npm install express
@@ -45,7 +45,7 @@ To run the server just type:
 node index.js
 ```
 
-You can test it working by visiting `localhost:3000` in your web browser, and should see something like this:
+You can test it working by visiting <code>localhost:3000</code> in your web browser, and should see something like this:
 
 ![](https://i.imgur.com/wcSGknH.png)
 
@@ -69,7 +69,7 @@ app.listen(3000);
 
 ### 1. Import and setup
 
-In this section we're doing two things. First, we're importing our newly installed `express` package with:
+In this section we're doing two things. First, we're importing our newly installed <code>express</code> package with:
 
 ```js
 const express = require("express");
@@ -104,9 +104,9 @@ app.get("/", (request, response) => {
 });
 ```
 
-This creates an endpoint for our `app` server which responds to GET requests sent to the URL `localhost:3000`.
+This creates an endpoint for our `app` server which responds to GET requests sent to the URL <code>localhost:3000<code>.
 
-If you wanted to add another endpoint which did something when you sent a request to `localhost:3000/ping`, it would look something like:
+If you wanted to add another endpoint which did something when you sent a request to <code>localhost:3000/ping</code>, it would look something like:
 
 ```js
 app.get("/ping", (request, response) => {
@@ -118,7 +118,7 @@ app.get("/ping", (request, response) => {
   Try this part out in your code, if you want! Consider it a small challenge or something.
 </aside>
 
-The final part is a [callback](https://www.javascripttutorial.net/javascript-callback/) which takes the `request` and `response` as parameters, allowing you to process the request to the server (e.g. [parsing parameters](https://masteringjs.io/tutorials/express/params) included in the URL) and your response before you send it back.
+The final part is a [callback](https://www.javascripttutorial.net/javascript-callback/) which takes the <code>request</code> and <code>response</code> as parameters, allowing you to process the request to the server (e.g. [parsing parameters](https://masteringjs.io/tutorials/express/params) included in the URL) and your response before you send it back.
 
 ### 3. Listening for requests
 

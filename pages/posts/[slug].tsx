@@ -5,7 +5,19 @@ import { styled } from "stitches.config";
 
 import { getAllPostIDs, getPostData } from "lib/posts";
 
-import { Container, Date, H1, H2, H3, Code, Text, Sidenote, TextLink, Layout } from "components";
+import {
+  Container,
+  Date,
+  H1,
+  H2,
+  H3,
+  Pre,
+  Code,
+  Text,
+  Sidenote,
+  TextLink,
+  Layout,
+} from "components";
 
 import { SidenoteProps } from "components/Sidenote";
 
@@ -30,8 +42,9 @@ const components = {
   h2: H2,
   h3: H3,
   p: Text,
+  code: Code,
   pre: ({ children }: { children: React.ReactNode }) => {
-    return <Code code={children} />;
+    return <Pre code={children} />;
   },
 };
 

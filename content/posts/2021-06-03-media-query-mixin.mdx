@@ -24,7 +24,7 @@ export const media = (size = "sm") => `@media screen and (min-width: ${breakpoin
 
 So it turns out [you can't use CSS variables with media queries](https://stackoverflow.com/a/40723269/12944841), which is a bit of a bummer.
 
-The main reason you might want to do something like this is to create a bunch of reusable media query mixins for yourself, keeping all your breakpoints the same and letting you change them at a moment's notice. It also saves a few keystrokes and keeps you from having to remember what the exact syntax for the query should be ("is it `min-width` or `max-width`? Hmm...")
+The main reason you might want to do something like this is to create a bunch of reusable media query mixins for yourself, keeping all your breakpoints the same and letting you change them at a moment's notice. It also saves a few keystrokes and keeps you from having to remember what the exact syntax for the query should be ("is it <code>min-width</code> or <code>max-width</code>? Hmm...")
 
 Since the function returns a template literal, it can be inserted whatever CSS-in-JS solution you're using!
 

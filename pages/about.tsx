@@ -32,8 +32,8 @@ const AboutPage = (): JSX.Element => {
         <div>
           <H1>About Me</H1>
           <Text>
-            Hi! I'm Ben, a third year Computer Science student at the University of York, currently
-            working on placement at <TextLink to="https://arm.com">Arm</TextLink>.
+            Hi! I'm Ben, a third year Computer Science student at the University of York, previous
+            on placement at <TextLink to="https://arm.com">Arm</TextLink>.
           </Text>
           <Text>
             I'm mainly interested in frontend development at the moment and spend a lot of my time

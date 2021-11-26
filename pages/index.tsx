@@ -28,8 +28,8 @@ const IndexPage = (): JSX.Element => {
         <Hero>
           <H1>Hey there!</H1>
           <Text>
-            Hi! I'm Ben, a third year Computer Science student at the University of York, currently
-            working on placement at <TextLink to="https://arm.com/">Arm</TextLink>.
+            Hi! I'm Ben, a third year Computer Science student at the University of York, previously
+            on placement at <TextLink to="https://arm.com/">Arm</TextLink>.
           </Text>
         </Hero>
 

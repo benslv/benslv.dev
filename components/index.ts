@@ -8,7 +8,7 @@ export { Footer } from "./Footer";
 export { H1, H2, H3 } from "./Heading";
 export { Layout } from "./Layout";
 export { UnorderedList, ListItem } from "./List";
-export { Navbar } from "./Navbar";
+export { DesktopNavbar, MobileNavbar } from "./Navbar";
 export { ProjectCard } from "./ProjectCard";
 export { SEO } from "./SEO";
 export { Sidenote } from "./Sidenote";

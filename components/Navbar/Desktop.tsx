@@ -47,7 +47,9 @@ const NavLink = styled(UnstyledLink, {
 
 export const Desktop = (): JSX.Element => (
   <Wrapper>
-    <Emoji emoji="👋" size="48px" />
+    <UnstyledLink to="/">
+      <Emoji emoji="👋" size="48px" />
+    </UnstyledLink>
     <Nav>
       {nav &&
         nav.map(({ name, to }, i) => (

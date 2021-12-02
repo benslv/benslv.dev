@@ -108,7 +108,9 @@ export const Mobile = (): JSX.Element => {
 
   return (
     <Wrapper>
-      <Emoji emoji="👋" size="48px" />
+      <UnstyledLink to="/">
+        <Emoji emoji="👋" size="48px" />
+      </UnstyledLink>
       <NavWrapper>
         <Nav state={isOpen ? "shown" : "hidden"}>
           {nav &&

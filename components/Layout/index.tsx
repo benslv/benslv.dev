@@ -1,10 +1,8 @@
 import React from "react";
 
-import { globalStyles } from "../../styles/globalStyles";
-import { Footer } from "../Footer";
-import { Navbar } from "../Navbar";
-import { SkipToContent } from "../SkipToContent";
-import { SEO } from "../SEO";
+import { Footer, DesktopNavbar, MobileNavbar, SkipToContent, SEO } from "components";
+
+import { globalStyles } from "styles/globalStyles";
 
 interface LayoutProps {
   title: string;
@@ -19,7 +17,8 @@ export const Layout = ({ title, description, children }: LayoutProps): JSX.Eleme
     <>
       <SEO title={title} description={description} />
       <SkipToContent />
-      <Navbar />
+      <DesktopNavbar />
+      <MobileNavbar />
       {children}
       <Footer />
     </>

@@ -80,7 +80,7 @@ const NavWrapper = styled("div", {
   gap: "$1",
 });
 
-const MenuButton = styled("button", blueBox, {
+const MenuButton = styled("button", {
   display: "flex",
 
   fontSize: "$3",
@@ -118,7 +118,10 @@ export const Mobile = (): JSX.Element => {
               </NavLink>
             ))}
         </Nav>
-        <MenuButton onClick={() => setIsOpen((prev) => !prev)} state={isOpen ? "shown" : "hidden"}>
+        <MenuButton
+          onClick={() => setIsOpen((prev) => !prev)}
+          state={isOpen ? "shown" : "hidden"}
+          className={blueBox()}>
           <BiChevronDown />
         </MenuButton>
       </NavWrapper>

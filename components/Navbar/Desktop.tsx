@@ -5,6 +5,7 @@ import { UnstyledLink } from "../UnstyledLink";
 import { Emoji } from "../Emoji";
 
 import { nav } from "content/config";
+import { ThemeToggle } from "components/ThemeToggle";
 
 const Wrapper = styled("div", {
   display: "none",
@@ -58,5 +59,6 @@ export const Desktop = (): JSX.Element => (
           </NavLink>
         ))}
     </Nav>
+    <ThemeToggle />
   </Wrapper>
 );

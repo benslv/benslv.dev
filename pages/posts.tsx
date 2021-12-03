@@ -22,6 +22,8 @@ const SearchBar = styled("input", {
   borderRadius: "$1",
   border: "1px solid $cardBorder",
 
+  background: "$background",
+
   color: "$text",
 
   fontFamily: "$sans",

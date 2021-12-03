@@ -41,6 +41,7 @@ export const globalStyles = globalCss({
       border: "3px solid $background",
     },
   },
+
   "@dark": {
     ":root:not(.light)": {
       ...Object.keys(darkTheme.colors).reduce((varSet, currentColorKey) => {

@@ -6,7 +6,7 @@ import { UnstyledLink } from "../UnstyledLink";
 import { Emoji } from "../Emoji";
 
 import { nav } from "content/config";
-import { blueBox } from "components";
+import { blueBox, ThemeToggle } from "components";
 
 const Wrapper = styled("div", {
   display: "flex",
@@ -74,7 +74,7 @@ const NavLink = styled(UnstyledLink, {
 
 const NavWrapper = styled("div", {
   display: "flex",
-  flexDirection: "column",
+  flexDirection: "row",
   alignItems: "flex-end",
 
   gap: "$1",
@@ -120,6 +120,7 @@ export const Mobile = (): JSX.Element => {
               </NavLink>
             ))}
         </Nav>
+        <ThemeToggle />
         <MenuButton
           onClick={() => setIsOpen((prev) => !prev)}
           state={isOpen ? "shown" : "hidden"}

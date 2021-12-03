@@ -1,4 +1,4 @@
-import { createStitches } from "@stitches/react";
+import { createStitches, createTheme } from "@stitches/react";
 
 export const { styled, css, globalCss, keyframes, getCssText, theme } = createStitches({
   theme: {
@@ -57,5 +57,21 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
     sm: "(min-width: 640px)",
     md: "(min-width: 768px)",
     lg: "(min-width: 1280px)",
+  },
+});
+
+export const darkTheme = createTheme("dark-theme", {
+  colors: {
+    text: "hsla(240, 20%, 75%, 1)",
+    heading: "hsla(240, 20%, 97%, 1)",
+    background: "hsla(240, 18%, 15%, 1)",
+    accent: "hsla(206, 100%, 64%, 1)",
+    accent20: "hsla(206, 100%, 64%, 0.2)",
+    warn: "hsla(38, 100%, 53%, 1)",
+    warn20: "hsla(38, 100%, 53%, 0.2)",
+    error: "hsla(348, 100%, 44%, 1)",
+    error20: "hsla(348, 100%, 44%, 0.2)",
+    cardBackground: "hsla(240, 16%, 11%, 1)",
+    cardBorder: "hsla(240, 100%, 93%, 1)",
   },
 });

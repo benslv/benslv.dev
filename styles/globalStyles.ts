@@ -1,4 +1,4 @@
-import { globalCss } from "../stitches.config";
+import { globalCss, darkTheme } from "../stitches.config";
 
 export const globalStyles = globalCss({
   html: {
@@ -39,6 +39,22 @@ export const globalStyles = globalCss({
       backgroundColor: "$text",
       borderRadius: 20,
       border: "3px solid $background",
+    },
+  },
+  "@dark": {
+    ":root:not(.light)": {
+      ...Object.keys(darkTheme.colors).reduce((varSet, currentColorKey) => {
+        const currentColor = darkTheme.colors[currentColorKey];
+        const currentColorValue =
+          currentColor.value.substring(0, 1) === "$"
+            ? `$colors${currentColor.value}`
+            : currentColor.value;
+
+        return {
+          [currentColor.variable]: currentColorValue,
+          ...varSet,
+        };
+      }, {}),
     },
   },
 });

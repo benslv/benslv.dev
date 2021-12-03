@@ -57,6 +57,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
     sm: "(min-width: 640px)",
     md: "(min-width: 768px)",
     lg: "(min-width: 1280px)",
+    dark: "(prefers-color-scheme: dark)",
   },
 });
 

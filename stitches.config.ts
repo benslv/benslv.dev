@@ -73,6 +73,6 @@ export const darkTheme = createTheme("dark-theme", {
     error: "hsla(348, 100%, 44%, 1)",
     error20: "hsla(348, 100%, 44%, 0.2)",
     cardBackground: "hsla(240, 16%, 11%, 1)",
-    cardBorder: "hsla(240, 100%, 93%, 1)",
+    cardBorder: "hsla(240, 17%, 40%, 1)",
   },
 });

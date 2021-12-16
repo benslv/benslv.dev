@@ -15,8 +15,6 @@ const Wrapper = styled("div", {
 
   padding: "$2 calc(1.5* $2)",
 
-  backgroundColor: "$background",
-
   "@md": {
     display: "none",
   },

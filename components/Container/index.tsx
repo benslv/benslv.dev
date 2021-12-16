@@ -7,7 +7,7 @@ export const Container = styled("main", {
   gridColumnGap: "$1",
   gridRowGap: "calc(2 * $1)",
 
-  marginBottom: "calc(2 * $1)",
+  margin: "calc(2 * $1) 0",
 
   "& > *": {
     gridColumn: 2,

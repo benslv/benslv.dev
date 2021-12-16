@@ -32,7 +32,7 @@ const AboutPage = (): JSX.Element => {
         <div>
           <H1>About Me</H1>
           <Text>
-            Hi! I'm Ben, a third year Computer Science student at the University of York, previous
+            Hi! I'm Ben, a third year Computer Science student at the University of York, previously
             on placement at <TextLink to="https://arm.com">Arm</TextLink>.
           </Text>
           <Text>

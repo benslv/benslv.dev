@@ -1,6 +1,6 @@
 $text: hsla(212, 37%, 92%, 1);
 
-$background: hsla(212, 39%, 10%, 1);
+$background: hsl(240, 18%, 8%);
 
 $selection: hsla(213, 28%, 33%, 1);
 $selection37: hsla(213, 28%, 33%, 0.37);
@@ -81,6 +81,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: $background;
+  padding: var(--space-1);
 }
 /* Inline code */
 :not(pre) > code[class*="language-"] {

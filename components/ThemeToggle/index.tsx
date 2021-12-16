@@ -20,16 +20,26 @@ const ToggleButton = styled("button", {
     state: {
       light: {
         transform: "rotate(180deg)",
+
+        "&:hover": {
+          cursor: "pointer",
+          transform: "rotate(185deg)",
+        },
       },
       dark: {
         transform: "rotate(0deg)",
+
+        "&:hover": {
+          cursor: "pointer",
+          transform: "rotate(+5deg)",
+        },
       },
     },
   },
 });
 
 export const ThemeToggle = () => {
-  const [, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => setIsMounted(true), []);
@@ -39,6 +49,8 @@ export const ThemeToggle = () => {
 
     setTheme(targetTheme);
   };
+
+  if (!isMounted) return null;
 
   return (
     <ToggleButton

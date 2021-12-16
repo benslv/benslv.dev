@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-import { encodeImageToBlurhash } from "./blurhash";
+import { getPlaiceholder } from "plaiceholder";
 
 const projectDirectory = path.join(process.cwd(), "content/projects");
 
@@ -27,13 +27,13 @@ export const getProjectData = async (): Promise<Project[]> => {
       // Use gray-matter to parse the post metadata section
       const { data } = matter(fileContents);
 
-      const blurhash = await encodeImageToBlurhash(path.join(process.cwd(), "public", data.image));
+      const { base64 } = await getPlaiceholder(data.image);
 
       return {
         title: data.title,
         description: data.description,
         image: data.image,
-        blurhash: blurhash,
+        blurhash: base64,
         link: data.link,
         tags: data.tags,
         ...data,

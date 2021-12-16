@@ -98,7 +98,7 @@ export const ProjectCard = ({
   image,
   blurhash,
 }: ProjectType): JSX.Element => {
-  const [blurDataUrl] = useNextBlurhash(blurhash);
+  // const [blurDataUrl] = useNextBlurhash(blurhash);
 
   return (
     <Project>
@@ -114,7 +114,7 @@ export const ProjectCard = ({
         alt=""
         className={cardImage()}
         placeholder="blur"
-        blurDataURL={blurDataUrl}
+        blurDataURL={blurhash}
       />
     </Project>
   );

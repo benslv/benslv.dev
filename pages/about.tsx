@@ -1,14 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { css } from "../stitches.config";
+import { css } from "stitches.config";
 
-import { H1 } from "../components/Heading";
-import { TextLink } from "../components/TextLink";
-import { Text } from "../components/Text";
-import { Layout } from "../components/Layout";
-import { Container } from "../components/Container";
+import { H1, TextLink, Text, Layout, Container } from "components";
 
-import profile from "../public/profile.jpg";
+import profile from "public/profile.jpg";
 
 const profilePhoto = css({
   margin: "0 auto",
@@ -36,8 +32,8 @@ const AboutPage = (): JSX.Element => {
         <div>
           <H1>About Me</H1>
           <Text>
-            Hi! I'm Ben, a third year Computer Science student at the University of York, currently
-            working on placement at <TextLink to="https://arm.com">Arm</TextLink>.
+            Hi! I'm Ben, a third year Computer Science student at the University of York, previous
+            on placement at <TextLink to="https://arm.com">Arm</TextLink>.
           </Text>
           <Text>
             I'm mainly interested in frontend development at the moment and spend a lot of my time

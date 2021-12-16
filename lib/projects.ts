@@ -18,7 +18,7 @@ export interface Project {
 export const getProjectData = async (): Promise<Project[]> => {
   const fileNames = fs.readdirSync(projectDirectory);
 
-  return await Promise.all(
+  return Promise.all(
     fileNames.map(async (fileName) => {
       // Read markdown file as string
       const fullPath = path.join(projectDirectory, fileName, "index.mdx");

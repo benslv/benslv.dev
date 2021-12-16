@@ -122,7 +122,8 @@ export const Mobile = (): JSX.Element => {
         <MenuButton
           onClick={() => setIsOpen((prev) => !prev)}
           state={isOpen ? "shown" : "hidden"}
-          className={blueBox()}>
+          className={blueBox()}
+          aria-label={`${isOpen ? "Close" : "Open"} nav menu`}>
           <BiChevronDown />
         </MenuButton>
       </NavWrapper>

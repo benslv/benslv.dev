@@ -56,7 +56,8 @@ export const ThemeToggle = () => {
     <ToggleButton
       onClick={toggleTheme}
       className={blueBox()}
-      state={resolvedTheme === "light" ? "light" : "dark"}>
+      state={resolvedTheme === "light" ? "light" : "dark"}
+      aria-label={`Toggle website to ${resolvedTheme === "light" ? "dark" : "light"} theme.`}>
       {resolvedTheme === "light" ? <BiSun /> : <BiMoon />}
     </ToggleButton>
   );

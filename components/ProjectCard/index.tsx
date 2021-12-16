@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import useNextBlurhash from "use-next-blurhash";
 
 import { css, styled } from "../../stitches.config";
 import { UnstyledLink } from "../UnstyledLink";
@@ -98,8 +97,6 @@ export const ProjectCard = ({
   image,
   blurhash,
 }: ProjectType): JSX.Element => {
-  // const [blurDataUrl] = useNextBlurhash(blurhash);
-
   return (
     <Project>
       <ProjectLink to={link}>

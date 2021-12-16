@@ -12,7 +12,7 @@ import "@fontsource/fira-code/500.css";
 
 import "styles/prism-theme.scss";
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ThemeProvider
       attribute="class"
@@ -27,4 +27,4 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     </ThemeProvider>
   );
 }
-export default MyApp;
+export default App;

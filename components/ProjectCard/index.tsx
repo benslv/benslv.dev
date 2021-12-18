@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { css, styled } from "~/stitches.config";
 
-import { css, styled } from "../../stitches.config";
 import { UnstyledLink } from "../UnstyledLink";
-import { Project as ProjectType } from "../../lib/projects";
+
+import { Project as ProjectType } from "~/lib/projects";
 
 const Project = styled("article", {
   position: "relative",

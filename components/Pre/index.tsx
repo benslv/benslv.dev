@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { styled } from "../../stitches.config";
 import Prism from "prismjs";
+import { styled } from "~/stitches.config";
 
 const Wrapper = styled("div", {
   pre: {

@@ -1,11 +1,11 @@
 import React from "react";
-import { styled } from "../../stitches.config";
+import { styled } from "~/stitches.config";
 
 import { UnstyledLink } from "../UnstyledLink";
 import { Emoji } from "../Emoji";
+import { ThemeToggle } from "../ThemeToggle";
 
-import { nav } from "content/config";
-import { ThemeToggle } from "components/ThemeToggle";
+import { nav } from "~/content/config";
 
 const Wrapper = styled("div", {
   display: "none",

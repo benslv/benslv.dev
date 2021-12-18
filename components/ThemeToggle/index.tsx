@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { BiSun, BiMoon } from "react-icons/bi";
-import { styled } from "stitches.config";
+import { styled } from "~/stitches.config";
 
-import { blueBox } from "components";
+import { blueBox } from "../BlueBox";
 
 const ToggleButton = styled("button", {
   display: "flex",

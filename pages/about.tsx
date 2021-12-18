@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { css } from "stitches.config";
 
-import { H1, TextLink, Text, Layout, Container } from "components";
+import { H1, TextLink, Text, Layout, Container } from "~/components";
 
-import profile from "public/profile.jpg";
+import profile from "~/public/profile.jpg";
 
 const profilePhoto = css({
   margin: "0 auto",

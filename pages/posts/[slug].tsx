@@ -3,7 +3,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { styled } from "stitches.config";
 
-import { getAllPostIDs, getPostData } from "lib/posts";
+import { getAllPostIDs, getPostData } from "~/lib/posts";
 
 import {
   Container,
@@ -17,9 +17,9 @@ import {
   Sidenote,
   TextLink,
   Layout,
-} from "components";
+} from "~/components";
 
-import { SidenoteProps } from "components/Sidenote";
+import { SidenoteProps } from "~/components/Sidenote";
 
 const Header = styled("header", {
   textAlign: "center",

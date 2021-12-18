@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Footer, DesktopNavbar, MobileNavbar, SkipToContent, SEO } from "components";
+import { Footer, DesktopNavbar, MobileNavbar, SkipToContent, SEO } from "~/components";
 
-import { globalStyles } from "styles/globalStyles";
+import { globalStyles } from "~/styles/globalStyles";
 
 interface LayoutProps {
   title: string;

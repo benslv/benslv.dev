@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "../../stitches.config";
+import { styled } from "~/stitches.config";
 
 import { Card, CardProps } from "./Card";
 import { UnstyledLink, UnstyledLinkProps } from "../UnstyledLink";

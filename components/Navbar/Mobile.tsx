@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { styled } from "../../stitches.config";
 import { BiChevronDown } from "react-icons/bi";
+import { styled } from "~/stitches.config";
 
+import { blueBox } from "../BlueBox";
 import { UnstyledLink } from "../UnstyledLink";
 import { Emoji } from "../Emoji";
+import { ThemeToggle } from "../ThemeToggle";
 
-import { nav } from "content/config";
-import { blueBox, ThemeToggle } from "components";
+import { nav } from "~/content/config";
 
 const Wrapper = styled("div", {
   display: "flex",

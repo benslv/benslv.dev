@@ -1,4 +1,4 @@
-import { styled, css } from "../../stitches.config";
+import { styled, css } from "~/stitches.config";
 
 const heading = css({
   fontWeight: "$bold",

@@ -1,7 +1,7 @@
 import React from "react";
-import { styled } from "../../stitches.config";
-import { blueBox } from "../BlueBox";
+import { styled } from "~/stitches.config";
 
+import { blueBox } from "../BlueBox";
 import { Emoji } from "../Emoji";
 import { Text } from "../Text";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { styled } from "stitches.config";
+import { styled } from "~/stitches.config";
 
 import {
   Layout,
@@ -13,7 +13,7 @@ import {
   Emoji,
   UnorderedList,
   ListItem,
-} from "components";
+} from "~/components";
 
 const Hero = styled("header", {
   [`& ${Text}`]: {

@@ -1,4 +1,4 @@
-import { css } from "../../stitches.config";
+import { css } from "~/stitches.config";
 
 export const blueBox = css({
   color: "$accent",

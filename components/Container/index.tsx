@@ -3,7 +3,7 @@ import { styled } from "~/stitches.config";
 export const Container = styled("main", {
   display: "grid",
 
-  gridTemplateColumns: "1fr min(65ch, calc(100% - 2 * $1)) 1fr",
+  gridTemplateColumns: "1fr min(75ch, calc(100% - 2 * $1)) 1fr",
   gridColumnGap: "$1",
   gridRowGap: "calc(2 * $1)",
 

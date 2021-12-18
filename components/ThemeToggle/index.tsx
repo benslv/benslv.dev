@@ -50,7 +50,7 @@ export const ThemeToggle = () => {
     setTheme(targetTheme);
   };
 
-  if (!isMounted) return null;
+  if (!isMounted) return <div></div>;
 
   return (
     <ToggleButton

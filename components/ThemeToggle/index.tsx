@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { BiSun, BiMoon } from "react-icons/bi";
+import { BiSun, BiMoon, BiLoader } from "react-icons/bi";
 import { styled } from "~/stitches.config";
 
 import { blueBox } from "../BlueBox";
@@ -19,19 +19,15 @@ const ToggleButton = styled("button", {
   variants: {
     state: {
       light: {
-        transform: "rotate(180deg)",
-
         "&:hover": {
           cursor: "pointer",
-          transform: "rotate(185deg)",
+          transform: "rotate(5deg)",
         },
       },
       dark: {
-        transform: "rotate(0deg)",
-
         "&:hover": {
           cursor: "pointer",
-          transform: "rotate(+5deg)",
+          transform: "rotate(5deg)",
         },
       },
     },
@@ -50,7 +46,12 @@ export const ThemeToggle = () => {
     setTheme(targetTheme);
   };
 
-  if (!isMounted) return <div></div>;
+  if (!isMounted)
+    return (
+      <ToggleButton state={"light"} className={blueBox()}>
+        <BiLoader />
+      </ToggleButton>
+    );
 
   return (
     <ToggleButton

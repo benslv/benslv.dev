@@ -93,7 +93,7 @@ const MenuButton = styled("button", {
   variants: {
     state: {
       shown: {
-        transform: "rotate(180deg)",
+        transform: "rotate(-180deg)",
       },
       hidden: {
         transform: "rotate(0deg)",

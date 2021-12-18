@@ -26,10 +26,10 @@ const Title = styled(H2, {
   color: "$heading",
 });
 
-export interface CardProps {
+export type CardProps = {
   title?: string;
   children: React.ReactNode;
-}
+};
 
 export const Card = ({ title, children }: CardProps): JSX.Element => {
   return (

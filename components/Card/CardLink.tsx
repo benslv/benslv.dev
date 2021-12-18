@@ -21,7 +21,7 @@ const Link = styled(UnstyledLink, {
   },
 });
 
-interface CardLinkProps extends CardProps, UnstyledLinkProps {}
+type CardLinkProps = CardProps & UnstyledLinkProps;
 
 export const CardLink = ({ title, to, children }: CardLinkProps): JSX.Element => {
   return (

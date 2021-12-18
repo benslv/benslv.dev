@@ -1,9 +1,9 @@
 import React from "react";
 import { parseISO, format } from "date-fns";
 
-interface DateProps {
+type DateProps = {
   dateString: string;
-}
+};
 
 export const Date = ({ dateString }: DateProps): JSX.Element => {
   const date = parseISO(dateString);

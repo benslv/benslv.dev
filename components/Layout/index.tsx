@@ -4,11 +4,11 @@ import { Footer, DesktopNavbar, MobileNavbar, SkipToContent, SEO } from "~/compo
 
 import { globalStyles } from "~/styles/globalStyles";
 
-interface LayoutProps {
+type LayoutProps = {
   title: string;
   description?: string;
   children: React.ReactNode;
-}
+};
 
 export const Layout = ({ title, description, children }: LayoutProps): JSX.Element => {
   globalStyles();

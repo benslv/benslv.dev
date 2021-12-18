@@ -19,9 +19,9 @@ const Wrapper = styled("div", {
   },
 });
 
-export interface CodeProps {
+export type CodeProps = {
   code: React.ReactNode;
-}
+};
 
 export const Pre = ({ code }: CodeProps): JSX.Element => {
   useEffect(() => {

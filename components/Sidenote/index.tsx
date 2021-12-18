@@ -1,10 +1,10 @@
 import { styled } from "~/stitches.config";
 
-export interface SidenoteProps {
+export type SidenoteProps = {
   className?: string;
   type?: "info" | "warn" | "error";
   children: React.ReactNode;
-}
+};
 
 export const Sidenote = styled("aside", {
   margin: "calc(2 * $1) 0",

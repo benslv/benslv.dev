@@ -26,10 +26,10 @@ const Header = styled("header", {
   marginBottom: "$1",
 });
 
-interface LinkProps {
+type LinkProps = {
   href: string;
   children: React.ReactNode;
-}
+};
 
 const components = {
   a: ({ href, children }: LinkProps) => <TextLink to={href}>{children}</TextLink>,
@@ -48,13 +48,13 @@ const components = {
   },
 };
 
-interface PostProps {
+type PostProps = {
   postData: {
     title: string;
     date: string;
     source: MDXRemoteSerializeResult;
   };
-}
+};
 
 const Post = ({ postData: { title, date, source } }: PostProps): JSX.Element => {
   return (

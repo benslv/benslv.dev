@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 
-export interface UnstyledLinkProps {
+export type UnstyledLinkProps = {
   to: string;
   className?: string;
   children: React.ReactNode;
-}
+};
 
 export const UnstyledLink = ({ to, className, children }: UnstyledLinkProps): JSX.Element => {
   const isInternal = /^\/(?!\/)/.test(to);

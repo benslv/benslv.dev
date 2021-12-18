@@ -6,14 +6,14 @@ import { getPlaiceholder } from "plaiceholder";
 
 const projectDirectory = path.join(process.cwd(), "content/projects");
 
-export interface Project {
+export type Project = {
   title: string;
   description: string;
   image: string;
   blurhash: string;
   link: string;
   tags: string[];
-}
+};
 
 export const getProjectData = async (): Promise<Project[]> => {
   const fileNames = fs.readdirSync(projectDirectory);

@@ -2,7 +2,7 @@ import React from "react";
 
 const baseURL = "https://emojicdn.elk.sh";
 
-interface EmojiProps {
+type EmojiProps = {
   emoji: string;
   style?:
     | "apple"
@@ -20,7 +20,7 @@ interface EmojiProps {
     | "htc"
     | "mozilla";
   size?: string;
-}
+};
 
 export const Emoji = ({ emoji, style = "apple", size = "1em" }: EmojiProps): JSX.Element => {
   const URL = `${baseURL}/${emoji}?style=${style}`;

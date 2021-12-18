@@ -1,12 +1,12 @@
 import React from "react";
 import { NextSeo } from "next-seo";
 
-interface SEOProps {
+type SEOProps = {
   description?: string;
   // lang?: string;
   // meta?: { name?: string; property?: string; content: string }[];
   title: string;
-}
+};
 
 const defaultDesc =
   "Ben Silverman is a computer science student at the University of York, with a passion for web and software development.";

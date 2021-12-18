@@ -38,9 +38,9 @@ const SearchIcon = styled(BiSearch, {
   top: 10,
 });
 
-interface Props {
+type Props = {
   allPostsData: { slug: string; date: string; title: string; description: string }[];
-}
+};
 
 const PostsPage = ({ allPostsData }: Props): JSX.Element => {
   const [searchValue, setSearchValue] = useState("");

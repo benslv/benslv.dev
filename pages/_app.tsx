@@ -16,8 +16,9 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
     <ThemeProvider
       attribute="class"
       defaultTheme="system"
+      disableTransitionOnChange={true}
       value={{
-        dark: darkTheme,
+        dark: darkTheme.toString(),
         light: "light",
       }}>
       <IconContext.Provider value={{ className: "react-icons" }}>

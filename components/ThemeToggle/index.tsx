@@ -52,7 +52,7 @@ export const ThemeToggle = () => {
 
   if (!isMounted) {
     return (
-      <ToggleButton state={"light"} className={blueBox()}>
+      <ToggleButton className={blueBox()}>
         <BiLoader />
       </ToggleButton>
     );

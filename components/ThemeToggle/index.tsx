@@ -23,15 +23,19 @@ const ToggleButton = styled("button", {
   variants: {
     state: {
       light: {
-        "&:hover": {
-          cursor: "pointer",
-          transform: "rotate(5deg)",
+        "@lg": {
+          "&:hover": {
+            cursor: "pointer",
+            transform: "rotate(5deg)",
+          },
         },
       },
       dark: {
-        "&:hover": {
-          cursor: "pointer",
-          transform: "rotate(5deg)",
+        "@lg": {
+          "&:hover": {
+            cursor: "pointer",
+            transform: "rotate(5deg)",
+          },
         },
       },
     },

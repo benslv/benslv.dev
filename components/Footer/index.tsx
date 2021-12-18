@@ -22,7 +22,7 @@ export const Footer = (): JSX.Element => {
   return (
     <Wrapper>
       <Text className={blueBox()}>
-        Made with <Emoji emoji="☕" /> in the UK!
+        Made with <Emoji emoji="☕" size="18px" /> in the UK!
       </Text>
     </Wrapper>
   );

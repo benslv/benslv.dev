@@ -22,7 +22,7 @@ type EmojiProps = {
   size?: string;
 };
 
-export const Emoji = ({ emoji, style = "apple", size = "1em" }: EmojiProps): JSX.Element => {
+export const Emoji = ({ emoji, style = "apple", size = "18px" }: EmojiProps): JSX.Element => {
   const URL = `${baseURL}/${emoji}?style=${style}`;
 
   return (

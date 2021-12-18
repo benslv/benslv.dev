@@ -7,12 +7,12 @@ const Body = styled("div", {
   display: "flex",
   flexDirection: "column",
 
-  border: "1px solid $cardBorder",
+  border: "1px solid $slate7",
   borderRadius: "$1",
 
   padding: "$1",
 
-  backgroundColor: "$cardBackground",
+  backgroundColor: "$slate2",
 
   boxShadow: "$light",
 });

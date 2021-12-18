@@ -17,6 +17,7 @@
   "dependencies": {
     "@fontsource/fira-code": "^4.5.0",
     "@fontsource/rubik": "^4.5.0",
+    "@radix-ui/colors": "^0.1.8",
     "@stitches/react": "^1.2.6",
     "blurhash": "^1.1.4",
     "canvas": "2.6.1",

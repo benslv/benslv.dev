@@ -33,8 +33,8 @@ const Nav = styled("nav", {
 
   padding: "$1",
 
-  background: "$cardBackground",
-  border: "1px solid $cardBorder",
+  background: "$blue4",
+  // border: "1px solid $blue7",
   borderRadius: "$1",
   boxShadow: "$light",
 
@@ -59,7 +59,7 @@ const Nav = styled("nav", {
 });
 
 const NavLink = styled(UnstyledLink, {
-  color: "$text",
+  color: "$blue11",
   fontWeight: 500,
 
   textDecoration: "none",
@@ -86,7 +86,7 @@ const MenuButton = styled("button", {
 
   padding: "calc(0.5 * $0)",
 
-  border: "$cardBorder",
+  border: "none",
 
   transition: "transform 0.3s cubic-bezier(.51,.28,0,1.29)",
 

@@ -14,7 +14,11 @@ const ToggleButton = styled("button", {
 
   border: "none",
 
-  transition: "transform 0.3s cubic-bezier(.51,.28,0,1.29)",
+  transition: "transform 0.3s cubic-bezier(.51,.28,0,1.29), background-color $ease",
+
+  "&:hover": {
+    backgroundColor: "$blue5",
+  },
 
   variants: {
     state: {
@@ -46,12 +50,13 @@ export const ThemeToggle = () => {
     setTheme(targetTheme);
   };
 
-  if (!isMounted)
+  if (!isMounted) {
     return (
       <ToggleButton state={"light"} className={blueBox()}>
         <BiLoader />
       </ToggleButton>
     );
+  }
 
   return (
     <ToggleButton

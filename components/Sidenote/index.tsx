@@ -13,34 +13,34 @@ export const Sidenote = styled("aside", {
   borderRadius: "$1",
 
   color: "$text",
-  backgroundColor: "$cardBackground",
-  border: "1px solid $cardBorder",
+  backgroundColor: "$slate2",
+  border: "1px solid $slate7",
 
   variants: {
     type: {
       info: {
-        color: "$heading",
+        color: "$blue12",
         backgroundColor: "$accent20",
 
-        border: "none",
+        border: "1px solid $blue7",
         borderLeft: "5px solid $accent",
 
         boxShadow: "0 0 15px $colors$accent20",
       },
       warn: {
-        color: "$heading",
+        color: "$amber12",
         backgroundColor: "$warn20",
 
-        border: "none",
+        border: "1px solid $amber7",
         borderLeft: "5px solid $warn",
 
         boxShadow: "0 0 15px $colors$warn20",
       },
       error: {
-        color: "$heading",
+        color: "$red12",
         backgroundColor: "$error20",
 
-        border: "none",
+        border: "1px solid $red7",
         borderLeft: "5px solid $error",
 
         boxShadow: "0 0 15px $colors$error20",

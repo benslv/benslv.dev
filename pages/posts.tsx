@@ -20,9 +20,9 @@ const SearchWrapper = styled("div", {
 const SearchBar = styled("input", {
   padding: "calc(0.5 * $1)",
   borderRadius: "$1",
-  border: "1px solid $cardBorder",
+  border: "1px solid $slate7",
 
-  background: "$background",
+  background: "$slate2",
 
   color: "$text",
 

@@ -17,7 +17,7 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
       attribute="class"
       defaultTheme="system"
       value={{
-        dark: darkTheme.className,
+        dark: darkTheme,
         light: "light",
       }}>
       <IconContext.Provider value={{ className: "react-icons" }}>

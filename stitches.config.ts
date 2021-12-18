@@ -1,19 +1,24 @@
 import { createStitches, createTheme } from "@stitches/react";
 
+import { blue, slate, red, amber, blueDark, slateDark, redDark, amberDark } from "@radix-ui/colors";
+
 export const { styled, css, globalCss, keyframes, getCssText, theme } = createStitches({
   theme: {
     colors: {
-      text: "hsla(240, 9%, 43%, 1)",
-      heading: "hsla(240, 18%, 15%, 1)",
-      background: "hsla(0, 0%, 100%,1)",
-      accent: "hsla(206, 80%, 50%, 1)",
-      accent20: "hsla(206, 80%, 50%, 0.2)",
-      warn: "hsla(38, 100%, 53%, 1)",
-      warn20: "hsla(38, 100%, 53%, 0.2)",
-      error: "hsla(348, 100%, 44%, 1)",
-      error20: "hsla(348, 100%, 44%, 0.2)",
-      cardBackground: "hsla(240, 20%, 97%, 1)",
-      cardBorder: "hsla(240, 20%, 75%, 1)",
+      ...blue,
+      ...slate,
+      ...red,
+      ...amber,
+
+      text: "$slate11",
+      heading: "$slate12",
+      background: "$slate1",
+      accent: "$blue11",
+      accent20: "$blue4",
+      warn: "$amber9",
+      warn20: "$amber4",
+      error: "$red9",
+      error20: "$red5",
     },
     fonts: {
       sans: "Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
@@ -32,7 +37,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       bold: 700,
     },
     shadows: {
-      light: "0 0px 5px 0 rgba(0, 0, 0, 0.1)",
+      light: "0 0px 5px 0 $slate10",
     },
     space: {
       0: "12px",
@@ -61,18 +66,21 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
   },
 });
 
-export const darkTheme = createTheme("dark-theme", {
+export const darkTheme = createTheme("dark", {
   colors: {
-    text: "hsla(240, 20%, 75%, 1)",
-    heading: "hsla(240, 20%, 97%, 1)",
-    background: "hsla(240, 18%, 15%, 1)",
-    accent: "hsla(206, 100%, 64%, 1)",
-    accent20: "hsla(206, 100%, 64%, 0.2)",
-    warn: "hsla(38, 100%, 53%, 1)",
-    warn20: "hsla(38, 100%, 53%, 0.2)",
-    error: "hsla(348, 100%, 44%, 1)",
-    error20: "hsla(348, 100%, 44%, 0.2)",
-    cardBackground: "hsla(240, 16%, 11%, 1)",
-    cardBorder: "hsla(240, 17%, 40%, 1)",
+    ...blueDark,
+    ...slateDark,
+    ...redDark,
+    ...amberDark,
+
+    text: "$slate11",
+    heading: "$slate12",
+    background: "$slate1",
+    accent: "$blue11",
+    accent20: "$blue4",
+    warn: "$amber9",
+    warn20: "$amber4",
+    error: "$red9",
+    error20: "$red5",
   },
 });

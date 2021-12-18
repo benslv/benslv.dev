@@ -1,0 +1,47 @@
+---
+title: Using next-themes with Stitches and Next.js
+date: "2021-12-18"
+description: A quick guide on how to make a reusable function to handle media queries.
+tags: [article]
+published: true
+---
+
+I've been building my website with the help of an amazing CSS-in-JSS solution called [Stitches](https://stitches.dev). If you haven't heard of it before I would definitely recommend taking a peek at their website and giving it a try because I almost instantly converted across from `styled-components`.
+
+Anyway, this isn't a post all about how great I think Stitches is, as much as the dev team would probably love it. Instead, I wanted to quickly write-up how I got dark mode working on this site using Next.js, Stitches and a little package called [`next-themes`](https://www.npmjs.com/package/next-themes).
+
+## Setup
+
+To keep this as concise as possible, I'll assume you already have Stitches set up in your project/repo/whatever and will jump straight into creating a dark theme and getting a nice button set up to toggle it.
+
+<aside>
+  If you <i>haven't</i> got Stitches set up yet, take a look at the{" "}
+  <a href="https://stitches.dev/docs/installation" target="_blank">
+    guide
+  </a>{" "}
+  on their site!
+</aside>
+
+First we just need to install `next-themes`
+
+```sh
+npm install next-themes
+```
+
+and add its provider to our Next.js `App` component.
+
+```ts
+import React from "react";
+import type { AppProps } from "next/app";
+
+import { ThemeProvider } from "next-themes";
+
+function App({ Component, pageProps }: AppProps): JSX.Element {
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+export default App;
+```

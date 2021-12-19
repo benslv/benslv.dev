@@ -204,72 +204,53 @@ pre[class*="language-"] {
 .language-scss .token.variable {
   color: $cyan;
 }
-/* overrides color-values for the Line Highlight plugin
-* http://prismjs.com/plugins/line-highlight/
-*/
-.line-highlight {
-  // background: hsla($selection, 0.37);
-  background: $selection37;
+
+pre {
+  overflow-x: auto;
 }
-.line-highlight:before,
-.line-highlight[data-end]:after {
-  background-color: $blueGrey;
-  color: $background;
-  box-shadow: 0 1px $selection;
+
+/**
+ * Inspired by gatsby remark prism - https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .code-highlight.
+ */
+.code-highlight {
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
 }
-pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
-  background-color: $blueGrey9;
+
+.code-line {
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  border-left-width: 4px;
+  border-left-color: rgba(31, 41, 55, 0); /* Set code block color */
 }
-/* overrides color-values for the Line Numbers plugin
-* http://prismjs.com/plugins/line-numbers/
-*/
-.line-numbers .line-numbers-rows {
-  border-right: 1px solid $darkBlue;
-  background: $darkBlue48;
+
+.code-line.inserted {
+  background-color: rgba(16, 185, 129, 0.2); /* Set inserted line (+) color */
 }
-.line-numbers-rows > span:before {
-  color: $blueGrey85;
+
+.code-line.deleted {
+  background-color: rgba(239, 68, 68, 0.2); /* Set deleted line (-) color */
 }
-/* overrides color-values for the Match Braces plugin
-* https://prismjs.com/plugins/match-braces/
-*/
-.rainbow-braces .token.punctuation.brace-level-1,
-.rainbow-braces .token.punctuation.brace-level-5,
-.rainbow-braces .token.punctuation.brace-level-9 {
-  color: $yellow;
+
+.highlight-line {
+  margin-left: -16px;
+  margin-right: -16px;
+  background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
+  border-left-width: 4px;
+  border-left-color: rgb(59, 130, 246); /* Set highlight accent border color */
 }
-.rainbow-braces .token.punctuation.brace-level-2,
-.rainbow-braces .token.punctuation.brace-level-6,
-.rainbow-braces .token.punctuation.brace-level-10 {
-  color: $pink;
-}
-.rainbow-braces .token.punctuation.brace-level-3,
-.rainbow-braces .token.punctuation.brace-level-7,
-.rainbow-braces .token.punctuation.brace-level-11 {
-  color: $blue;
-}
-.rainbow-braces .token.punctuation.brace-level-4,
-.rainbow-braces .token.punctuation.brace-level-8,
-.rainbow-braces .token.punctuation.brace-level-12 {
-  color: $purple;
-}
-/* overrides color-values for the Diff Highlight plugin
-* https://prismjs.com/plugins/diff-highlight/
-*/
-pre.diff-highlight > code .token.deleted:not(.prefix),
-pre > code.diff-highlight .token.deleted:not(.prefix) {
-  background-color: $red12;
-}
-pre.diff-highlight > code .token.inserted:not(.prefix),
-pre > code.diff-highlight .token.inserted:not(.prefix) {
-  background-color: $green12;
-}
-/* overrides color-values for the Command Line plugin
-* https://prismjs.com/plugins/command-line/
-*/
-.command-line-prompt {
-  border-right: 1px solid $darkBlue;
-}
-.command-line-prompt > span:before {
-  color: $blueGrey85;
+
+.line-number::before {
+  display: inline-block;
+  width: 1rem;
+  text-align: right;
+  margin-right: 16px;
+  margin-left: -8px;
+  color: rgb(156, 163, 175); /* Line number color */
+  content: attr(line);
 }

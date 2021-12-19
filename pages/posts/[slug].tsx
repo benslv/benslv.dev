@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { styled } from "stitches.config";
+
+import { getMDXComponent } from "mdx-bundler/client";
 
 import { getAllPostIDs, getPostData } from "~/lib/posts";
 
@@ -33,30 +34,28 @@ type LinkProps = {
 
 const components = {
   a: ({ href, children }: LinkProps) => <TextLink to={href}>{children}</TextLink>,
-  aside: ({ className, type, children }: SidenoteProps) => (
-    <Sidenote type={type} className={className}>
-      {children}
-    </Sidenote>
-  ),
+  Sidenote,
   h1: H1,
   h2: H2,
   h3: H3,
   p: Text,
   code: Code,
-  pre: ({ children }: { children: React.ReactNode }) => {
-    return <Pre code={children} />;
-  },
+  // pre: ({ children }: { children: React.ReactNode }) => {
+  //   return <Pre code={children} />;
+  // },
 };
 
 type PostProps = {
   postData: {
     title: string;
     date: string;
-    source: MDXRemoteSerializeResult;
+    source: string;
   };
 };
 
 const Post = ({ postData: { title, date, source } }: PostProps): JSX.Element => {
+  const MDXComponent = useMemo(() => getMDXComponent(source), [source]);
+
   return (
     <Layout title={title}>
       <Container id="main-content">
@@ -66,7 +65,7 @@ const Post = ({ postData: { title, date, source } }: PostProps): JSX.Element => 
         </Header>
         <br />
         <article>
-          <MDXRemote {...source} components={components} />
+          <MDXComponent components={components} />
         </article>
       </Container>
     </Layout>

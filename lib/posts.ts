@@ -1,8 +1,14 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { bundleMDX } from "mdx-bundler";
+
+import rehypeSlug from "rehype-slug";
+import rehypePrismPlus from "rehype-prism-plus";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
+import remarkGfm from "remark-gfm";
+import remarkFrontmatter from "remark-frontmatter";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -69,19 +75,23 @@ export const getAllPostIDs = (): {
 
 type Slug = string | string[] | undefined;
 
-export const getPostData = async (
-  slug: Slug,
-): Promise<{ slug: Slug; source: MDXRemoteSerializeResult }> => {
+export const getPostData = async (slug: Slug): Promise<{ slug: Slug; source: string }> => {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, "utf8"); // content of the MDX file
 
-  const { data, content } = matter(fileContents);
+  const { code, frontmatter } = await bundleMDX({
+    source: fileContents,
+    xdmOptions(options) {
+      options.remarkPlugins = [remarkFrontmatter, remarkGfm];
+      options.rehypePlugins = [rehypeSlug, rehypePrismPlus];
 
-  const mdxSource = await serialize(content);
+      return options;
+    },
+  });
 
   return {
     slug,
-    source: mdxSource,
-    ...data,
+    source: code,
+    ...frontmatter,
   };
 };

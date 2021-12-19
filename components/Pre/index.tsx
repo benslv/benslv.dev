@@ -1,21 +1,32 @@
-import React, { useEffect } from "react";
-import Prism from "prismjs";
+import React from "react";
 import { styled } from "~/stitches.config";
 
 const Wrapper = styled("div", {
   pre: {
-    padding: "$2",
+    padding: "$1",
   },
-
-  backgroundColor: "hsla(212, 39%, 10%, 1)",
+  backgroundColor: "$slate3",
   margin: "$2 calc(-1 * $2)",
   position: "relative",
-  fontFamily: "$mono",
   fontSize: "$1",
-  overflow: "hidden",
+  lineHeight: 1.5,
+
+  overflowX: "auto",
+  scrollbarWidth: "thin",
+
+  border: "1px solid $slate7",
 
   "@md": {
     borderRadius: "$2",
+  },
+
+  // Reset styles from standalone <Code /> component
+  code: {
+    color: "inherit",
+    background: "none",
+    padding: 0,
+    borderRadius: 0,
+    lineHeight: "inherit",
   },
 });
 
@@ -23,14 +34,8 @@ export type CodeProps = {
   code: React.ReactNode;
 };
 
-export const Pre = ({ code }: CodeProps): JSX.Element => {
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
-
-  return (
-    <Wrapper className="code">
-      <pre>{code}</pre>
-    </Wrapper>
-  );
-};
+export const Pre = ({ code }: CodeProps): JSX.Element => (
+  <Wrapper className="code">
+    <pre>{code}</pre>
+  </Wrapper>
+);

@@ -40,7 +40,7 @@ const components = {
   h2: H2,
   h3: H3,
   p: Text,
-  // code: Code,
+  code: Code,
   pre: ({ children }: { children: React.ReactNode }) => {
     return <Pre code={children} />;
   },

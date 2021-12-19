@@ -19,6 +19,15 @@ const Wrapper = styled("div", {
   "@md": {
     borderRadius: "$2",
   },
+
+  // Reset styles from standalone <Code /> component
+  code: {
+    color: "inherit",
+    background: "none",
+    padding: 0,
+    borderRadius: 0,
+    lineHeight: "inherit",
+  },
 });
 
 export type CodeProps = {

@@ -40,9 +40,9 @@ const components = {
   h3: H3,
   p: Text,
   code: Code,
-  // pre: ({ children }: { children: React.ReactNode }) => {
-  //   return <Pre code={children} />;
-  // },
+  pre: ({ children }: { children: React.ReactNode }) => {
+    return <Pre code={children} />;
+  },
 };
 
 type PostProps = {
@@ -65,7 +65,8 @@ const Post = ({ postData: { title, date, source } }: PostProps): JSX.Element => 
         </Header>
         <br />
         <article>
-          <MDXComponent components={components} />
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          <MDXComponent components={components as any} />
         </article>
       </Container>
     </Layout>

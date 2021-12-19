@@ -1,37 +1,28 @@
-import { blue, red, cyan, pink, orange, grass, slate, amber } from "@radix-ui/colors";
 import { css } from "~/stitches.config";
 
 export const prismTheme = css({
-  ...blue,
-  ...red,
-  ...cyan,
-  ...pink,
-  ...orange,
-  ...grass,
-  ...slate,
-  ...amber,
-
   ".token.comment, .token.prolog, .token.doctype, .token.cdata": {
-    color: "$slate11",
+    color: "$slate9",
+    fontStyle: "italic",
   },
   ".token.punctuation": { color: "$slate11" },
   ".token.delimiter.important, .token.selector .parent, .token.tag, .token.tag .token.punctuation":
     {
-      color: "$cyan9",
+      color: "$slate11",
     },
   ".token.attr-name, .token.boolean, .token.boolean.important, .token.number, .token.constant, .token.selector .token.attribute":
     {
-      color: "$amber9",
+      color: "$cyan9",
     },
   ".token.class-name, .token.key, .token.parameter, .token.property, .token.property-access, .token.variable":
     {
-      color: "$blue9",
+      color: "$blue10",
     },
   ".token.attr-value, .token.inserted, .token.color, .token.selector .token.value, .token.string, .token.string .token.url-link":
     {
       color: "$grass9",
     },
-  ".token.builtin, .token.keyword-array, .token.package, .token.regex": {
+  ".token.builtin, .token.keyword-array, .token.package, .token.regex, .token.maybe-class-name": {
     color: "$pink9",
   },
   ".token.function, .token.selector .token.class, .token.selector .token.id": {

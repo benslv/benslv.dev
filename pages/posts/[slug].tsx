@@ -41,9 +41,9 @@ const components = {
   h3: H3,
   p: Text,
   // code: Code,
-  // pre: ({ children }: { children: React.ReactNode }) => {
-  //   return <Pre code={children} />;
-  // },
+  pre: ({ children }: { children: React.ReactNode }) => {
+    return <Pre code={children} />;
+  },
 };
 
 type PostProps = {

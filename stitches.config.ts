@@ -9,6 +9,7 @@ import {
   pink,
   orange,
   grass,
+  purple,
   blueDark,
   slateDark,
   redDark,
@@ -31,6 +32,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       ...pink,
       ...orange,
       ...grass,
+      ...purple,
 
       text: "$slate11",
       heading: "$slate12",

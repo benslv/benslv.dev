@@ -41,4 +41,8 @@ export const globalStyles = globalCss({
       border: "3px solid $background",
     },
   },
+
+  code: {
+    fontFamily: "$mono",
+  },
 });

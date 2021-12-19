@@ -21,6 +21,7 @@ import {
 } from "~/components";
 
 import { SidenoteProps } from "~/components/Sidenote";
+import { prismTheme } from "~/styles/prismTheme";
 
 const Header = styled("header", {
   textAlign: "center",
@@ -39,10 +40,10 @@ const components = {
   h2: H2,
   h3: H3,
   p: Text,
-  code: Code,
-  pre: ({ children }: { children: React.ReactNode }) => {
-    return <Pre code={children} />;
-  },
+  // code: Code,
+  // pre: ({ children }: { children: React.ReactNode }) => {
+  //   return <Pre code={children} />;
+  // },
 };
 
 type PostProps = {
@@ -64,7 +65,7 @@ const Post = ({ postData: { title, date, source } }: PostProps): JSX.Element => 
           <Date dateString={date} />
         </Header>
         <br />
-        <article>
+        <article className={prismTheme()}>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           <MDXComponent components={components as any} />
         </article>

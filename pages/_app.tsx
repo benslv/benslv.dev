@@ -9,7 +9,7 @@ import "@fontsource/rubik/500.css";
 import "@fontsource/rubik/700.css";
 import "@fontsource/fira-code/500.css";
 
-import "~/styles/prism-theme.scss";
+// import "~/styles/prism-theme.scss";
 
 function App({ Component, pageProps }: AppProps): JSX.Element {
   return (

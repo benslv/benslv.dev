@@ -49,8 +49,8 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       mono: "Fira Code, Hack, Cascadia Code, Inconsolata, Roboto Mono, Consolas, monospace",
     },
     fontSizes: {
-      0: "12px",
-      1: "17px",
+      0: "14px",
+      1: "16px",
       2: "24px",
       3: "32px",
       4: "48px",
@@ -61,11 +61,11 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       bold: 700,
     },
     shadows: {
-      light: "0 0px 5px 0 $slate10",
+      light: "0 0 5px 0 $slate10",
     },
     space: {
-      0: "12px",
-      1: "17px",
+      0: "14px",
+      1: "16px",
       2: "24px",
       3: "32px",
       4: "48px",

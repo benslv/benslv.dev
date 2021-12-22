@@ -18,3 +18,4 @@ export { TextLink } from "./TextLink";
 export { UnstyledLink } from "./UnstyledLink";
 export { Code } from "./Code";
 export { ThemeToggle } from "./ThemeToggle";
+export { KBar } from "./KBar";

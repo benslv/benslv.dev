@@ -17,7 +17,7 @@ const Search = styled(KBarSearch, {
   font: "inherit",
 
   color: "$heading",
-  backgroundColor: "$slate2",
+  backgroundColor: "$slate3",
 
   padding: "$1",
 

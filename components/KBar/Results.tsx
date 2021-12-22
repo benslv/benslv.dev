@@ -31,6 +31,16 @@ const Result = styled("div", {
   },
 });
 
+const SectionHeader = styled("div", {
+  color: "$text",
+  backgroundColor: "$slate1",
+
+  fontSize: "$0",
+  textTransform: "uppercase",
+
+  padding: "calc(0.5 * $0) $0",
+});
+
 export const Results = ({ results }) => {
   console.log(results);
 
@@ -38,8 +48,8 @@ export const Results = ({ results }) => {
     <KBarResults
       items={results}
       onRender={({ item, active }) =>
-        typeof item === "string" ? (
-          <Result>{item}</Result>
+        typeof item === "string" ? ( // Designates a section header
+          <SectionHeader>{item}</SectionHeader>
         ) : (
           <Result state={active ? "active" : "inactive"}>
             {item.icon}

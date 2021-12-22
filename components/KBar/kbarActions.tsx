@@ -43,7 +43,7 @@ export const actions: Action[] = [
     keywords: "twitter tweet",
     section: "Socials",
     icon: <FaTwitter />,
-    perform: () => window.open("https://twitter.com/bensilverman", "_blank"),
+    perform: () => window.open("https://twitter.com/bensilverman_", "_blank"),
   },
   {
     id: "github",

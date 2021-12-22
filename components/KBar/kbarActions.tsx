@@ -47,7 +47,7 @@ export const actions: Action[] = [
   },
   {
     id: "github",
-    name: "Github",
+    name: "GitHub",
     keywords: "github git",
     section: "Socials",
     icon: <FaGithub />,

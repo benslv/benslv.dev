@@ -24,12 +24,12 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
         dark: darkTheme.toString(),
         light: "light",
       }}>
-      <KBarProvider actions={actions}>
-        <KBar />
-        <IconContext.Provider value={{ className: "react-icons" }}>
+      <IconContext.Provider value={{ className: "react-icons" }}>
+        <KBarProvider actions={actions}>
+          <KBar />
           <Component {...pageProps} />
-        </IconContext.Provider>
-      </KBarProvider>
+        </KBarProvider>
+      </IconContext.Provider>
     </ThemeProvider>
   );
 }

@@ -61,7 +61,7 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       bold: 700,
     },
     shadows: {
-      light: "0 0px 5px 0 $slate10",
+      light: "0 0 5px 0 $slate10",
     },
     space: {
       0: "12px",

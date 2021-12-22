@@ -45,16 +45,17 @@ export const Results = ({ results }: { results: Array<string | object> }) => {
   return (
     <KBarResults
       items={results}
-      onRender={({ item, active }) =>
-        typeof item === "string" ? ( // Designates a section header
-          <SectionHeader>{item}</SectionHeader>
-        ) : (
+      onRender={({ item, active }) => {
+        if (typeof item === "string") {
+          return <SectionHeader>{item}</SectionHeader>;
+        }
+        return (
           <Result state={active ? "active" : "inactive"}>
             {item.icon}
             {item.name}
           </Result>
-        )
-      }
+        );
+      }}
     />
   );
 };

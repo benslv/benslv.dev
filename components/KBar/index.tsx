@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  KBarAnimator,
-  KBarPortal,
-  KBarPositioner,
-  KBarResults,
-  KBarSearch,
-  useMatches,
-} from "kbar";
+import { KBarAnimator, KBarPortal, KBarPositioner, KBarSearch, useMatches } from "kbar";
+import Results from "./Results";
 
 export const KBar = () => {
   const { results } = useMatches();
@@ -16,21 +10,7 @@ export const KBar = () => {
       <KBarPositioner>
         <KBarAnimator>
           <KBarSearch />
-          <KBarResults
-            items={results}
-            onRender={({ item, active }) =>
-              typeof item === "string" ? (
-                <div>{item}</div>
-              ) : (
-                <div
-                  style={{
-                    background: active ? "#eee" : "transparent",
-                  }}>
-                  {item.name}
-                </div>
-              )
-            }
-          />
+          <Results results={results} />
         </KBarAnimator>
       </KBarPositioner>
     </KBarPortal>

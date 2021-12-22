@@ -7,7 +7,7 @@ import { darkTheme } from "~/stitches.config";
 
 import { KBar } from "~/components";
 
-import { actions } from "~/lib/kbarActions";
+import { actions } from "~/components/KBar/kbarActions";
 
 import "@fontsource/rubik/400.css";
 import "@fontsource/rubik/500.css";

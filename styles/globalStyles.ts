@@ -27,6 +27,8 @@ export const globalStyles = globalCss({
     color: "$text",
     backgroundColor: "$background",
 
+    overflowY: "scroll",
+
     "&::-webkit-scrollbar": {
       width: 12,
     },

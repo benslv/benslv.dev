@@ -41,9 +41,7 @@ const SectionHeader = styled("div", {
   padding: "calc(0.5 * $0) $0",
 });
 
-export const Results = ({ results }) => {
-  console.log(results);
-
+export const Results = ({ results }: { results: Array<string | object> }) => {
   return (
     <KBarResults
       items={results}

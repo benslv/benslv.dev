@@ -2,6 +2,7 @@ import React from "react";
 import { Action } from "kbar";
 
 import { BiHome, BiUser, BiBulb, BiPen } from "react-icons/bi";
+import { FaTwitter, FaGithub } from "react-icons/fa";
 
 export const actions: Action[] = [
   {
@@ -35,5 +36,21 @@ export const actions: Action[] = [
     section: "Pages",
     icon: <BiPen />,
     perform: () => (window.location.pathname = "posts"),
+  },
+  {
+    id: "twitter",
+    name: "Twitter",
+    keywords: "twitter tweet",
+    section: "Socials",
+    icon: <FaTwitter />,
+    perform: () => window.open("https://twitter.com/bensilverman", "_blank"),
+  },
+  {
+    id: "github",
+    name: "Github",
+    keywords: "github git",
+    section: "Socials",
+    icon: <FaGithub />,
+    perform: () => window.open("https://github.com/benslv", "_blank"),
   },
 ];

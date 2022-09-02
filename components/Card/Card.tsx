@@ -21,7 +21,8 @@ const Title = styled(H2, {
   fontSize: "$1",
   fontWeight: "$semibold",
 
-  marginBottom: "calc(0.5 * $1)",
+  // marginBottom: "calc(0.5 * $1)",
+  marginBottom: "calc(0.25 * $0)",
 
   color: "$heading",
 });

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { BiSun, BiMoon, BiLoader } from "react-icons/bi";
+import { SunLight, HalfMoon, QuestionMark } from "iconoir-react";
 import { styled } from "~/stitches.config";
 
 import { blueBox } from "../BlueBox";
@@ -57,7 +57,7 @@ export const ThemeToggle = () => {
   if (!isMounted) {
     return (
       <ToggleButton className={blueBox()}>
-        <BiLoader />
+        <QuestionMark />
       </ToggleButton>
     );
   }
@@ -68,7 +68,7 @@ export const ThemeToggle = () => {
       className={blueBox()}
       state={resolvedTheme === "light" ? "light" : "dark"}
       aria-label={`Toggle website to ${resolvedTheme === "light" ? "dark" : "light"} theme.`}>
-      {resolvedTheme === "light" ? <BiSun /> : <BiMoon />}
+      {resolvedTheme === "light" ? <SunLight /> : <HalfMoon />}
     </ToggleButton>
   );
 };

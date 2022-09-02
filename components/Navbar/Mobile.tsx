@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BiChevronDown } from "react-icons/bi";
+import { NavArrowDown } from "iconoir-react";
 import { styled } from "~/stitches.config";
 
 import { blueBox } from "../BlueBox";
@@ -125,7 +125,7 @@ export const Mobile = (): JSX.Element => {
           state={isOpen ? "shown" : "hidden"}
           className={blueBox()}
           aria-label={`${isOpen ? "Close" : "Open"} nav menu`}>
-          <BiChevronDown />
+          <NavArrowDown />
         </MenuButton>
       </NavWrapper>
     </Wrapper>

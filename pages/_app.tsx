@@ -1,7 +1,7 @@
 import React from "react";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
-import { IconContext } from "react-icons";
+import { IconoirProvider } from "iconoir-react";
 import { KBarProvider } from "kbar";
 import { darkTheme } from "~/stitches.config";
 
@@ -24,12 +24,12 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
         dark: darkTheme.toString(),
         light: "light",
       }}>
-      <IconContext.Provider value={{ className: "react-icons" }}>
+      <IconoirProvider iconProps={{ width: 28, height: 28, strokeWidth: 2 }}>
         <KBarProvider actions={actions}>
           <KBar />
           <Component {...pageProps} />
         </KBarProvider>
-      </IconContext.Provider>
+      </IconoirProvider>
     </ThemeProvider>
   );
 }

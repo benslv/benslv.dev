@@ -1,8 +1,7 @@
 import React from "react";
 import { Action } from "kbar";
 
-import { BiHome, BiUser, BiBulb, BiPen } from "react-icons/bi";
-import { FaTwitter, FaGithub } from "react-icons/fa";
+import { Home, User, LightBulb, EditPencil, Twitter, GitHub } from "iconoir-react";
 
 export const actions: Action[] = [
   {
@@ -10,7 +9,7 @@ export const actions: Action[] = [
     name: "Home",
     keywords: "home start index",
     section: "Pages",
-    icon: <BiHome />,
+    icon: <Home />,
     perform: () => (window.location.pathname = "/"),
   },
   {
@@ -18,7 +17,7 @@ export const actions: Action[] = [
     name: "About",
     keywords: "about",
     section: "Pages",
-    icon: <BiUser />,
+    icon: <User />,
     perform: () => (window.location.pathname = "about"),
   },
   {
@@ -26,7 +25,7 @@ export const actions: Action[] = [
     name: "Projects",
     keywords: "projects work demo example",
     section: "Pages",
-    icon: <BiBulb />,
+    icon: <LightBulb />,
     perform: () => (window.location.pathname = "projects"),
   },
   {
@@ -34,7 +33,7 @@ export const actions: Action[] = [
     name: "Posts",
     keywords: "posts blog",
     section: "Pages",
-    icon: <BiPen />,
+    icon: <EditPencil />,
     perform: () => (window.location.pathname = "posts"),
   },
   {
@@ -42,7 +41,7 @@ export const actions: Action[] = [
     name: "Twitter",
     keywords: "twitter tweet",
     section: "Socials",
-    icon: <FaTwitter />,
+    icon: <Twitter />,
     perform: () => window.open("https://twitter.com/bensilverman_", "_blank"),
   },
   {
@@ -50,7 +49,7 @@ export const actions: Action[] = [
     name: "GitHub",
     keywords: "github git",
     section: "Socials",
-    icon: <FaGithub />,
+    icon: <GitHub />,
     perform: () => window.open("https://github.com/benslv", "_blank"),
   },
 ];

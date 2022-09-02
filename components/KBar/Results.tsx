@@ -4,6 +4,9 @@ import { styled } from "~/stitches.config";
 
 const Result = styled("div", {
   padding: "$1",
+  display: "flex",
+  alignItems: "center",
+  columnGap: "$1",
 
   variants: {
     state: {
@@ -22,12 +25,6 @@ const Result = styled("div", {
 
   defaultVariants: {
     state: "inactive",
-  },
-
-  "& > .react-icons": {
-    fontSize: "$2",
-    verticalAlign: "middle",
-    marginRight: "$0",
   },
 });
 

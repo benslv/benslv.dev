@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GetStaticProps } from "next";
-import { BiSearch } from "react-icons/bi";
+import { Search } from "iconoir-react";
 import { styled } from "~/stitches.config";
 
 import { Date, Layout, Container, H1, Text, CardLink } from "~/components";
@@ -32,10 +32,10 @@ const SearchBar = styled("input", {
   width: "100%",
 });
 
-const SearchIcon = styled(BiSearch, {
+const SearchIcon = styled(Search, {
   position: "absolute",
   right: 10,
-  top: 10,
+  top: 7,
 });
 
 type Props = {
@@ -67,7 +67,7 @@ const PostsPage = ({ allPostsData }: Props): JSX.Element => {
               aria-label={`Search through ${allPostsData.length} posts`}
               onChange={(e) => setSearchValue(e.target.value)}
             />
-            <SearchIcon />
+            <SearchIcon width={22} height={22} />
           </SearchWrapper>
         </header>
       </Container>

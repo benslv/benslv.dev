@@ -33,7 +33,7 @@ export default function App() {
 				<Meta />
 				<Links />
 			</head>
-			<body className="mx-4 subpixel-antialiased text-white bg-gray-900 sm:max-w-2xl sm:mx-auto">
+			<body className="subpixel-antialiased">
 				<Outlet />
 				<ScrollRestoration />
 				<Scripts />

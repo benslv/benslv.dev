@@ -4,20 +4,39 @@
 
 @layer base {
 	@font-face {
-		font-family: "DM Sans";
-		src: url("/fonts/DMSans-Regular.woff2") format("woff2"),
-			url("/fonts/DMSans-Regular.woff") format("woff");
+		font-family: "Inter";
+		src: url("/fonts/Inter-Regular.woff2") format("woff2"),
+			url("/fonts/Inter-Regular.woff") format("woff");
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 	}
 
 	@font-face {
-		font-family: "DM Sans";
-		src: url("/fonts/DMSans-Bold.woff2") format("woff2"),
-			url("/fonts/DMSans-Bold.woff") format("woff");
+		font-family: "Inter";
+		src: url("/fonts/Inter-Bold.woff2") format("woff2"),
+			url("/fonts/Inter-Bold.woff") format("woff");
 		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
 	}
+}
+
+html {
+	--bg-color: #f1f5f9;
+	--bg-accent: #e2e8f0;
+
+	background-color: var(--bg-color);
+	opacity: 1;
+	background-image: radial-gradient(var(--bg-accent) 2px, transparent 2px),
+		radial-gradient(var(--bg-accent) 2px, var(--bg-color) 2px);
+	background-size: 56px 56px;
+	background-position: 0 0, 28px 28px;
+
+	font-size: 14px;
+}
+
+html[data-theme="dark"] {
+	--bg-color: #1a202c;
+	--bg-accent: #2d3748;
 }

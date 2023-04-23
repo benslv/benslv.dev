@@ -3,9 +3,9 @@ module.exports = {
 	content: ["./app/**/*.{ts,tsx,jsx,js}"],
 	theme: {
 		fontFamily: {
-			sans: ["DM Sans", "sans"],
+			sans: ["Inter", "sans"],
 		},
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/typography")],
 };

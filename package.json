@@ -17,6 +17,7 @@
 		"@remix-run/react": "^1.9.0",
 		"@remix-run/vercel": "^1.9.0",
 		"@vercel/node": "^2.6.2",
+		"framer-motion": "^10.12.4",
 		"iconoir-react": "^5.5.2",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"

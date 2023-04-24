@@ -30,8 +30,8 @@ html {
 	opacity: 1;
 	background-image: radial-gradient(var(--bg-accent) 2px, transparent 2px),
 		radial-gradient(var(--bg-accent) 2px, var(--bg-color) 2px);
-	background-size: 56px 56px;
-	background-position: 0 0, 28px 28px;
+	background-size: 40px 40px;
+	background-position: 0 0, 20px 20px;
 
 	font-size: 14px;
 }

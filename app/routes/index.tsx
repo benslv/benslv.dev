@@ -1,9 +1,46 @@
-import { Section } from "~/components/Section";
+import { LoaderArgs } from "@remix-run/node";
+import { Link, useLoaderData } from "@remix-run/react";
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
+import z from "zod";
 
-import jobs from "../content/jobs";
+import { Section } from "~/components/Section";
+import jobs from "~/content/jobs";
 import projects from "~/content/projects";
 
+const postFrontmatterSchema = z.object({
+	date: z.string(),
+	title: z.string(),
+	description: z.string(),
+	published: z.coerce.boolean(),
+	tags: z.array(z.string()),
+	slug: z.string().nonempty(),
+});
+
+export async function loader() {
+	const cwd = process.cwd();
+	const postsFolder = path.join(cwd, "app", "content", "posts");
+
+	console.log(postsFolder);
+	const postUrls = fs.readdirSync(postsFolder);
+
+	const posts = postUrls
+		.map((slug) => {
+			const filePath = path.join(postsFolder, slug);
+			const file = fs.readFileSync(filePath, { encoding: "utf-8" });
+
+			const { data } = matter(file, { excerpt: true });
+
+			return postFrontmatterSchema.parse({ ...data, slug });
+		})
+		.filter((data) => !!data.published);
+
+	return { posts };
+}
+
 export default function Index() {
+	const { posts } = useLoaderData<typeof loader>();
 	return (
 		<div className="mx-auto mt-8 flex w-full max-w-xl flex-col space-y-6">
 			<div className="flex items-center space-x-6">
@@ -95,6 +132,24 @@ export default function Index() {
 					</a>
 				</div>
 			</div>
+			<Section>
+				<div className="flex flex-col gap-y-2">
+					{posts.map((post) => {
+						return (
+							<div key={post.slug}>
+								<Link to={`post/${post.slug}`}>
+									<h2 className="text-blue-500 font-bold text-lg transition-colors hover:text-blue-400">
+										{post.title}
+									</h2>
+									<p className="text-gray-700">
+										{post.description}
+									</p>
+								</Link>
+							</div>
+						);
+					})}
+				</div>
+			</Section>
 		</div>
 	);
 }

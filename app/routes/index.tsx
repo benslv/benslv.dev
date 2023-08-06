@@ -1,23 +1,7 @@
-import { motion } from "framer-motion";
+import { Section } from "~/components/Section";
 
-const work = [
-	{
-		role: "Currently",
-		company: "Warner Bros. Discovery",
-		description:
-			"Sunt culpa eu officia laboris voluptate magna qui do. Aliquip reprehenderit exercitation exercitation ipsum. Laborum labore officia reprehenderit eiusmod nostrud esse non cupidatat eu fugiat excepteur.",
-		image: "/images/wbd.png",
-		link: "https://wbd.com/",
-	},
-	{
-		role: "Previously",
-		company: "Arm Ltd.",
-		description:
-			"Sunt culpa eu officia laboris voluptate magna qui do. Voluptate aliqua duis culpa cupidatat pariatur aliqua aliquip exercitation.",
-		image: "/images/arm.png",
-		link: "https://arm.com/",
-	},
-];
+import jobs from "../content/jobs";
+import projects from "~/content/projects";
 
 export default function Index() {
 	return (
@@ -44,9 +28,9 @@ export default function Index() {
 					</p>
 				</div>
 			</div>
-			<div className="w-full rounded-2xl border border-gray-200 bg-white p-4 shadow-sm sm:mx-0">
+			<Section>
 				<div className="flex flex-col space-y-4">
-					{work.map((job, index) => {
+					{jobs.map((job, index) => {
 						return (
 							<div key={index} className="flex space-x-4">
 								<img
@@ -68,6 +52,9 @@ export default function Index() {
 											{job.company}
 										</a>
 									</h3>
+									<p className="text-sm text-gray-400 font-bold">
+										{job.start}-{job.end}
+									</p>
 									<p className="text-gray-700">
 										{job.description}
 									</p>
@@ -76,29 +63,36 @@ export default function Index() {
 						);
 					})}
 				</div>
-			</div>
-			<div className="grid grid-cols-3 gap-x-8">
-				<div className="flex w-full select-none items-center justify-center overflow-hidden rounded-2xl  bg-white shadow-lg shadow-green-500/50 sm:mx-0">
-					<img
-						src="/images/projects/insync.jpg"
-						alt="Insync logo"
-						draggable="false"
-					/>
-				</div>
-				<div className="flex w-full select-none items-center justify-center overflow-hidden rounded-2xl  shadow-red-300/50 bg-white shadow-lg sm:mx-0">
-					<img
-						src="/images/projects/lettucewatch.jpg"
-						alt="Lettucewatch logo"
-						draggable="false"
-					/>
-				</div>
-				<div className="flex w-full select-none bg-gray-900 h-full items-center justify-center overflow-hidden rounded-2xl shadow-lg shadow-gray-600/60 sm:mx-0">
-					<img
-						src="/images/projects/github.png"
-						alt="Github logo"
-						className="p-8"
-						draggable="false"
-					/>
+			</Section>
+			<h1 className="font-bold text-xl">My Work</h1>
+			<div className="grid grid-cols-4 gap-8 justify-center">
+				{projects.map(({ name, href, src, alt }) => {
+					return (
+						<div key={name}>
+							<a href={href} target="_blank" rel="noreferrer">
+								<img
+									src={src}
+									alt={alt}
+									className="rounded-2xl shadow shadow-gray-400/40 mb-2"
+									draggable="false"
+								/>
+							</a>
+						</div>
+					);
+				})}
+				<div>
+					<a
+						href="https://github.com/benslv"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img
+							src="/images/projects/github.png"
+							alt="Github logo"
+							className="p-8 bg-gray-900 rounded-2xl shadow shadow-gray-400/40 mb-2"
+							draggable="false"
+						/>
+					</a>
 				</div>
 			</div>
 		</div>

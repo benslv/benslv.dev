@@ -13,26 +13,26 @@
 		"typecheck": "tsc -b"
 	},
 	"dependencies": {
-		"@remix-run/node": "^1.9.0",
-		"@remix-run/react": "^1.9.0",
-		"@remix-run/vercel": "^1.9.0",
-		"@vercel/node": "^2.6.2",
-		"framer-motion": "^10.12.4",
-		"iconoir-react": "^5.5.2",
+		"@remix-run/node": "^1.19.2",
+		"@remix-run/react": "^1.19.2",
+		"@remix-run/vercel": "^1.19.2",
+		"@vercel/node": "^2.15.8",
+		"framer-motion": "^10.15.0",
+		"iconoir-react": "^6.11.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@remix-run/dev": "^1.9.0",
-		"@remix-run/eslint-config": "^1.9.0",
-		"@remix-run/serve": "^1.9.0",
+		"@remix-run/dev": "^1.19.2",
+		"@remix-run/eslint-config": "^1.19.2",
+		"@remix-run/serve": "^1.19.2",
 		"@tailwindcss/typography": "^0.5.9",
-		"@types/react": "^18.0.25",
-		"@types/react-dom": "^18.0.8",
-		"eslint": "^8.27.0",
+		"@types/react": "^18.2.18",
+		"@types/react-dom": "^18.2.7",
+		"eslint": "^8.46.0",
 		"npm-run-all": "^4.1.5",
-		"tailwindcss": "^3.3.1",
-		"typescript": "^4.8.4"
+		"tailwindcss": "^3.3.3",
+		"typescript": "^5.1.6"
 	},
 	"engines": {
 		"node": ">=14"

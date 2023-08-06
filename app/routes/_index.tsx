@@ -1,40 +1,12 @@
-import { LoaderArgs } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
-import z from "zod";
 
 import { Section } from "~/components/Section";
 import jobs from "~/content/jobs";
 import projects from "~/content/projects";
-
-const postFrontmatterSchema = z.object({
-	date: z.string(),
-	title: z.string(),
-	description: z.string(),
-	published: z.coerce.boolean(),
-	tags: z.array(z.string()),
-	slug: z.string().nonempty(),
-});
+import { getAllPosts } from "~/models/blog.server";
 
 export async function loader() {
-	const cwd = process.cwd();
-	const postsFolder = path.join(cwd, "app", "content", "posts");
-
-	console.log(postsFolder);
-	const postUrls = fs.readdirSync(postsFolder);
-
-	const posts = postUrls
-		.map((slug) => {
-			const filePath = path.join(postsFolder, slug);
-			const file = fs.readFileSync(filePath, { encoding: "utf-8" });
-
-			const { data } = matter(file, { excerpt: true });
-
-			return postFrontmatterSchema.parse({ ...data, slug });
-		})
-		.filter((data) => !!data.published);
+	const posts = getAllPosts();
 
 	return { posts };
 }

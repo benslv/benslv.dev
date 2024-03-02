@@ -25,7 +25,7 @@ export default function Index() {
 							href="https://wbd.com/"
 							target="_blank"
 							className="text-green-500 underline decoration-green-100 decoration-4 transition-colors hover:text-green-600 hover:decoration-green-200">
-							Warner Bros. Discovery
+							Warner Bros. Discovery.
 						</a>
 					</h2>
 				</div>

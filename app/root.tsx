@@ -1,18 +1,15 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
 	Links,
-	LiveReload,
 	Meta,
 	Outlet,
 	Scripts,
 	ScrollRestoration,
 } from "@remix-run/react";
 
-import tailwind from "./tailwind.css";
+import tailwind from "./tailwind.css?url";
 
 export const links: LinksFunction = () => [
-	...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 	{ rel: "stylesheet", href: tailwind },
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
 	{
@@ -28,18 +25,17 @@ export const links: LinksFunction = () => [
 
 export default function App() {
 	return (
-		<html lang="en" className="text-[14px]">
+		<html lang="en">
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
 				<Links />
 			</head>
-			<body className="bg-white p-2 font-sans text-gray-700">
+			<body className="bg-green-50 p-2 font-sans text-gray-700">
 				<Outlet />
 				<ScrollRestoration />
 				<Scripts />
-				<LiveReload />
 			</body>
 		</html>
 	);

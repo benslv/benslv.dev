@@ -9,97 +9,108 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<div className="mx-auto flex max-w-2xl flex-col gap-y-4">
-			<div className="my-8 flex items-center justify-center gap-x-4">
-				<img
-					src="https://pbs.twimg.com/profile_images/1383143052202631174/Tvn3Fj5I_200x200.jpg"
-					width={64}
-					height={64}
-					className="h-16 w-16 rounded-full"
-				/>
-				<div>
-					<h1 className="text-3xl font-bold text-gray-900">Ben Silverman</h1>
-					<h2 className="text-xl">
-						Software Engineer II at{" "}
-						<a
-							href="https://wbd.com/"
-							target="_blank"
-							className="text-green-500 underline decoration-green-100 decoration-4 transition-colors hover:text-green-600 hover:decoration-green-200">
-							Warner Bros. Discovery.
-						</a>
-					</h2>
-				</div>
-			</div>
+		<div className="mx-auto mt-28 flex max-w-2xl flex-col gap-y-4">
+			<h1 className="text-5xl font-bold text-zinc-800">👋 Hi, I'm Ben!</h1>
+			<h2 className="text-xl">
+				I'm a software engineer from London, currently working at{" "}
+				<a
+					href="https://wbd.com/"
+					className="text-green-500 underline decoration-green-200 decoration-4 transition-colors hover:text-green-600 hover:decoration-green-300">
+					Warner Bros. Discovery.
+				</a>
+			</h2>
+
 			<section>
-				<h2 className="text-xl font-medium text-gray-900">Stuff I've Made</h2>
-				<ul>
-					<li>
-						<p>
-							🎧{" "}
+				<h2 className="text-xl font-medium text-zinc-900">My Experience</h2>
+				<div className="flex flex-col gap-y-2">
+					<div>
+						<span className="text-sm text-zinc-500">2022-present</span>
+						<h3 className="font-medium">
+							Software Engineer II at{" "}
 							<a
-								href="https://insync.rocks"
-								target="_blank"
-								className="font-medium underline decoration-gray-300 decoration-2">
-								Insync
+								href="https://wbd.com"
+								className="text-green-500 underline decoration-green-200 decoration-2 transition-colors hover:text-green-600 hover:decoration-green-300">
+								Warner Bros. Discovery
 							</a>
-							, a Spotify-enabled smart playlist maker, based on your listening
-							history and the artists you love!
-						</p>
-					</li>
-					<li>
+						</h3>
 						<p>
-							🥬{" "}
-							<a
-								href="https://lettuce.watch"
-								target="_blank"
-								className="font-medium underline decoration-gray-300 decoration-2">
-								Lettucewatch
-							</a>
-							, a realtime social application for movie nights with friends and
-							family.
+							I'm a developer on the Connected Device team, responsible for
+							developing Max, our flagship streaming application, for smart TVs,
+							set-top boxes, and games consoles.
 						</p>
-					</li>
-					<li>
-						🤖{" "}
-						<a
-							href="https://countable.cc"
-							className="font-medium underline decoration-gray-300 decoration-2">
-							Countable
-						</a>
-						, a robust Discord bot to help you manage counting channels in your
-						server.
-					</li>
-				</ul>
+					</div>
+					<div>
+						<span className="text-sm text-zinc-500">2020-2021</span>
+						<h3 className="font-medium">
+							Enterprise IT Intern at{" "}
+							<a
+								href="https://arm.com"
+								className="text-green-500 underline decoration-green-200 decoration-2 transition-colors hover:text-green-600 hover:decoration-green-300">
+								Arm Ltd.
+							</a>
+						</h3>
+						<p>
+							I secured a position at Arm for my placement year during
+							university, engaged across both backend and frontend during this
+							time. I worked on various projects in these areas, with my
+							favourite being the implementation of a new component-driven
+							development process for our Arm Developer 2.0 React applications.
+						</p>
+					</div>
+				</div>
 			</section>
 			<section>
-				<h2 className="text-xl font-medium text-gray-900">My Experience</h2>
-				<ul className="list-outside list-disc pl-4">
-					<li>
-						Currently at{" "}
+				<h2 className="text-xl font-medium text-zinc-900">Side Projects</h2>
+				<p>
+					I'm currently focused on frontend development, specifically working on
+					various React projects. I love the satisfaction of creating genuinely
+					useful apps and services for people to use, and the journey through
+					conceptualisation, design, and development is something I find
+					incredibly rewarding!
+				</p>
+				<p>
+					Below are some of my most recent projects. You can check out
+					everything I've made over on my{" "}
+					<a
+						href="https://github.com/benslv"
+						className="underline decoration-zinc-300 decoration-2 transition-colors hover:decoration-zinc-400">
+						Github
+					</a>
+					.
+				</p>
+				<ul className="mt-2 list-inside list-disc">
+					<li className="text-green-600">
 						<a
-							href="https://wbd.com"
-							target="_blank"
-							className="font-medium underline decoration-gray-300 decoration-2">
-							WBD
+							href="https://insync.rocks"
+							className="font-medium underline decoration-green-300 decoration-2 transition-colors hover:text-green-700 hover:decoration-green-400">
+							Insync
 						</a>
-						, developing{" "}
-						<a
-							href="https://max.com"
-							target="_blank"
-							className="font-medium underline decoration-gray-300 decoration-2">
-							Max
-						</a>{" "}
-						for TVs and games consoles with Solid and LightningJS.
+						<span className="text-zinc-700">
+							, a Spotify-enabled smart playlist maker, based on your listening
+							history and the artists you love!
+						</span>
 					</li>
-					<li>
-						Previously interned at{" "}
+					<li className="text-amber-600">
 						<a
-							href="https://arm.com"
-							target="_blank"
-							className="font-medium underline decoration-gray-300 decoration-2">
-							Arm
+							href="https://lettuce.watch"
+							className="font-medium underline decoration-amber-300 decoration-2 transition-colors hover:text-amber-700 hover:decoration-amber-400">
+							Lettucewatch
 						</a>
-						, creating React applications for the Arm Developer platform.
+						<span className="text-zinc-700">
+							, a realtime social application for movie nights with friends and
+							family.
+						</span>
+					</li>
+					<li className="text-indigo-600">
+						<a
+							href="https://countable.cc"
+							className="font-medium underline decoration-indigo-300 decoration-2 transition-colors hover:text-indigo-700 hover:decoration-indigo-400">
+							Countable
+						</a>
+						<span className="text-zinc-700">
+							, a robust Discord bot to help you manage counting channels in
+							your server.
+						</span>
 					</li>
 				</ul>
 			</section>

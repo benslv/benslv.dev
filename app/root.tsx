@@ -6,6 +6,7 @@ import {
 	Scripts,
 	ScrollRestoration,
 } from "@remix-run/react";
+import type { ReactNode } from "react";
 
 import tailwind from "./tailwind.css?url";
 
@@ -23,7 +24,7 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-export default function App() {
+export function Layout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="en">
 			<head>
@@ -32,11 +33,15 @@ export default function App() {
 				<Meta />
 				<Links />
 			</head>
-			<body className="bg-green-50 p-2 font-sans text-gray-700">
-				<Outlet />
+			<body className="w-screen bg-green-50 p-2 font-sans text-zinc-700">
+				{children}
 				<ScrollRestoration />
 				<Scripts />
 			</body>
 		</html>
 	);
+}
+
+export default function App() {
+	return <Outlet />;
 }

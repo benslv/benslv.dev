@@ -33,7 +33,7 @@ export function Layout({ children }: { children: ReactNode }) {
 				<Meta />
 				<Links />
 			</head>
-			<body className="w-screen bg-green-50 p-2 font-sans text-zinc-700">
+			<body className="w-screen bg-white p-2 font-sans text-zinc-700">
 				{children}
 				<ScrollRestoration />
 				<Scripts />

@@ -9,7 +9,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<div className="mx-auto mt-28 flex max-w-2xl flex-col gap-y-4">
+		<div className="mx-auto mt-28 flex max-w-2xl flex-col gap-y-8">
 			<h1 className="text-5xl font-bold text-zinc-800">👋 Hi, I'm Ben!</h1>
 			<h2 className="text-xl">
 				I'm a software engineer from London, currently working at{" "}

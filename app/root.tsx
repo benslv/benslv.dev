@@ -8,6 +8,7 @@ import {
 } from "@remix-run/react";
 import type { ReactNode } from "react";
 
+import styles from "./root.module.css";
 import tailwind from "./tailwind.css?url";
 
 export const links: LinksFunction = () => [
@@ -33,7 +34,8 @@ export function Layout({ children }: { children: ReactNode }) {
 				<Meta />
 				<Links />
 			</head>
-			<body className="w-screen bg-white p-2 font-sans text-zinc-700">
+			<body
+				className={`h-full bg-white font-sans text-zinc-500 ${styles.root}`}>
 				{children}
 				<ScrollRestoration />
 				<Scripts />

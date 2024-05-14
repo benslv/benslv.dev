@@ -1,4 +1,4 @@
-import { TextLink } from "~/components/TextLink";
+import { Link } from "@remix-run/react";
 
 export function Page() {
 	return (
@@ -10,7 +10,7 @@ export function Page() {
 						<span className="text-sm text-zinc-500">2022-present</span>
 						<h3 className="font-medium">
 							Software Engineer II at{" "}
-							<TextLink to="https://wbd.com">Warner Bros. Discovery</TextLink>
+							<Link to="https://wbd.com">Warner Bros. Discovery</Link>
 						</h3>
 						<p>
 							I'm a developer on the Connected Device team, responsible for
@@ -21,8 +21,7 @@ export function Page() {
 					<div>
 						<span className="text-sm text-zinc-500">2020-2021</span>
 						<h3 className="font-medium">
-							Enterprise IT Intern at{" "}
-							<TextLink to="https://arm.com">Arm Ltd.</TextLink>
+							Enterprise IT Intern at <Link to="https://arm.com">Arm Ltd.</Link>
 						</h3>
 						<p>
 							I secured a position at Arm for my placement year during
@@ -46,25 +45,25 @@ export function Page() {
 				<p>
 					Below are some of my most recent projects. You can check out
 					everything I've made over on my{" "}
-					<TextLink to="https://github.com/benslv">Github</TextLink>.
+					<Link to="https://github.com/benslv">Github</Link>.
 				</p>
 				<ul className="mt-2 list-inside list-disc">
 					<li>
-						<TextLink to="https://insync.rocks">Insync</TextLink>
+						<Link to="https://insync.rocks">Insync</Link>
 						<span>
 							, a Spotify-enabled smart playlist maker, based on your listening
 							history and the artists you love!
 						</span>
 					</li>
 					<li>
-						<TextLink to="https://lettuce.watch">Lettucewatch</TextLink>
+						<Link to="https://lettuce.watch">Lettucewatch</Link>
 						<span>
 							, a realtime social application for movie nights with friends and
 							family.
 						</span>
 					</li>
 					<li>
-						<TextLink to="https://countable.cc">Countable</TextLink>
+						<Link to="https://countable.cc">Countable</Link>
 						<span>
 							, a robust Discord bot to help you manage counting channels in
 							your server.

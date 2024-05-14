@@ -11,36 +11,34 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<div className="m-8 flex flex-col gap-4">
-			<div className="w-fit rounded-md border bg-white p-8">
-				<p className="mb-2">👋</p>
-				<h2 className="text-2xl font-medium text-zinc-800">Ben Silverman</h2>
-				<p>
-					Software Engineer at{" "}
-					<a
-						href="https://wbd.com"
-						target="_blank"
-						className="text-blue-500 underline decoration-blue-300 underline-offset-2">
-						Warner Bros. Discovery
-					</a>
-				</p>
-				<div className="mt-4 flex flex-col gap-y-2">
-					<Link
-						to="/about"
-						className="underline decoration-zinc-300 underline-offset-2">
-						about
-					</Link>
-					<Link
-						to="/posts"
-						className="underline decoration-zinc-300 underline-offset-2">
-						posts
-					</Link>
-					<Link
-						to="/projects"
-						className="underline decoration-zinc-300 underline-offset-2">
-						projects
-					</Link>
-				</div>
+		<div className="mx-auto flex w-fit flex-col gap-4 rounded-md border bg-white p-8">
+			<p className="mb-2">👋</p>
+			<h2 className="text-2xl font-medium text-zinc-800">Ben Silverman</h2>
+			<p>
+				Software Engineer at{" "}
+				<a
+					href="https://wbd.com"
+					target="_blank"
+					className="text-blue-500 underline decoration-blue-300 underline-offset-2">
+					Warner Bros. Discovery
+				</a>
+			</p>
+			<div className="mt-4 flex flex-col gap-y-2">
+				<Link
+					to="/about"
+					className="underline decoration-zinc-300 underline-offset-2">
+					about
+				</Link>
+				<Link
+					to="/posts"
+					className="underline decoration-zinc-300 underline-offset-2">
+					posts
+				</Link>
+				<Link
+					to="/projects"
+					className="underline decoration-zinc-300 underline-offset-2">
+					projects
+				</Link>
 			</div>
 			<div className="flex gap-x-4">
 				<div className="relative w-fit rounded-md bg-[#333333] p-4 transition-colors hover:bg-[#222222]">

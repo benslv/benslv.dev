@@ -16,7 +16,6 @@ export default defineConfig({
 		mdx({
 			remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
 		}),
-		,
 		remix({
 			ignoredRouteFiles: ["**/*.css"],
 		}),

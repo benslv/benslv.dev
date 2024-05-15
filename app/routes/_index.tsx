@@ -52,7 +52,7 @@ export default function Index() {
 					</p>
 				</section>
 				<section>
-					<h2 className="font-handwriting text-2xl font-medium text-zinc-800">
+					<h2 className="mt-2 font-handwriting text-2xl font-medium text-zinc-800">
 						Experience
 					</h2>
 					<ul className="ml-4 mt-2 list-disc space-y-2 marker:text-zinc-300">
@@ -63,7 +63,7 @@ export default function Index() {
 								className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 								Warner Bros. Discovery
 							</Link>{" "}
-							<span className="text-sm text-zinc-500">
+							<span className="text-sm text-zinc-400">
 								(sept. 2022 &#8212; present)
 							</span>
 							<p>
@@ -78,7 +78,7 @@ export default function Index() {
 								className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 								Arm Ltd.
 							</Link>{" "}
-							<span className="text-sm text-zinc-500">
+							<span className="text-sm text-zinc-400">
 								(sept. 2020 &#8212; sept. 2021)
 							</span>
 							<p>
@@ -91,7 +91,7 @@ export default function Index() {
 					</ul>
 				</section>
 				<section>
-					<h2 className="font-handwriting text-2xl font-medium text-zinc-800">
+					<h2 className="mt-2 font-handwriting text-2xl font-medium text-zinc-800">
 						Projects
 					</h2>
 					<ul className="ml-6 mt-2 space-y-2 marker:text-zinc-300">

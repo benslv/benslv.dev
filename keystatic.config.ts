@@ -2,7 +2,11 @@ import { collection, config, fields } from "@keystatic/core";
 
 export default config({
 	storage: {
-		kind: "local",
+		kind: "github",
+		repo: {
+			owner: "benslv",
+			name: "benslv.dev",
+		},
 	},
 	collections: {
 		posts: collection({

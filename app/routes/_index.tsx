@@ -10,23 +10,25 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<div className="flex flex-col gap-y-4">
+		<div className="mt-16 flex flex-col gap-y-4">
 			<section>
-				<p className="mb-2 text-xl">👋</p>
-				<h1 className="text-xl font-medium text-zinc-800">Hi, I'm Ben!</h1>
+				<p className="mb-2 text-xl"></p>
+				<h1 className="font-handwriting mb-2 text-3xl text-zinc-800">
+					Hi, I'm Ben! 👋
+				</h1>
 				<p>
 					I'm a software engineer at{" "}
 					<Link
 						to="https://wbd.com"
 						target="_blank"
-						className="text-blue-700 underline decoration-blue-300 decoration-2 underline-offset-2">
+						className="font-medium text-blue-500 underline decoration-blue-300 decoration-2 underline-offset-2">
 						Warner Bros. Discovery
 					</Link>
 					, currently focused on developing our flagship streaming platform,{" "}
 					<Link
 						to="https://max.com"
 						target="_blank"
-						className="text-blue-700 underline decoration-blue-300 decoration-2 underline-offset-2">
+						className="font-medium text-blue-500 underline decoration-blue-300 decoration-2 underline-offset-2">
 						Max
 					</Link>
 					.
@@ -41,15 +43,17 @@ export default function Index() {
 					<Link
 						to="https://goodreads.com/benslv"
 						target="_blank"
-						className="text-blue-700 underline decoration-blue-300 decoration-2 underline-offset-2">
+						className="font-medium text-blue-500 underline decoration-blue-300 decoration-2 underline-offset-2">
 						reading
 					</Link>
-					, or playing my saxophone in my local band!
+					, or playing my saxophone in my local band! 🎷
 				</p>
 			</section>
 			<section>
-				<h2 className="text-lg font-medium text-zinc-800">Experience</h2>
-				<ul className="mt-2 list-disc space-y-2 pl-4 marker:text-zinc-300">
+				<h2 className="font-handwriting text-2xl font-medium text-zinc-800">
+					Experience
+				</h2>
+				<ul className="ml-4 mt-2 list-disc space-y-2 marker:text-zinc-300">
 					<li>
 						<Link
 							to="https://wbd.com"
@@ -83,62 +87,50 @@ export default function Index() {
 					</li>
 				</ul>
 			</section>
+			<section>
+				<h2 className="font-handwriting text-2xl font-medium text-zinc-800">
+					Projects
+				</h2>
+				<ul className="ml-6 mt-2 space-y-2 marker:text-zinc-300">
+					<li className="before:-ml-6 before:mr-2 before:content-['🎶']">
+						<Link
+							to="https://insync.rocks"
+							target="_blank"
+							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							insync
+						</Link>
+						, a smart Spotify playlist generator.
+					</li>
+					<li className="before:-ml-6 before:mr-2 before:content-['🥬']">
+						<Link
+							to="https://lettuce.watch"
+							target="_blank"
+							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							Lettucewatch
+						</Link>
+						, a real-time, collaborative movie picker for groups.
+					</li>
+					<li className="before:-ml-6 before:mr-2 before:content-['🤖']">
+						<Link
+							to="https://countable.cc"
+							target="_blank"
+							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							Countable
+						</Link>
+						, a small, robust Discord bot to support and manage a counting
+						channel in your server.
+					</li>
+					<li className="before:-ml-6 before:mr-2 before:content-['😸']">
+						<Link
+							to="https://www.npmjs.com/package/jsfycat"
+							target="_blank"
+							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							Jsfycat
+						</Link>
+						, a Node.js wrapper for Gfycat&#39;s API.
+					</li>
+				</ul>
+			</section>
 		</div>
-		// <div className="mx-auto flex w-fit flex-col gap-4 rounded-md border bg-white p-8">
-		// 	<p className="mb-2">👋</p>
-		// 	<h2 className="text-2xl font-medium text-zinc-800">Ben Silverman</h2>
-		// 	<p>
-		// 		Software Engineer at{" "}
-		// 		<a
-		// 			href="https://wbd.com"
-		// 			target="_blank"
-		// 			className="text-blue-500 underline decoration-blue-300 underline-offset-2">
-		// 			Warner Bros. Discovery
-		// 		</a>
-		// 	</p>
-		// 	<div className="mt-4 flex flex-col gap-y-2">
-		// 		<Link
-		// 			to="/about"
-		// 			className="underline decoration-zinc-300 underline-offset-2">
-		// 			about
-		// 		</Link>
-		// 		<Link
-		// 			to="/posts"
-		// 			className="underline decoration-zinc-300 underline-offset-2">
-		// 			posts
-		// 		</Link>
-		// 		<Link
-		// 			to="/projects"
-		// 			className="underline decoration-zinc-300 underline-offset-2">
-		// 			projects
-		// 		</Link>
-		// 	</div>
-		// 	<div className="flex gap-x-4">
-		// 		<div className="relative w-fit rounded-md bg-[#333333] p-4 transition-colors hover:bg-[#222222]">
-		// 			<Link
-		// 				to="https://github.com/benslv"
-		// 				target="_blank"
-		// 				className="before:absolute before:inset-0">
-		// 				<Github color="#ffffff" />
-		// 			</Link>
-		// 		</div>
-		// 		<div className="relative w-fit rounded-md bg-[#0a66c2] p-4 transition-colors hover:bg-[#0959aa]">
-		// 			<Link
-		// 				to="https://linkedin.com/in/ben-silverman"
-		// 				target="_blank"
-		// 				className="before:absolute before:inset-0">
-		// 				<Linkedin color="#ffffff" />
-		// 			</Link>
-		// 		</div>
-		// 		<div className="relative w-fit rounded-md bg-[#1da1f2] p-4 transition-colors hover:bg-[#0d8bd9]">
-		// 			<Link
-		// 				to="https://twitter.com/bensilverman_"
-		// 				target="_blank"
-		// 				className="before:absolute before:inset-0">
-		// 				<Twitter color="#ffffff" />
-		// 			</Link>
-		// 		</div>
-		// 	</div>
-		// </div>
 	);
 }

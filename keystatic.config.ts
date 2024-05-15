@@ -13,9 +13,10 @@ export default config({
 			schema: {
 				title: fields.slug({ name: { label: "Title" } }),
 				publishedDate: fields.date({ label: "Published Date" }),
+				published: fields.checkbox({ label: "Published" }),
 				description: fields.text({ label: "Description" }),
 				tags: fields.array(fields.text({ label: "Tag" })),
-				body: fields.document({
+				body: fields.mdx({
 					label: "Body",
 				}),
 			},

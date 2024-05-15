@@ -2,8 +2,10 @@
 import { createReader } from "@keystatic/core/reader";
 import { json, type LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { bundleMDX } from "mdx-bundler";
+import { getMDXComponent } from "mdx-bundler/client";
+import React from "react";
 
-import { DocumentRenderer } from "@keystatic/core/renderer";
 import { DefaultLayout } from "~/components/DefaultLayout";
 import keystaticConfig from "../../keystatic.config";
 
@@ -19,15 +21,22 @@ export async function loader({ params }: LoaderFunctionArgs) {
 	);
 	if (!post) throw json("Not Found", { status: 404 });
 
-	return json({ post });
+	const { code } = await bundleMDX({
+		source: post.body,
+	});
+
+	return json({ post, code });
 }
 
 export default function Post() {
-	const { post } = useLoaderData<typeof loader>();
+	const { post, code } = useLoaderData<typeof loader>();
+
+	const RenderedMDX = React.useMemo(() => getMDXComponent(code), [code]);
+
 	return (
 		<DefaultLayout>
 			<h1>{post.title}</h1>
-			<DocumentRenderer document={post.body} />
+			<RenderedMDX />
 		</DefaultLayout>
 	);
 }

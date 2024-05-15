@@ -47,7 +47,7 @@ export function Layout({ children }: { children: ReactNode }) {
 				<Links />
 			</head>
 			<body className="h-full bg-white font-sans font-normal text-zinc-600">
-				<div className="mx-4 my-2 mt-16 max-w-screen-sm md:mx-auto">
+				<div className="mx-4 my-2 mt-8 max-w-screen-sm md:mx-auto md:mt-16">
 					<div className="group flex justify-end gap-x-2 text-zinc-400 transition-colors hover:text-zinc-300">
 						<Link
 							to="https://linkedin.com/in/ben-silverman"

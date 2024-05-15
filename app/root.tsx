@@ -8,10 +8,9 @@ import {
 } from "@remix-run/react";
 import type { ReactNode } from "react";
 
-import tailwind from "./tailwind.css?url";
+import "./tailwind.css";
 
 export const links: LinksFunction = () => [
-	{ rel: "stylesheet", href: tailwind },
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
 	{
 		rel: "preconnect",

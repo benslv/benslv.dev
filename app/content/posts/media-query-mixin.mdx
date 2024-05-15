@@ -11,19 +11,20 @@ tags: [snippet]
 // mixins.js
 
 const breakpoints = {
-  sm: "640px",
-  md: "768px",
-  lg: "1280px",
+	sm: "640px",
+	md: "768px",
+	lg: "1280px",
 };
 
-export const media = (size = "sm") => `@media screen and (min-width: ${breakpoints[size]})`;
+export const media = (size = "sm") =>
+	`@media screen and (min-width: ${breakpoints[size]})`;
 ```
 
 ## Explanation
 
 So it turns out [you can't use CSS variables with media queries](https://stackoverflow.com/a/40723269/12944841), which is a bit of a bummer.
 
-The main reason you might want to do something like this is to create a bunch of reusable media query mixins for yourself, keeping all your breakpoints the same and letting you change them at a moment's notice. It also saves a few keystrokes and keeps you from having to remember what the exact syntax for the query should be ("is it <code>min-width</code> or <code>max-width</code>? Hmm...")
+The main reason you might want to do something like this is to create a bunch of reusable media query mixins for yourself, keeping all your breakpoints the same and letting you change them at a moment's notice. It also saves a few keystrokes and keeps you from having to remember what the exact syntax for the query should be ("is it `min-width` or `max-width`? Hmm...")
 
 Since the function returns a template literal, it can be inserted whatever CSS-in-JS solution you're using!
 
@@ -39,18 +40,18 @@ import styled from "styled-components";
 import { media } from "./mixins.js";
 
 const Text = styled.p`
-  color: red;
+	color: red;
 
-  ${media("sm")} {
-    color: green;
-  }
+	${media("sm")} {
+		color: green;
+	}
 
-  ${media("md")} {
-    color: orange;
-  }
+	${media("md")} {
+		color: orange;
+	}
 
-  ${media("md")} {
-    color: blue;
-  }
+	${media("md")} {
+		color: blue;
+	}
 `;
 ```

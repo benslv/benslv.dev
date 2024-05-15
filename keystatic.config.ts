@@ -13,6 +13,7 @@ export default config({
 			label: "Posts",
 			slugField: "title",
 			path: "app/content/posts/*",
+			entryLayout: "content",
 			format: { contentField: "body" },
 			schema: {
 				title: fields.slug({ name: { label: "Title" } }),

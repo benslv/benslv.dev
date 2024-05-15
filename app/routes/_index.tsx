@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<div className="mt-16 flex flex-col gap-y-4">
+		<div className="flex flex-col gap-y-4">
 			<section>
 				<p className="mb-2 text-xl"></p>
 				<h1 className="font-handwriting mb-2 text-3xl text-zinc-800">
@@ -58,7 +58,7 @@ export default function Index() {
 						<Link
 							to="https://wbd.com"
 							target="_blank"
-							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 							Warner Bros. Discovery
 						</Link>{" "}
 						<span className="text-sm text-zinc-500">
@@ -73,7 +73,7 @@ export default function Index() {
 						<Link
 							to="https://arm.com"
 							target="_blank"
-							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 							Arm Ltd.
 						</Link>{" "}
 						<span className="text-sm text-zinc-500">
@@ -96,7 +96,7 @@ export default function Index() {
 						<Link
 							to="https://insync.rocks"
 							target="_blank"
-							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 							insync
 						</Link>
 						, a smart Spotify playlist generator.
@@ -105,7 +105,7 @@ export default function Index() {
 						<Link
 							to="https://lettuce.watch"
 							target="_blank"
-							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 							Lettucewatch
 						</Link>
 						, a real-time, collaborative movie picker for groups.
@@ -114,7 +114,7 @@ export default function Index() {
 						<Link
 							to="https://countable.cc"
 							target="_blank"
-							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 							Countable
 						</Link>
 						, a small, robust Discord bot to support and manage a counting
@@ -124,7 +124,7 @@ export default function Index() {
 						<Link
 							to="https://www.npmjs.com/package/jsfycat"
 							target="_blank"
-							className="text-zinc-800 underline decoration-zinc-800 underline-offset-2">
+							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 							Jsfycat
 						</Link>
 						, a Node.js wrapper for Gfycat&#39;s API.

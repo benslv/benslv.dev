@@ -2,7 +2,6 @@ import { createReader } from "@keystatic/core/reader";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 
-import { DefaultLayout } from "~/components/DefaultLayout";
 import keystaticConfig from "../../keystatic.config";
 
 export async function loader() {
@@ -18,8 +17,8 @@ export default function Page() {
 	const { posts } = useLoaderData<typeof loader>();
 
 	return (
-		<DefaultLayout>
-			<h1 className="mb-2 font-handwriting text-3xl text-zinc-800">Posts</h1>
+		<>
+			<h1 className="mb-4 font-handwriting text-3xl text-zinc-800">Posts 📝</h1>
 			<ul className="space-y-2">
 				{posts.map((post) => (
 					<li key={post.slug}>
@@ -34,7 +33,7 @@ export default function Page() {
 					</li>
 				))}
 			</ul>
-		</DefaultLayout>
+		</>
 	);
 }
 

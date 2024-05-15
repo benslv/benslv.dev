@@ -1,15 +1,15 @@
 // app/routes/posts.$slug.tsx
 import { createReader } from "@keystatic/core/reader";
 import { json, type LoaderFunctionArgs } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData, useRouteError } from "@remix-run/react";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 import React from "react";
 import rehypePrism from "rehype-prism-plus";
 
-import { DefaultLayout } from "~/components/DefaultLayout";
 import keystaticConfig from "../../keystatic.config";
 
+import { Prose } from "~/components/Prose";
 import "~/styles/prism-one-light.css";
 
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -42,13 +42,27 @@ export default function Post() {
 	const RenderedMDX = React.useMemo(() => getMDXComponent(code), [code]);
 
 	return (
-		<DefaultLayout>
-			<div
-				className="prose-blockquote: prose prose-headings:font-handwriting prose-headings:font-medium prose-h1:mb-4 prose-h1:text-3xl prose-h2:mb-2 prose-h2:mt-6 prose-h2:text-2xl prose-h3:mt-4 prose-p:mb-1 prose-p:mt-2 prose-a:font-normal prose-a:text-zinc-800 prose-a:underline prose-a:decoration-zinc-300 prose-a:decoration-2 prose-a:underline-offset-2 prose-blockquote:-rotate-[0.5deg] prose-blockquote:rounded prose-blockquote:border prose-blockquote:border-l-4 prose-blockquote:bg-white prose-blockquote:py-1 prose-blockquote:text-zinc-500 prose-pre:my-4 prose-pre:border prose-inline-code:rounded prose-inline-code:bg-blue-100 prose-inline-code:py-1 prose-inline-code:font-normal prose-inline-code:text-blue-500
-			">
-				<h1>{post.title}</h1>
-				<RenderedMDX />
-			</div>
-		</DefaultLayout>
+		<Prose>
+			<h1>{post.title}</h1>
+			<RenderedMDX />
+		</Prose>
+	);
+}
+
+export function ErrorBoundary() {
+	const error = useRouteError();
+	console.error(error);
+
+	return (
+		<Prose>
+			<h1>Post Not Found ⁉️</h1>
+			<p>
+				There doesn't seem to be a post with that title. Maybe double-check the
+				URL is correct?
+			</p>
+			<Link to=".." relative="path">
+				View All Posts
+			</Link>
+		</Prose>
 	);
 }

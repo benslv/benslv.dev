@@ -5,9 +5,11 @@ import {
 	Outlet,
 	Scripts,
 	ScrollRestoration,
+	useRouteError,
 } from "@remix-run/react";
 import type { ReactNode } from "react";
 
+import { DefaultLayout } from "./components/DefaultLayout";
 import "./tailwind.css";
 
 export const links: LinksFunction = () => [
@@ -41,7 +43,7 @@ export function Layout({ children }: { children: ReactNode }) {
 				<Links />
 			</head>
 			<body className="my-8 h-full bg-zinc-100 font-sans font-normal text-zinc-600 md:mt-16">
-				{children}
+				<DefaultLayout>{children}</DefaultLayout>
 				<ScrollRestoration />
 				<Scripts />
 			</body>
@@ -51,4 +53,21 @@ export function Layout({ children }: { children: ReactNode }) {
 
 export default function App() {
 	return <Outlet />;
+}
+
+export function ErrorBoundary() {
+	const error = useRouteError();
+	console.error(error);
+
+	return (
+		<DefaultLayout>
+			<h1 className="mb-2 font-handwriting text-3xl text-zinc-800">
+				Uh oh! 🚨
+			</h1>
+			<p>
+				Something went a bit wrong there, and the site wasn't quite able to
+				handle it.
+			</p>
+		</DefaultLayout>
+	);
 }

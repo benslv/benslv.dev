@@ -43,7 +43,7 @@ export function Layout({ children }: { children: ReactNode }) {
 				<Links />
 			</head>
 			<body className="my-8 h-full bg-zinc-100 font-sans font-normal text-zinc-600 md:mt-16">
-				<DefaultLayout>{children}</DefaultLayout>
+				{children}
 				<ScrollRestoration />
 				<Scripts />
 			</body>

@@ -10,6 +10,8 @@ export async function loader() {
 	// 2. Read the "Posts" collection
 	const posts = await reader.collections.posts.all();
 
+	console.log(posts);
+
 	return json({ posts });
 }
 

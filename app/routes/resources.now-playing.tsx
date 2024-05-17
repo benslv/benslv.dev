@@ -10,25 +10,39 @@ export async function loader() {
 		limit: 10,
 	});
 
-	const recentTrack = recent.recenttracks.track;
+	const currentTrack = recent.recenttracks.track.find(
+		(track) => track["@attr"]?.nowplaying,
+	);
 
-	console.log(recentTrack);
-
-	return { recent };
+	return { currentTrack };
 }
 
 export function CurrentTrackPlayer() {
 	const fetcher = useFetcher<typeof loader>();
+	const currentTrack = fetcher.data?.currentTrack;
 
 	useEffect(() => {
 		fetcher.submit({}, { method: "get", action: "/resources/now-playing" });
 	}, []);
 
-	return fetcher.data ? (
-		<div className="h-8 w-16 bg-red-500">
-			{fetcher.data.recent.recenttracks.track[0].name}
+	return (
+		<div className="flex w-fit items-center gap-x-2 rounded-full border bg-white p-1 pr-3">
+			{currentTrack ? (
+				<>
+					<img
+						src={currentTrack.image[0]["#text"]}
+						className="animate-spin-slow h-6 w-6 rounded-full border bg-white"
+					/>
+					<p className="text-sm">
+						{currentTrack.name} - {currentTrack.artist["#text"]}
+					</p>
+				</>
+			) : (
+				<>
+					<div className="h-6 w-6 animate-pulse rounded-full border bg-zinc-400" />
+					<p className="text-sm">loading...</p>
+				</>
+			)}
 		</div>
-	) : (
-		<div className="h-8 w-16 bg-blue-500"></div>
 	);
 }

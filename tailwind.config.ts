@@ -8,10 +8,13 @@ export default {
 			normal: "300",
 			medium: "400",
 		},
+		fontFamily: {
+			sans: ["Rubik", "sans-serif"],
+			handwriting: ["Kalam", "Rubik", "sans-serif"],
+		},
 		extend: {
-			fontFamily: {
-				sans: ["Rubik", "sans-serif"],
-				handwriting: ["Kalam", "Rubik", "sans-serif"],
+			animation: {
+				"spin-slow": "spin 4s linear infinite",
 			},
 		},
 	},

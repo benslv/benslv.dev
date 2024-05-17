@@ -2,10 +2,8 @@ import { collection, config, fields } from "@keystatic/core";
 
 export default config({
 	storage: {
-		kind: "cloud",
-	},
-	cloud: {
-		project: "benslv-dev/benslv-dev",
+		kind: "github",
+		repo: "benslv/benslv.dev",
 	},
 	collections: {
 		posts: collection({

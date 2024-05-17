@@ -9,7 +9,7 @@ export default config({
 		posts: collection({
 			label: "Posts",
 			slugField: "title",
-			path: "app/content/posts/*",
+			path: "content/posts/*",
 			entryLayout: "content",
 			format: { contentField: "body" },
 			schema: {

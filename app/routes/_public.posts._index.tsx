@@ -4,11 +4,15 @@ import { Link, useLoaderData } from "@remix-run/react";
 
 import keystaticConfig from "../../keystatic.config";
 
+import fs from "fs";
+
 export async function loader() {
 	// 1. Create a reader
 	const reader = createReader(process.cwd(), keystaticConfig);
 
 	console.log(reader);
+
+	console.log(fs.readdirSync(process.cwd()));
 
 	// 2. Read the "Posts" collection
 	const posts = await reader.collections.posts.all();

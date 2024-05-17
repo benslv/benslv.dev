@@ -28,12 +28,16 @@ export default function Page() {
 			<ul className="space-y-2">
 				{posts.map((post) => (
 					<li key={post.slug}>
-						<Link to={`/posts/${post.slug}`} className="flex justify-between">
+						<Link
+							to={`/posts/${post.slug}`}
+							className="flex justify-between gap-x-2">
 							<span className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 								{post.entry.title}
 							</span>
-							<span className="tabular-nums text-zinc-400">
-								{formatPostDate(post.entry.publishedDate!)}
+							<span className="text-nowrap tabular-nums text-zinc-400">
+								{new Date(post.entry.publishedDate!).toLocaleString("en-GB", {
+									dateStyle: "medium",
+								})}
 							</span>
 						</Link>
 					</li>
@@ -41,14 +45,4 @@ export default function Page() {
 			</ul>
 		</>
 	);
-}
-
-const postDateFormatter = new Intl.DateTimeFormat("en-GB", {
-	dateStyle: "medium",
-});
-
-function formatPostDate(date: string) {
-	const dateString = new Date(date);
-
-	return postDateFormatter.format(dateString);
 }

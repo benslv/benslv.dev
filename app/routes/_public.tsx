@@ -3,7 +3,7 @@ import { SocialIcons } from "~/components/SocialIcons";
 
 export default function PublicLayout() {
 	return (
-		<div className="mx-4 my-2 max-w-screen-sm md:mx-auto">
+		<div className="mx-auto my-2 max-w-screen-sm">
 			<div className="mb-8 flex items-center justify-between">
 				<nav>
 					<ul className="flex gap-x-4 text-sm font-medium uppercase text-zinc-400">

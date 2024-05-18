@@ -39,6 +39,7 @@ export default function Page() {
 					<li key={post.slug} className="flex justify-between gap-x-2">
 						<Link
 							to={`/posts/${post.slug}`}
+							prefetch="intent"
 							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
 							<span className="">{post.entry.title}</span>
 						</Link>

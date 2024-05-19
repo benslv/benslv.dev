@@ -29,6 +29,18 @@ export function CurrentTrackPlayer() {
 		fetcher.submit({}, { method: "get", action: "/resources/now-playing" });
 	}, []);
 
+	// Super simple auto refresh
+	useEffect(() => {
+		const interval = setInterval(
+			() => {
+				fetcher.submit({}, { method: "get", action: "/resources/now-playing" });
+			},
+			3 * 60 * 60,
+		);
+
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
 		<div className="flex w-fit items-center gap-x-2 rounded-full border bg-white p-1 pr-3">
 			{!data || fetcher.state === "loading" ? (

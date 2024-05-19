@@ -14,12 +14,16 @@ export async function loader() {
 		(track) => track["@attr"]?.nowplaying,
 	);
 
-	return { currentTrack };
+	if (!currentTrack) {
+		return { isPlaying: false as const };
+	}
+
+	return { isPlaying: true as const, currentTrack };
 }
 
 export function CurrentTrackPlayer() {
 	const fetcher = useFetcher<typeof loader>();
-	const currentTrack = fetcher.data?.currentTrack;
+	const data = fetcher.data;
 
 	useEffect(() => {
 		fetcher.submit({}, { method: "get", action: "/resources/now-playing" });
@@ -27,19 +31,19 @@ export function CurrentTrackPlayer() {
 
 	return (
 		<div className="flex w-fit items-center gap-x-2 rounded-full border bg-white p-1 pr-3">
-			{fetcher.state === "loading" ? (
+			{!data || fetcher.state === "loading" ? (
 				<>
 					<div className="h-6 w-6 animate-pulse rounded-full border bg-zinc-400" />
 					<p className="text-sm">loading...</p>
 				</>
-			) : fetcher.state === "idle" && currentTrack ? (
+			) : data.isPlaying ? (
 				<>
 					<img
-						src={currentTrack.image[0]["#text"]}
+						src={data.currentTrack.image[0]["#text"]}
 						className="h-6 w-6 animate-spin-slow rounded-full border bg-white"
 					/>
 					<p className="text-sm">
-						{currentTrack.name} - {currentTrack.artist["#text"]}
+						{data.currentTrack.name} - {data.currentTrack.artist["#text"]}
 					</p>
 				</>
 			) : (

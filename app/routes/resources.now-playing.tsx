@@ -27,11 +27,16 @@ export function CurrentTrackPlayer() {
 
 	return (
 		<div className="flex w-fit items-center gap-x-2 rounded-full border bg-white p-1 pr-3">
-			{currentTrack ? (
+			{fetcher.state === "loading" ? (
+				<>
+					<div className="h-6 w-6 animate-pulse rounded-full border bg-zinc-400" />
+					<p className="text-sm">loading...</p>
+				</>
+			) : fetcher.state === "idle" && currentTrack ? (
 				<>
 					<img
 						src={currentTrack.image[0]["#text"]}
-						className="animate-spin-slow h-6 w-6 rounded-full border bg-white"
+						className="h-6 w-6 animate-spin-slow rounded-full border bg-white"
 					/>
 					<p className="text-sm">
 						{currentTrack.name} - {currentTrack.artist["#text"]}
@@ -39,8 +44,8 @@ export function CurrentTrackPlayer() {
 				</>
 			) : (
 				<>
-					<div className="h-6 w-6 animate-pulse rounded-full border bg-zinc-400" />
-					<p className="text-sm">loading...</p>
+					<img src="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg&w=24&h=24" />
+					<p className="text-sm">Nothing playing</p>
 				</>
 			)}
 		</div>

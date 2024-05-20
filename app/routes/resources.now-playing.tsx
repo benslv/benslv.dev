@@ -35,7 +35,7 @@ export function CurrentTrackPlayer() {
 			() => {
 				fetcher.submit({}, { method: "get", action: "/resources/now-playing" });
 			},
-			3 * 60 * 60,
+			3 * 60 * 60 * 1000,
 		);
 
 		return () => clearInterval(interval);

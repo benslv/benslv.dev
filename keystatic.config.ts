@@ -26,5 +26,18 @@ export default config({
 				}),
 			},
 		}),
+		blogroll: collection({
+			label: "Blogroll",
+			slugField: "author",
+			path: "app/content/blogroll/*",
+			schema: {
+				url: fields.text({ label: "URL" }),
+				author: fields.slug({ name: { label: "Author" } }),
+				reason: fields.text({
+					label: "Reason",
+					description: "Why are you sharing this site?",
+				}),
+			},
+		}),
 	},
 });

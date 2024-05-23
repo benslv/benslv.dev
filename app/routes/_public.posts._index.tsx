@@ -1,20 +1,10 @@
-import { createReader } from "@keystatic/core/reader";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 
-import keystaticConfig from "../../keystatic.config";
-
-import fs from "fs";
-import path from "path";
+import { getReader } from "~/models/reader.server";
 
 export async function loader() {
-	// 1. Create a reader
-	const reader = createReader(process.cwd(), keystaticConfig);
-
-	console.log(fs.readdirSync(path.join(process.cwd(), "app", "content/posts")));
-
-	// 2. Read the "Posts" collection
-	const posts = await reader.collections.posts.all();
+	const posts = await getReader().collections.posts.all();
 
 	const publishedPosts = posts
 		.filter((post) => post.entry.published || process.env.SHOW_DRAFT_POSTS)

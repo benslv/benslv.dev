@@ -30,8 +30,8 @@ export default function Page() {
 				I really like their site design!
 			</p>
 			<div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-2">
-				{sites.map(({ entry }) => (
-					<SiteCard {...entry} />
+				{sites.map(({ entry, slug }) => (
+					<SiteCard key={slug} {...entry} />
 				))}
 			</div>
 		</>

@@ -1,5 +1,4 @@
 // app/routes/posts.$slug.tsx
-import { createReader } from "@keystatic/core/reader";
 import { json, type LoaderFunctionArgs } from "@remix-run/node";
 import { Link, useLoaderData, useRouteError } from "@remix-run/react";
 import { bundleMDX } from "mdx-bundler";
@@ -7,13 +6,12 @@ import { getMDXComponent } from "mdx-bundler/client";
 import React from "react";
 import rehypePrism from "rehype-prism-plus";
 
-import keystaticConfig from "../../keystatic.config";
-
 import { Prose } from "~/components/Prose";
+import { getReader } from "~/models/reader.server";
 import "~/styles/prism-one-light.css";
 
 export async function loader({ params }: LoaderFunctionArgs) {
-	const reader = createReader(process.cwd(), keystaticConfig);
+	const reader = getReader();
 	const slug = params.slug;
 	if (!slug) throw json("Not Found", { status: 404 });
 	const post = await reader.collections.posts.read(

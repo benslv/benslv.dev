@@ -12,7 +12,7 @@ tags: []
 export async function loader() {
   const reader = createReader(process.cwd(), keystaticConfig);
 
-  // This is the 
+  // This is the important line!
   console.log(fs.readdirSync(path.join(process.cwd(), "app", "content/posts")));
 
   const posts = await reader.collections.posts.all();

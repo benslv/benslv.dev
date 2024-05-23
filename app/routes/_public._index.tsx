@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import { Link, json, useLoaderData } from "@remix-run/react";
+import { getReader } from "~/models/reader.server";
 import { CurrentTrackPlayer } from "./resources.now-playing";
 
 export const meta: MetaFunction = () => {
@@ -9,9 +10,26 @@ export const meta: MetaFunction = () => {
 	];
 };
 
+export async function loader() {
+	const posts = await getReader().collections.posts.all();
+
+	const publishedPosts = posts
+		.filter((post) => post.entry.published || process.env.SHOW_DRAFT_POSTS)
+		.sort((a, b) => {
+			return (
+				new Date(b.entry.publishedDate!).getTime() -
+				new Date(a.entry.publishedDate!).getTime()
+			);
+		});
+
+	return json({ posts: publishedPosts });
+}
+
 export default function Index() {
+	const { posts } = useLoaderData<typeof loader>();
+
 	return (
-		<div className="flex flex-col gap-y-4">
+		<div className="flex flex-col gap-y-6">
 			<section>
 				<h1 className="mb-4 font-handwriting text-3xl text-zinc-800">
 					Hi, I'm Ben! 👋
@@ -52,10 +70,10 @@ export default function Index() {
 				</p>
 			</section>
 			<section>
-				<h2 className="mt-2 font-handwriting text-2xl font-medium text-zinc-800">
+				<h2 className="mb-2 font-handwriting text-2xl font-medium text-zinc-800">
 					Experience
 				</h2>
-				<ul className="ml-4 mt-2 list-disc space-y-2 marker:text-zinc-300">
+				<ul className="ml-4 list-disc space-y-2 marker:text-zinc-300">
 					<li>
 						<Link
 							to="https://wbd.com"
@@ -90,10 +108,10 @@ export default function Index() {
 				</ul>
 			</section>
 			<section>
-				<h2 className="mt-2 font-handwriting text-2xl font-medium text-zinc-800">
+				<h2 className="mb-2 mt-2 font-handwriting text-2xl font-medium text-zinc-800">
 					Projects
 				</h2>
-				<ul className="ml-6 mt-2 space-y-2 marker:text-zinc-300">
+				<ul className="ml-6 space-y-2 marker:text-zinc-300">
 					<li className="before:-ml-6 before:mr-2 before:content-['🎶']">
 						<Link
 							to="https://insync.rocks"
@@ -131,6 +149,28 @@ export default function Index() {
 						</Link>
 						, a Node.js wrapper for Gfycat&#39;s API.
 					</li>
+				</ul>
+			</section>
+			<section>
+				<h2 className="mb-2 font-handwriting text-2xl font-medium text-zinc-800">
+					Blog
+				</h2>
+				<ul className="space-y-2">
+					{posts.map((post) => (
+						<li key={post.slug} className="flex justify-between gap-x-2">
+							<Link
+								to={`/posts/${post.slug}`}
+								prefetch="intent"
+								className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
+								<span className="">{post.entry.title}</span>
+							</Link>
+							<span className="text-nowrap tabular-nums text-zinc-400">
+								{new Date(post.entry.publishedDate!).toLocaleString("en-GB", {
+									dateStyle: "medium",
+								})}
+							</span>
+						</li>
+					))}
 				</ul>
 			</section>
 		</div>

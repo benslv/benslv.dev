@@ -12,13 +12,6 @@ export default function PublicLayout() {
 								Home
 							</Link>
 						</li>
-						<li>
-							<Link
-								to="/posts"
-								className="transition-colors hover:text-zinc-500">
-								Posts
-							</Link>
-						</li>
 					</ul>
 				</nav>
 				<SocialIcons />

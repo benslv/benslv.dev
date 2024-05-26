@@ -1,7 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link, json, useLoaderData } from "@remix-run/react";
 import { getReader } from "~/models/reader.server";
-import { CurrentTrackPlayer } from "./resources.now-playing";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -52,8 +51,6 @@ export default function Index() {
 					.
 				</p>
 			</section>
-			<hr />
-			<CurrentTrackPlayer />
 			<hr />
 			<section>
 				<p>

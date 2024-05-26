@@ -1,9 +1,17 @@
-import { collection, config, fields } from "@keystatic/core";
+import { collection, config, fields, singleton } from "@keystatic/core";
 
 export default config({
 	storage: {
 		kind: "github",
 		repo: "benslv/benslv.dev",
+	},
+	singletons: {
+		reading: singleton({
+			label: "Currently reading",
+			schema: {
+				ISBN: fields.text({ label: "ISBN" }),
+			},
+		}),
 	},
 	collections: {
 		posts: collection({

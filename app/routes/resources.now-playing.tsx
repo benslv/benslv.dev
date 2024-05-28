@@ -3,7 +3,7 @@ import { LastFMUser } from "lastfm-ts-api";
 import { useEffect } from "react";
 
 export async function loader() {
-	const me = new LastFMUser("2893cab5bb7c151f1f23d5fd9f054934");
+	const me = new LastFMUser(process.env.LASTFM_API_KEY!);
 
 	const recent = await me.getRecentTracks({
 		user: "benslv",

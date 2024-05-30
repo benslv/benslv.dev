@@ -1,7 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link, json, useLoaderData } from "@remix-run/react";
+import { Link, defer, useLoaderData } from "@remix-run/react";
+import { NowPlaying } from "~/components/NowPlaying";
+import { getNowPlaying } from "~/models/nowplaying.server";
 import { getReader } from "~/models/reader.server";
-import { CurrentTrackPlayer } from "./resources.now-playing";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -22,11 +23,14 @@ export async function loader() {
 			);
 		});
 
-	return json({ posts: publishedPosts });
+	return defer({
+		posts: publishedPosts,
+		currentTrackPromise: getNowPlaying(),
+	});
 }
 
 export default function Index() {
-	const { posts } = useLoaderData<typeof loader>();
+	const { posts, currentTrackPromise } = useLoaderData<typeof loader>();
 
 	return (
 		<div className="flex flex-col gap-y-6">
@@ -53,7 +57,7 @@ export default function Index() {
 				</p>
 			</section>
 			<hr />
-			<CurrentTrackPlayer />
+			<NowPlaying currentTrackPromise={currentTrackPromise} />
 			<hr />
 			<section>
 				<p>

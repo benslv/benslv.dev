@@ -21,8 +21,6 @@ export async function loader() {
 }
 ```
 
----
-
 I recently posted about how I decided to [rewrite my website](https://benslv.dev/posts/rewriting-my-website), choosing to use Keystatic for managing the trillions and trillions of posts I've made.&#x20;
 
 The process was very simple: I set it up in local development, told it to use GitHub for storage, and added some code in my loaders to read said storage and serve the posts. It's super simple and it works super well...locally. The only tiny issue I ran into was when deploying this same code to production, on a server hosted by Vercel, where absolutely *none* of the posts were showing up.

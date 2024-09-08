@@ -35,7 +35,7 @@ export default function Index() {
 	return (
 		<div className="flex flex-col gap-y-6">
 			<section>
-				<h1 className="mb-4 font-handwriting text-3xl text-zinc-800">
+				<h1 className="mb-4 text-3xl font-bold text-zinc-800">
 					Hi, I'm Ben! 👋
 				</h1>
 				<p>
@@ -74,9 +74,7 @@ export default function Index() {
 				</p>
 			</section>
 			<section>
-				<h2 className="mb-2 font-handwriting text-2xl font-medium text-zinc-800">
-					Experience
-				</h2>
+				<h2 className="mb-2 text-2xl font-medium text-zinc-800">Experience</h2>
 				<ul className="ml-4 list-disc space-y-2 marker:text-zinc-300">
 					<li>
 						<Link
@@ -112,7 +110,7 @@ export default function Index() {
 				</ul>
 			</section>
 			<section>
-				<h2 className="mb-2 mt-2 font-handwriting text-2xl font-medium text-zinc-800">
+				<h2 className="mb-2 mt-2  text-2xl font-medium text-zinc-800">
 					Projects
 				</h2>
 				<ul className="ml-6 space-y-2 marker:text-zinc-300">
@@ -156,9 +154,7 @@ export default function Index() {
 				</ul>
 			</section>
 			<section>
-				<h2 className="mb-2 font-handwriting text-2xl font-medium text-zinc-800">
-					Blog
-				</h2>
+				<h2 className="mb-2  text-2xl font-medium text-zinc-800">Blog</h2>
 				<ul className="space-y-2">
 					{posts.map((post) => (
 						<li key={post.slug} className="flex justify-between gap-x-2">

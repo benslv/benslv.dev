@@ -61,9 +61,7 @@ export function ErrorBoundary() {
 
 	return (
 		<DefaultLayout>
-			<h1 className="mb-2 font-handwriting text-3xl text-zinc-800">
-				Uh oh! 🚨
-			</h1>
+			<h1 className="mb-2 text-3xl text-zinc-800">Uh oh! 🚨</h1>
 			<p>
 				Something went a bit wrong there, and the site wasn't quite able to
 				handle it.

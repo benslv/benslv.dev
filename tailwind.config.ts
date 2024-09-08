@@ -11,7 +11,6 @@ export default {
 		},
 		fontFamily: {
 			sans: ["Rubik", "sans-serif"],
-			handwriting: ["Kalam", "Rubik", "sans-serif"],
 		},
 		extend: {
 			animation: {

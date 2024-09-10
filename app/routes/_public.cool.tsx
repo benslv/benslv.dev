@@ -1,24 +1,20 @@
-import { useLoaderData } from "@remix-run/react";
-import { SiteCard } from "~/components/SiteCard";
-import { getReader } from "~/models/reader.server";
+// export async function loader() {
+// 	const reader = getReader();
+// 	const sites = await reader.collections.blogroll.all();
 
-export async function loader() {
-	const reader = getReader();
-	const sites = await reader.collections.blogroll.all();
+// 	const sitesWithFavicon = sites.map((site) => ({
+// 		slug: site.slug,
+// 		entry: {
+// 			...site.entry,
+// 			favicon: `https://s2.googleusercontent.com/s2/favicons?domain=${site.entry.url}&sz=16`,
+// 		},
+// 	}));
 
-	const sitesWithFavicon = sites.map((site) => ({
-		slug: site.slug,
-		entry: {
-			...site.entry,
-			favicon: `https://s2.googleusercontent.com/s2/favicons?domain=${site.entry.url}&sz=16`,
-		},
-	}));
-
-	return { sites: sitesWithFavicon };
-}
+// 	return { sites: sitesWithFavicon };
+// }
 
 export default function Page() {
-	const { sites } = useLoaderData<typeof loader>();
+	// const { sites } = useLoaderData<typeof loader>();
 	return (
 		<>
 			<h1 className="mb-4  text-3xl text-zinc-800">Cool Sites 😎</h1>
@@ -27,11 +23,11 @@ export default function Page() {
 				could be that I've enjoyed the articles an author has written, or maybe
 				I really like their site design!
 			</p>
-			<div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-2">
+			{/* <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-2">
 				{sites.map(({ entry, slug }) => (
 					<SiteCard key={slug} {...entry} />
 				))}
-			</div>
+			</div> */}
 		</>
 	);
 }

@@ -1,48 +1,43 @@
 // app/routes/posts.$slug.tsx
-import { json, type LoaderFunctionArgs } from "@remix-run/node";
-import { Link, useLoaderData, useRouteError } from "@remix-run/react";
-import { bundleMDX } from "mdx-bundler";
-import { getMDXComponent } from "mdx-bundler/client";
-import React from "react";
-import rehypePrism from "rehype-prism-plus";
+import { Link, useRouteError } from "@remix-run/react";
 
 import { Prose } from "~/components/Prose";
-import { getReader } from "~/models/reader.server";
 import "~/styles/prism-one-light.css";
 
-export async function loader({ params }: LoaderFunctionArgs) {
-	const reader = getReader();
-	const slug = params.slug;
-	if (!slug) throw json("Not Found", { status: 404 });
-	const post = await reader.collections.posts.read(
-		slug,
-		// Retrieve the content data directly, instead
-		// of getting an async `content()` function
-		{ resolveLinkedFiles: true },
-	);
-	if (!post) throw json("Not Found", { status: 404 });
+// export async function loader({ params }: LoaderFunctionArgs) {
+// 	const reader = getReader();
+// 	const slug = params.slug;
+// 	if (!slug) throw json("Not Found", { status: 404 });
+// 	const post = await reader.collections.posts.read(
+// 		slug,
+// 		// Retrieve the content data directly, instead
+// 		// of getting an async `content()` function
+// 		{ resolveLinkedFiles: true },
+// 	);
+// 	if (!post) throw json("Not Found", { status: 404 });
 
-	const { code } = await bundleMDX({
-		source: post.body,
-		mdxOptions(options) {
-			options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypePrism];
+// 	const { code } = await bundleMDX({
+// 		source: post.body,
+// 		mdxOptions(options) {
+// 			options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypePrism];
 
-			return options;
-		},
-	});
+// 			return options;
+// 		},
+// 	});
 
-	return json({ post, code });
-}
+// 	return json({ post, code });
+// }
 
 export default function Post() {
-	const { post, code } = useLoaderData<typeof loader>();
+	// const { post, code } = useLoaderData<typeof loader>();
 
-	const RenderedMDX = React.useMemo(() => getMDXComponent(code), [code]);
+	// const RenderedMDX = React.useMemo(() => getMDXComponent(code), [code]);
 
 	return (
 		<Prose>
-			<h1>{post.title}</h1>
-			<RenderedMDX />
+			<p>Title</p>
+			{/* <h1>{post.title}</h1> */}
+			{/* <RenderedMDX /> */}
 		</Prose>
 	);
 }

@@ -1,21 +1,46 @@
-import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+// import { getReader } from "~/models/reader.server";
 
-import { getReader } from "~/models/reader.server";
+import { Link, useLoaderData } from "@remix-run/react";
+import * as v from "valibot";
+
+const FrontmatterSchema = v.object({
+	frontmatter: v.object({
+		title: v.string(),
+		published: v.boolean(),
+		publishedDate: v.optional(
+			v.pipe(
+				v.string(),
+				v.transform((input) => new Date(input)),
+			),
+		),
+	}),
+});
+
+type Frontmatter = v.InferOutput<typeof FrontmatterSchema>["frontmatter"];
+
+type Entry = Frontmatter & { slug: string };
 
 export async function loader() {
-	const posts = await getReader().collections.posts.all();
+	const rawPosts = import.meta.glob("../content/posts/*.mdx", { eager: true });
 
-	const publishedPosts = posts
-		.filter((post) => post.entry.published || process.env.SHOW_DRAFT_POSTS)
-		.sort((a, b) => {
-			return (
-				new Date(b.entry.publishedDate!).getTime() -
-				new Date(a.entry.publishedDate!).getTime()
-			);
-		});
+	const posts = Object.entries(rawPosts).reduce((acc, post) => {
+		const slug = v.parse(
+			v.string(),
+			post[0].split("/").at(-1)?.replace(".mdx", ""),
+		);
 
-	return json({ posts: publishedPosts });
+		const frontmatter = v.parse(FrontmatterSchema, post[1]).frontmatter;
+
+		acc.push({ slug, ...frontmatter });
+
+		return acc;
+	}, [] as Entry[]);
+
+	const sortedAndPublished = posts
+		.filter((post) => post.published || process.env.SHOW_DRAFT_POSTS)
+		.sort((a, b) => b.publishedDate!.getTime() - a.publishedDate!.getTime());
+
+	return { posts: sortedAndPublished };
 }
 
 export default function Page() {
@@ -31,10 +56,10 @@ export default function Page() {
 							to={`/posts/${post.slug}`}
 							prefetch="intent"
 							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
-							<span className="">{post.entry.title}</span>
+							<span className="">{post.title}</span>
 						</Link>
 						<span className="text-nowrap tabular-nums text-zinc-400">
-							{new Date(post.entry.publishedDate!).toLocaleString("en-GB", {
+							{new Date(post.publishedDate!).toLocaleString("en-GB", {
 								dateStyle: "medium",
 							})}
 						</span>

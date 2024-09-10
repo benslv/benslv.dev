@@ -2,7 +2,6 @@ import type { MetaFunction } from "@remix-run/node";
 import { Link, defer, useLoaderData } from "@remix-run/react";
 import { NowPlaying } from "~/components/NowPlaying";
 import { getNowPlaying } from "~/models/nowplaying.server";
-import { getReader } from "~/models/reader.server";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -12,25 +11,13 @@ export const meta: MetaFunction = () => {
 };
 
 export async function loader() {
-	const posts = await getReader().collections.posts.all();
-
-	const publishedPosts = posts
-		.filter((post) => post.entry.published || process.env.SHOW_DRAFT_POSTS)
-		.sort((a, b) => {
-			return (
-				new Date(b.entry.publishedDate!).getTime() -
-				new Date(a.entry.publishedDate!).getTime()
-			);
-		});
-
 	return defer({
-		posts: publishedPosts,
 		currentTrackPromise: getNowPlaying(),
 	});
 }
 
 export default function Index() {
-	const { posts, currentTrackPromise } = useLoaderData<typeof loader>();
+	const { currentTrackPromise } = useLoaderData<typeof loader>();
 
 	return (
 		<div className="flex flex-col gap-y-6">
@@ -151,26 +138,6 @@ export default function Index() {
 						</Link>
 						, a Node.js wrapper for Gfycat&#39;s API.
 					</li>
-				</ul>
-			</section>
-			<section>
-				<h2 className="mb-2  text-2xl font-medium text-zinc-800">Blog</h2>
-				<ul className="space-y-2">
-					{posts.map((post) => (
-						<li key={post.slug} className="flex justify-between gap-x-2">
-							<Link
-								to={`/posts/${post.slug}`}
-								prefetch="intent"
-								className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
-								<span className="">{post.entry.title}</span>
-							</Link>
-							<span className="text-nowrap tabular-nums text-zinc-400">
-								{new Date(post.entry.publishedDate!).toLocaleString("en-GB", {
-									dateStyle: "medium",
-								})}
-							</span>
-						</li>
-					))}
 				</ul>
 			</section>
 		</div>

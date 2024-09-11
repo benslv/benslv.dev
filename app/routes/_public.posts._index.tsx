@@ -46,7 +46,9 @@ export default function Page() {
 
 	return (
 		<Container>
-			<h1 className="mb-4  text-3xl text-zinc-800">Posts 📝</h1>
+			<h1 className="mb-4 text-3xl font-bold tracking-tight text-zinc-800">
+				Posts
+			</h1>
 			<ul className="space-y-2">
 				{posts.map((post) => (
 					<li key={post.slug} className="flex justify-between gap-x-2">

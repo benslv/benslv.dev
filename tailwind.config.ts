@@ -7,7 +7,7 @@ export default {
 		fontWeight: {
 			normal: "300",
 			medium: "400",
-			bold: "500",
+			bold: "600",
 		},
 		fontFamily: {
 			sans: ["Rubik", "sans-serif"],

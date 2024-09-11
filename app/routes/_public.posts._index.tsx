@@ -1,6 +1,6 @@
-// import { getReader } from "~/models/reader.server";
-
 import { Link, useLoaderData } from "@remix-run/react";
+import { Container } from "~/components/Container";
+
 import * as v from "valibot";
 
 const FrontmatterSchema = v.object({
@@ -45,7 +45,7 @@ export default function Page() {
 	const { posts } = useLoaderData<typeof loader>();
 
 	return (
-		<>
+		<Container>
 			<h1 className="mb-4  text-3xl text-zinc-800">Posts 📝</h1>
 			<ul className="space-y-2">
 				{posts.map((post) => (
@@ -64,6 +64,6 @@ export default function Page() {
 					</li>
 				))}
 			</ul>
-		</>
+		</Container>
 	);
 }

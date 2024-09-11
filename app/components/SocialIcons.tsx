@@ -6,7 +6,7 @@ import Twitter from "./icons/Twitter";
 
 export function SocialIcons() {
 	return (
-		<div className="flex items-center justify-between gap-x-2 text-zinc-400">
+		<div className="flex w-max items-center justify-between gap-x-4 text-zinc-400">
 			<Link
 				to="https://linkedin.com/in/ben-silverman"
 				target="_blank"

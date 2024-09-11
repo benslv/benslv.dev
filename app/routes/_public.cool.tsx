@@ -1,6 +1,4 @@
-// export async function loader() {
-// 	const reader = getReader();
-// 	const sites = await reader.collections.blogroll.all();
+import { Container } from "~/components/Container";
 
 // 	const sitesWithFavicon = sites.map((site) => ({
 // 		slug: site.slug,
@@ -16,7 +14,7 @@
 export default function Page() {
 	// const { sites } = useLoaderData<typeof loader>();
 	return (
-		<>
+		<Container>
 			<h1 className="mb-4  text-3xl text-zinc-800">Cool Sites 😎</h1>
 			<p>
 				A bunch of sites that I think are cool for one reason or another. It
@@ -28,6 +26,6 @@ export default function Page() {
 					<SiteCard key={slug} {...entry} />
 				))}
 			</div> */}
-		</>
+		</Container>
 	);
 }

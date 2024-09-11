@@ -23,7 +23,7 @@ type Entry = Frontmatter & { slug: string };
 export async function loader() {
 	const rawPosts = import.meta.glob("../content/posts/*.mdx", { eager: true });
 
-	const posts = Object.entries(rawPosts).reduce((acc, post) => {
+	const posts = Object.entries(rawPosts).map<Entry>((post) => {
 		const slug = v.parse(
 			v.string(),
 			post[0].split("/").at(-1)?.replace(".mdx", ""),
@@ -31,10 +31,8 @@ export async function loader() {
 
 		const frontmatter = v.parse(FrontmatterSchema, post[1]).frontmatter;
 
-		acc.push({ slug, ...frontmatter });
-
-		return acc;
-	}, [] as Entry[]);
+		return { slug, ...frontmatter };
+	});
 
 	const sortedAndPublished = posts
 		.filter((post) => post.published || process.env.SHOW_DRAFT_POSTS)

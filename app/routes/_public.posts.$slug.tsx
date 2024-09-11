@@ -21,6 +21,8 @@ export async function loader({ params }: LoaderFunctionArgs) {
 	const fileName = `${slug}.mdx`;
 	const filePath = path.join(__dirname, "..", "content", "posts", fileName);
 
+	console.log(fs.readdirSync(path.join(__dirname, "..", "content", "posts")));
+
 	if (!fs.existsSync(filePath)) {
 		throw json("Not Found", { status: 404 });
 	}

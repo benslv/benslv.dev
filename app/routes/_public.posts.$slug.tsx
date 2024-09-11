@@ -57,15 +57,17 @@ export function ErrorBoundary() {
 	console.error(error);
 
 	return (
-		<Prose>
-			<h1>Post Not Found ⁉️</h1>
-			<p>
-				There doesn't seem to be a post with that title. Maybe double-check the
-				URL is correct?
-			</p>
-			<Link to=".." relative="path">
-				View All Posts
-			</Link>
-		</Prose>
+		<Container>
+			<Prose>
+				<h1>Post Not Found ⁉️</h1>
+				<p>
+					There doesn't seem to be a post with that title. Maybe double-check
+					the URL is correct?
+				</p>
+				<Link to=".." relative="path">
+					View All Posts
+				</Link>
+			</Prose>
+		</Container>
 	);
 }

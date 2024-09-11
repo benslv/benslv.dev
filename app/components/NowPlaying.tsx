@@ -1,37 +1,13 @@
 import { Await } from "@remix-run/react";
-import type { LastFMBooleanNumber } from "lastfm-ts-api";
+import type { LastFMUserGetRecentTracksResponse } from "lastfm-ts-api";
 import { Suspense } from "react";
-
-type LastFmTrack = {
-	artist: {
-		mbid: string;
-		"#text": string;
-	};
-	streamable: LastFMBooleanNumber;
-	image: Array<{
-		"#text": string;
-		size: string;
-	}>;
-	mbid: string;
-	album: {
-		mbid: string;
-		"#text": string;
-	};
-	name: string;
-	url: string;
-	date: {
-		uts: string;
-		"#text": string;
-	};
-	"@attr"?: {
-		nowplaying: "true";
-	};
-};
 
 export function NowPlaying({
 	currentTrackPromise,
 }: {
-	currentTrackPromise: Promise<LastFmTrack | null>;
+	currentTrackPromise: Promise<
+		LastFMUserGetRecentTracksResponse["recenttracks"]["track"][number] | null
+	>;
 }) {
 	return (
 		<div className="flex w-fit items-center gap-x-2 rounded-full border bg-white p-1 pr-3">
@@ -59,7 +35,7 @@ export function NowPlaying({
 									src={currentTrack.image[0]["#text"]}
 									className="h-6 w-6 animate-spin-slow rounded-full border bg-white"
 								/>
-								<p className="text-sm">
+								<p className="max-w-80 overflow-hidden text-ellipsis whitespace-nowrap text-nowrap text-sm">
 									{currentTrack.name} - {currentTrack.artist["#text"]}
 								</p>
 							</>

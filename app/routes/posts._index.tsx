@@ -9,7 +9,7 @@ export async function loader() {
 
 export const meta: MetaFunction = () => [
 	{
-		title: "Ben Silverman's Posts",
+		title: "Ben Silverman's posts",
 		description: "Everything I've written!",
 	},
 	{ name: "description", content: "Everything I've written!" },

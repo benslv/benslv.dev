@@ -1,7 +1,12 @@
 import { LastFMUser } from "lastfm-ts-api";
 
 export async function getNowPlaying() {
-	const me = new LastFMUser(process.env.LASTFM_API_KEY!);
+	if (!process.env.LASTFM_API_KEY) {
+		console.warn("Missing Last.fm API key.");
+		return null;
+	}
+
+	const me = new LastFMUser(process.env.LASTFM_API_KEY);
 
 	const recent = await me.getRecentTracks({
 		user: "benslv",

@@ -1,5 +1,5 @@
 // app/routes/posts.$slug.tsx
-import { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
+import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Link, useLoaderData, useRouteError } from "@remix-run/react";
 import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
@@ -16,7 +16,14 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
 	const { frontmatter, code } = await getPostContent(slug);
 
-	return { frontmatter, code };
+	return json(
+		{ frontmatter, code },
+		{
+			headers: {
+				"Cache-Control": "max-age=3600, s-maxage=3600",
+			},
+		},
+	);
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => [

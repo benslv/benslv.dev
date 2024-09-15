@@ -1,6 +1,5 @@
 import type { Entry } from "@keystatic/core/reader";
 import { Link } from "@remix-run/react";
-import type keystaticConfig from "keystatic.config";
 
 type SiteCardProps = Entry<
 	(typeof keystaticConfig)["collections"]["blogroll"]

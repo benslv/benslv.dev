@@ -1,4 +1,5 @@
 import { json } from "@remix-run/node";
+import { all } from "@wooorm/starry-night";
 import fs from "fs";
 import { bundleMDX } from "mdx-bundler";
 import path from "path";
@@ -59,7 +60,7 @@ export async function getPostContent(slug: string) {
 		mdxOptions(options) {
 			options.rehypePlugins = [
 				...(options.rehypePlugins ?? []),
-				rehypeStarryNight,
+				() => rehypeStarryNight({ grammars: all }),
 			];
 			return options;
 		},

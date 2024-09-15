@@ -8,7 +8,6 @@ import * as v from "valibot";
 import { Container } from "~/components/Container";
 import { Prose } from "~/components/Prose";
 import { getPostContent } from "~/models/posts.server";
-// import "~/styles/prism-one-light.css";
 
 import "~/styles/starry-night.css";
 

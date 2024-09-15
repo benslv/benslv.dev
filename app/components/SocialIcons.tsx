@@ -9,6 +9,7 @@ export function SocialIcons() {
 		<div className="flex w-max items-center justify-between gap-x-4 text-zinc-400">
 			<Link
 				to="https://linkedin.com/in/ben-silverman"
+				aria-label="LinkedIn"
 				target="_blank"
 				className="transition-colors hover:text-zinc-500"
 				rel="noreferrer">
@@ -16,6 +17,7 @@ export function SocialIcons() {
 			</Link>
 			<Link
 				to="https://github.com/benslv"
+				aria-label="GitHub"
 				target="_blank"
 				className="transition-colors hover:text-zinc-500"
 				rel="noreferrer">
@@ -23,6 +25,7 @@ export function SocialIcons() {
 			</Link>
 			<Link
 				to="https://twitter.com/bensilverman_"
+				aria-label="Twitter"
 				target="_blank"
 				className="transition-colors hover:text-zinc-500"
 				rel="noreferrer">
@@ -30,6 +33,7 @@ export function SocialIcons() {
 			</Link>
 			<Link
 				to="https://www.goodreads.com/benslv"
+				aria-label="Goodreads"
 				target="_blank"
 				className="transition-colors hover:text-zinc-500"
 				rel="noreferrer">

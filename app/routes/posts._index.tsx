@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, MetaFunction, useLoaderData } from "@remix-run/react";
 
 import { Container } from "~/components/Container";
 import { getAllPostEntries } from "~/models/posts.server";
@@ -6,6 +6,14 @@ import { getAllPostEntries } from "~/models/posts.server";
 export async function loader() {
 	return { posts: getAllPostEntries() };
 }
+
+export const meta: MetaFunction = () => [
+	{
+		title: "Ben Silverman's Posts",
+		description: "Everything I've written!",
+	},
+	{ name: "description", content: "Everything I've written!" },
+];
 
 export default function Page() {
 	const { posts } = useLoaderData<typeof loader>();

@@ -23,7 +23,13 @@ export function NowPlaying({
 						if (!currentTrack) {
 							return (
 								<>
-									<img src="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg&w=24&h=24" />
+									<img
+										src="https://wsrv.nl/?url=upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg&w=24&h=24"
+										width={24}
+										height={24}
+										className="size-6"
+										alt=""
+									/>
 									<p className="text-sm">Nothing playing</p>
 								</>
 							);

@@ -58,7 +58,7 @@ export function Layout({ children }: { children: ReactNode }) {
 			</head>
 			<body className="h-full font-sans font-normal text-zinc-600">
 				<div className="flex h-full flex-col gap-y-4">
-					<header className="my-4 w-full">
+					<header className="my-4 w-full px-4">
 						<nav className="mx-auto flex max-w-screen-sm rounded-full border border-white bg-gradient-to-b from-zinc-50 to-zinc-100 px-4 py-2 text-zinc-400 shadow-md ring-1 ring-zinc-200">
 							<ul className="flex gap-x-4 text-sm font-medium">
 								<li>

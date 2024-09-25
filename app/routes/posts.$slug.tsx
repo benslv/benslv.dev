@@ -56,7 +56,7 @@ export function ErrorBoundary() {
 	return (
 		<Container>
 			<Prose>
-				<h1>Post Not Found ⁉️</h1>
+				<h1>Post Not Found</h1>
 				<p>
 					There doesn't seem to be a post with that title. Maybe double-check
 					the URL is correct?

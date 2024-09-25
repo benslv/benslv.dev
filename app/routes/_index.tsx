@@ -14,7 +14,7 @@ export default function Index() {
 		<Container>
 			<div className="flex flex-col gap-y-6">
 				<section>
-					<h1 className="font-serif mb-4 text-3xl font-bold tracking-tight text-zinc-800">
+					<h1 className="mb-4 text-3xl font-bold tracking-tight text-zinc-800">
 						Hi, I'm Ben!
 					</h1>
 					<p>
@@ -50,7 +50,7 @@ export default function Index() {
 					</p>
 				</section>
 				<section>
-					<h2 className="font-serif mb-2 text-2xl font-medium tracking-tight text-zinc-800">
+					<h2 className=" mb-2 text-2xl font-medium tracking-tight text-zinc-800">
 						Experience
 					</h2>
 					<ul className="ml-4 list-disc space-y-2 marker:text-zinc-300">
@@ -89,7 +89,7 @@ export default function Index() {
 					</ul>
 				</section>
 				<section>
-					<h2 className="font-serif mb-2 mt-2 text-2xl font-medium tracking-tight text-zinc-800">
+					<h2 className=" mb-2 mt-2 text-2xl font-medium tracking-tight text-zinc-800">
 						Projects
 					</h2>
 					<ul className="ml-6 space-y-2 marker:text-zinc-300">

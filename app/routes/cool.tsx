@@ -15,7 +15,7 @@ export default function Page() {
 	// const { sites } = useLoaderData<typeof loader>();
 	return (
 		<Container>
-			<h1 className="font-serif mb-4 text-3xl text-zinc-800">Cool Sites 😎</h1>
+			<h1 className="mb-4 text-3xl text-zinc-800">Cool Sites 😎</h1>
 			<p>
 				A bunch of sites that I think are cool for one reason or another. It
 				could be that I've enjoyed the articles an author has written, or maybe

@@ -11,7 +11,6 @@ export default {
 		},
 		fontFamily: {
 			sans: ["Rubik", "sans-serif"],
-			serif: ["Playfair Display", "serif"],
 		},
 		extend: {
 			animation: {

@@ -27,7 +27,7 @@ export const links: LinksFunction = () => [
 	},
 	{
 		rel: "stylesheet",
-		href: "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap",
+		href: "https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap",
 	},
 	{
 		rel: "icon",
@@ -52,22 +52,22 @@ export function Layout({ children }: { children: ReactNode }) {
 				<Meta />
 				<Links />
 			</head>
-			<body className="h-full font-sans font-normal text-zinc-600">
+			<body className="h-full">
 				<div className="flex h-full flex-col gap-y-4">
 					<header className="my-4 w-full px-4">
-						<nav className="mx-auto flex max-w-screen-sm rounded-full border border-white bg-gradient-to-b from-zinc-50 to-zinc-100 px-4 py-2 text-zinc-400 shadow-md ring-1 ring-zinc-200">
-							<ul className="flex gap-x-4 text-sm font-medium">
+						<nav className="mx-auto flex max-w-screen-sm rounded-full border border-white bg-gradient-to-b from-gray-50 to-gray-100 px-4 py-2 text-gray-500 shadow-md ring-1 ring-gray-200">
+							<ul className="flex gap-x-4 text-sm">
 								<li>
 									<Link
 										to="/"
-										className="transition-colors hover:text-zinc-500">
+										className="transition-colors hover:text-gray-600">
 										Home
 									</Link>
 								</li>
 								<li>
 									<Link
 										to="/posts"
-										className="transition-colors hover:text-zinc-500">
+										className="transition-colors hover:text-gray-600">
 										Posts
 									</Link>
 								</li>
@@ -75,7 +75,7 @@ export function Layout({ children }: { children: ReactNode }) {
 						</nav>
 					</header>
 					<div className="w-full flex-1 px-4">{children}</div>
-					<footer className="w-full border-t border-zinc-200 bg-gradient-to-b from-zinc-50 to-white p-4 shadow-inner">
+					<footer className="w-full border-t border-gray-200 bg-gradient-to-b from-gray-50 to-white p-4 shadow-inner">
 						<div className="mx-auto flex max-w-screen-sm justify-between">
 							<NowPlaying currentTrackPromise={currentTrackPromise} />
 							<SocialIcons />
@@ -99,7 +99,7 @@ export function ErrorBoundary() {
 
 	return (
 		<DefaultLayout>
-			<h1 className="mb-2 text-3xl text-zinc-800">Uh oh! 🚨</h1>
+			<h1 className="mb-2 text-3xl text-gray-800">Uh oh! 🚨</h1>
 			<p>
 				Something went a bit wrong there, and the site wasn't quite able to
 				handle it.

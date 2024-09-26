@@ -5,8 +5,8 @@ export default {
 	content: ["./app/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		fontWeight: {
-			normal: "300",
-			medium: "400",
+			normal: "400",
+			medium: "500",
 			bold: "600",
 		},
 		fontFamily: {

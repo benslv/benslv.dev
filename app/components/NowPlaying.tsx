@@ -10,11 +10,11 @@ export function NowPlaying({
 	>;
 }) {
 	return (
-		<div className="flex w-fit items-center gap-x-2 rounded-full border bg-white p-1 pr-3">
+		<div className="flex w-fit items-center gap-x-2 rounded-full border bg-white p-1 pr-3 text-gray-600">
 			<Suspense
 				fallback={
 					<>
-						<div className="h-6 w-6 animate-pulse rounded-full border bg-zinc-400" />
+						<div className="h-6 w-6 animate-pulse rounded-full border bg-gray-400" />
 						<p className="text-sm">loading...</p>
 					</>
 				}>

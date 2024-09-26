@@ -20,7 +20,7 @@ export default function Page() {
 
 	return (
 		<Container>
-			<h1 className="mb-4 text-3xl font-bold tracking-tight text-zinc-800">
+			<h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-800">
 				Posts
 			</h1>
 			<ul className="space-y-2">
@@ -29,10 +29,10 @@ export default function Page() {
 						<Link
 							to={`/posts/${post.slug}`}
 							prefetch="intent"
-							className="text-zinc-800 underline decoration-zinc-300 decoration-2 underline-offset-2">
+							className="text-gray-600 underline decoration-gray-300 decoration-2 underline-offset-2 hover:text-gray-900 hover:decoration-gray-400">
 							<span className="">{post.title}</span>
 						</Link>
-						<span className="text-nowrap tabular-nums text-zinc-400">
+						<span className="text-nowrap tabular-nums text-gray-400">
 							{new Date(post.publishedDate!).toLocaleString("en-GB", {
 								dateStyle: "medium",
 							})}

@@ -7,10 +7,9 @@ export default {
 		fontWeight: {
 			normal: "400",
 			medium: "500",
-			bold: "600",
 		},
 		fontFamily: {
-			sans: ["Rubik", "sans-serif"],
+			sans: ["IBM Plex Sans", "sans-serif"],
 		},
 		extend: {
 			animation: {

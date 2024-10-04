@@ -20,7 +20,7 @@ export default function Page() {
 
 	return (
 		<Container>
-			<h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-800">
+			<h1 className="mb-4 text-3xl font-medium tracking-tight text-gray-800">
 				Posts
 			</h1>
 			<ul className="space-y-2">
